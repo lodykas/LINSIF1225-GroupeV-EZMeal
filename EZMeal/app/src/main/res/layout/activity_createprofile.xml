@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/usermail"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/usermail"
+        />
+
+    <EditText
+        android:id="@+id/usermailedit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/usermail"
+        android:layout_toRightOf="@+id/usermail"
+        android:layout_marginLeft="10dp"
+        android:hint="@string/usermail"
+        android:inputType="text"
+        android:background="@color/grey"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"/>
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/usermail"
+        android:layout_alignLeft="@+id/usermail"
+        android:text="@string/password" />
+
+    <EditText
+        android:id="@+id/passwordedit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/password"
+        android:layout_toRightOf="@+id/password"
+        android:layout_marginLeft="10dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:background="@color/grey"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"/>
+
+
+</RelativeLayout>

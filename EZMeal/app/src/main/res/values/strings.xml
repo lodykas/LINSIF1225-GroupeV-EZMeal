@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">EZMeal</string>
+    <string name="usermail">Usermail</string>
+    <string name="password">Password</string>
 </resources>
