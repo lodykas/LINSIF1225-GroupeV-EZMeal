@@ -9,21 +9,24 @@ public class User {
     private String usermail;
     private char sex;
     private String password;
-    private String date;
+    private String birthdate;
     private String country;
+    private String oriCountry;
 
-    User(String usermail, char sex, String password, String date, String country){
+    User(String usermail, char sex, String password, String birthdate, String country, String oriCountry){
         this.usermail = usermail;
         this.sex = sex;
         this.password = password;
-        this.date = date;
+        this.birthdate = birthdate;
         this.country = country;
+        this.oriCountry = oriCountry;
     }
 
     String getUser(){return usermail;}
     char getSex(){return sex;}
     String getPassword(){return password;}
-    String getDate(){return date;}
+    String getBirth(){return birthdate;}
     String getCountry(){return country;}
+    String getOriginCountry(){return oriCountry;}
 
 }

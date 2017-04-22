@@ -126,6 +126,27 @@
         android:layout_alignLeft="@+id/usermail"
         android:text="@string/country" />
 
+    <EditText
+        android:id="@+id/origincountryedit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:hint="@string/origincountry"
+        android:inputType="text"
+        android:layout_marginTop="30dp"
+        android:layout_alignLeft="@+id/usermailedit"
+        android:layout_below="@+id/countryedit"
+        android:background="@color/colorAccent"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/origincountryedit"
+        android:layout_alignLeft="@+id/usermail"
+        android:text="@string/origincountry" />
+
     <Button
         android:id="@+id/button101"
         android:layout_width="wrap_content"

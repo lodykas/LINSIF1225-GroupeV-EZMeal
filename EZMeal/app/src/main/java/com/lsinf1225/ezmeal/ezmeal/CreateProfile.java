@@ -9,6 +9,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+
 /**
  * Created by Lodycas on 21-04-17.
  */
@@ -23,15 +24,24 @@ public class CreateProfile extends AppCompatActivity {
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EditText usermail = (EditText) findViewById(R.id.usermailedit);
-                EditText password = (EditText) findViewById(R.id.passwordedit);
+                //I get all the data the user entered
+                String usermail = ((EditText) findViewById(R.id.usermailedit)).getText().toString();
+                String password = ((EditText) findViewById(R.id.passwordedit)).getText().toString();
                 RadioGroup sex = (RadioGroup) findViewById(R.id.sexSelect);
                 RadioButton sexB = (RadioButton) findViewById(sex.getCheckedRadioButtonId());
-                EditText birth = (EditText) findViewById(R.id.birthedit);
-                EditText country = (EditText) findViewById(R.id.countryedit);
+                String birth = ((EditText) findViewById(R.id.birthedit)).getText().toString();
+                String country = ((EditText) findViewById(R.id.countryedit)).getText().toString();
+                String oriCountry = ((EditText) findViewById(R.id.origincountryedit)).getText().toString();
 
-                User user = new User(usermail.getText().toString(), sexB.getText().charAt(0), password.getText().toString(),birth.getText().toString(),country.getText().toString());
-                Toast.makeText(getApplicationContext(), getResources().getString(R.string.Toast1, user.getUser(),user.getSex()), 3000).show();
+                if (usermail == "" || password == "" || birth == "" || country == "" || oriCountry == "" || sexB == null){
+                    Toast.makeText(getApplicationContext(), "All fields are mandatory!", 3000).show();
+                }
+                else {//if everything's complete, I create the object and update the database
+                    User user = new User(usermail, sexB.getText().charAt(0), password, birth, country, oriCountry);
+                    SQLiteManager db = new SQLiteManager(getApplicationContext());
+                    db.addUser(user);
+                    Toast.makeText(getApplicationContext(), "Bienvenue, " + user.getUser() + "!", 3000).show();
+                }
             }
         });
     }

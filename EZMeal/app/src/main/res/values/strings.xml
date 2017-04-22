@@ -3,7 +3,7 @@
     <string name="usermail">Usermail</string>
     <string name="password">Password</string>
     <string name="sex">Sex</string>
-    <string name="country">Current country</string>
+    <string name="country">Living country</string>
     <string name="origincountry">Country of origin</string>
     <string name="birthday">Birthday</string>
     <string name="Toast1">Bienvenue, %1$s, étrange %2$s!</string>
