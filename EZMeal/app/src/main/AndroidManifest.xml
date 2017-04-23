@@ -4,11 +4,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ouroborus"
+        android:icon="@mipmap/ezmeal"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+
+        <activity android:name=".LoginActivity" android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,7 +18,7 @@
         </activity>
 
         <activity
-            android:name=".CreateProfile"
+            android:name=".CreateProfileActivity"
             android:label="@string/app_name"/>
 
     </application>

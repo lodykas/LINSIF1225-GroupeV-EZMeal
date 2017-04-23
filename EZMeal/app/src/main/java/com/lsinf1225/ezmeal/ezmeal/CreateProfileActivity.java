@@ -14,7 +14,7 @@ import android.widget.Toast;
  * Created by Lodycas on 21-04-17.
  */
 
-public class CreateProfile extends AppCompatActivity {
+public class CreateProfileActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
