@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:layout_below="@+id/usermail"
+        android:layout_marginTop="1dp"
+        android:id="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:hint="Password"
+        android:textColorLink="?android:attr/colorMultiSelectHighlight"
+        android:autoText="false" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ezmeal"
+        android:id="@+id/logo"
+        android:cropToPadding="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/usermail"
+        android:hint="Usermail"
+        android:layout_below="@+id/logo"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
+        android:textColorLink="?android:attr/colorMultiSelectHighlight" />
+
+    <Button
+        android:id = "@+id/log"
+        android:layout_width = "wrap_content"
+        android:layout_height = "wrap_content"
+        android:onClick = "login"
+        android:hint = "Login"
+        android:layout_alignParentBottom="false"
+        android:layout_centerHorizontal="false"
+        android:layout_marginBottom="11dp"
+        android:textColorLink="?android:attr/colorMultiSelectHighlight"
+        android:layout_below="@+id/password"
+        android:layout_alignStart="@+id/password" />
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Cancel"
+        android:layout_alignParentBottom="false"
+        android:layout_toRightOf="@+id/textview"
+        android:layout_toEndOf="@+id/textview"
+        android:textColorLink="?android:attr/colorMultiSelectHighlight"
+        android:layout_alignEnd="@+id/password"
+        android:layout_alignRight="@+id/password"
+        android:layout_below="@+id/password" />
+
+    <TextView
+        android:text="New account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/log"
+        android:layout_marginRight="27dp"
+        android:layout_marginEnd="27dp"
+        android:id="@+id/newaccount"
+        android:clickable="true"
+        android:contextClickable="true"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp" />
+
+</RelativeLayout>
