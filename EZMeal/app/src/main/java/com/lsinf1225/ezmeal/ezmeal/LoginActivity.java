@@ -21,8 +21,26 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     //on clique sur "new account" ==> on lance createProfileActivity
-    public void onClick(View v) {
+    public void newAccout(View v) {
         Intent intent = new Intent(getApplicationContext(), CreateProfileActivity.class);
         startActivity(intent);
+    }
+
+    public void login(View v) {
+        String usermail = ((EditText) findViewById(R.id.logusermail)).getText().toString();
+        String triedPW = ((EditText) findViewById(R.id.logpassword)).getText().toString();
+
+        SQLiteManager db = new SQLiteManager(getApplicationContext());
+        String passWord = db.getPassword(usermail);
+
+        if(passWord == ""){
+            Toast.makeText(getApplicationContext(), "No User " + usermail + " found", 3000).show();
+        }
+        else if(passWord.equals(triedPW)){
+            Toast.makeText(getApplicationContext(), "Bienvenue, " + usermail + "!", 3000).show();
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "Invalid Credentials !", 3000).show();
+        }
     }
 }

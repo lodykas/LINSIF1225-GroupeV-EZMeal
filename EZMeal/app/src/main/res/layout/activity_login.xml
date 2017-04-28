@@ -8,14 +8,13 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:layout_below="@+id/usermail"
+        android:layout_below="@+id/logusermail"
         android:layout_marginTop="1dp"
-        android:id="@+id/password"
+        android:id="@+id/logpassword"
         android:layout_centerHorizontal="true"
         android:hint="Password"
         android:textColorLink="?android:attr/colorMultiSelectHighlight"
-        android:gravity="center"
-        android:autoText="false" />
+        android:gravity="center" />
 
     <ImageView
         android:layout_width="wrap_content"
@@ -31,7 +30,7 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/usermail"
+        android:id="@+id/logusermail"
         android:hint="Usermail"
         android:layout_below="@+id/logo"
         android:layout_marginTop="25dp"
@@ -49,8 +48,8 @@
         android:layout_centerHorizontal="false"
         android:layout_marginBottom="11dp"
         android:textColorLink="?android:attr/colorMultiSelectHighlight"
-        android:layout_below="@+id/password"
-        android:layout_alignStart="@+id/password" />
+        android:layout_below="@+id/logpassword"
+        android:layout_alignStart="@+id/logpassword" />
     <Button
         android:id="@+id/cancel"
         android:layout_width="wrap_content"
@@ -60,9 +59,9 @@
         android:layout_toRightOf="@+id/textview"
         android:layout_toEndOf="@+id/textview"
         android:textColorLink="?android:attr/colorMultiSelectHighlight"
-        android:layout_alignEnd="@+id/password"
-        android:layout_alignRight="@+id/password"
-        android:layout_below="@+id/password" />
+        android:layout_alignEnd="@+id/logpassword"
+        android:layout_alignRight="@+id/logpassword"
+        android:layout_below="@+id/logpassword" />
 
     <TextView
         android:id="@+id/newaccount"
@@ -73,7 +72,7 @@
         android:layout_marginRight="27dp"
         android:layout_marginEnd="27dp"
         android:clickable="true"
-        android:onClick="onClick"
+        android:onClick="newAccout"
         android:contextClickable="true"
         android:layout_alignParentTop="false"
         android:layout_centerHorizontal="true"
