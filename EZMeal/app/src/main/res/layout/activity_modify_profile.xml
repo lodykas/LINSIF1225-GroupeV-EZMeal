@@ -24,7 +24,9 @@
         android:inputType="text"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:background="@color/white"/>
+        android:background="@color/white"
+        />
+    <!--get usermail de user-->
 
     <EditText
         android:id="@+id/passwordedit"
@@ -80,7 +82,7 @@
         android:layout_alignLeft="@+id/usermail"
         android:text="@string/sex" />
 
-    <EditText
+    <TextView
         android:id="@+id/birthedit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -93,7 +95,7 @@
         android:layout_below="@+id/sexSelect"
         android:background="@color/white"
         />
-
+    <!-- get birthday de user-->
     <TextView
         android:id="@+id/birth"
         android:layout_width="wrap_content"
@@ -115,6 +117,7 @@
         android:layout_below="@+id/birthedit"
         android:background="@color/white"
         />
+    <!-- get living country de user-->
 
     <TextView
         android:id="@+id/country"
@@ -124,7 +127,7 @@
         android:layout_alignLeft="@+id/usermail"
         android:text="@string/country" />
 
-    <EditText
+    <TextView
         android:id="@+id/origincountryedit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
