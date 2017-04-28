@@ -151,10 +151,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="OK"
+        android:layout_marginBottom="90dp"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/origincountryedit"
-        android:layout_alignStart="@+id/origincountryedit"
-        android:layout_marginBottom="95dp"
-        />
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
