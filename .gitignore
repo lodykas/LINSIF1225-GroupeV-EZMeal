@@ -1,8 +1,7 @@
 EZMeal/*.iml
 EZMeal/.gradle
 EZMeal/local.properties
-EZMeal/.idea/workspace.xml
-EZMeal/.idea/libraries
+EZMeal/.idea/*
 EZMeal/.DS_Store
 EZMeal/build
 EZMeal/captures
