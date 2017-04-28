@@ -1,0 +1,9 @@
+EZMeal/*.iml
+EZMeal/.gradle
+EZMeal/local.properties
+EZMeal/.idea/workspace.xml
+EZMeal/.idea/libraries
+EZMeal/.DS_Store
+EZMeal/build
+EZMeal/captures
+EZMeal/.externalNativeBuild
