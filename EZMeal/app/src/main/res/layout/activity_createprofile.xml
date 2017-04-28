@@ -143,15 +143,17 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/origincountryedit"
         android:layout_alignLeft="@+id/usermail"
-        android:text="@string/origincountry" />
+        android:text="@string/origincountry"
+        android:id="@+id/textView" />
 
     <Button
         android:id="@+id/button101"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="OK"
-        android:layout_below="@+id/origincountryedit"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="95dp" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/origincountryedit"
+        android:layout_alignStart="@+id/origincountryedit"
+        android:layout_marginBottom="95dp" />
 
 </RelativeLayout>
