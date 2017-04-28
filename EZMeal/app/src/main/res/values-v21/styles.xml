@@ -1,16 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Base application theme. -->
     <style name="AppTheme" parent="Base.Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:colorPrimary">@color/colorAccent</item>
+        <item name="android:colorPrimaryDark">@color/colorAccent</item>
         <item name="android:colorForeground">@color/grey</item>
+        <item name="android:navigationBarColor">@android:color/darker_gray</item>
+        <item name="android:statusBarColor">@color/grey</item>
+        <item name="android:colorAccent">@color/colorAccent</item>
         <item name="android:textColorPrimary">@color/colorAccent</item>
         <item name="android:windowBackground">@color/white</item>
     </style>
-
-    <style name="ezmeal" parent="AppTheme" />
-
 </resources>

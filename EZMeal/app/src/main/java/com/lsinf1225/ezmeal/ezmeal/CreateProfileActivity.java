@@ -41,6 +41,7 @@ public class CreateProfileActivity extends AppCompatActivity {
                     SQLiteManager db = new SQLiteManager(getApplicationContext());
                     db.addUser(user);
                     Toast.makeText(getApplicationContext(), "Bienvenue, " + user.getUser() + "!", 3000).show();
+
                 }
             }
         });

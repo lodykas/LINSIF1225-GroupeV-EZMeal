@@ -4,7 +4,8 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
+
+
 
 
 public class SQLiteManager extends SQLiteOpenHelper {
@@ -94,34 +95,11 @@ public class SQLiteManager extends SQLiteOpenHelper {
     }
 
     /**
-     * Adds a new User in the database
+     *Adds a new User in the database
      */
     public void addUser(User user){
-            SQLiteDatabase db = getWritableDatabase();
-            db.execSQL("INSERT INTO \"Utilisateur\" VALUES (\""+user.getUser()+"\",\""+user.getCountry()+"\",\""+user.getOriginCountry()+"\",\""+user.getPassword()+"\",\""+user.getBirth()+"\");");
-            close();
-    }
-
-
-    /**
-     * Get the password of a specified user
-     */
-    public  String getPassword(String usermail){
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor c = db.query("\"Utilisateur\"", // La table
-                new String[]{"\"MotDePasse\""},
-                "\"Usermail\" = ?", // Colonnes pour la clause WHERE
-                new String[]{"\""+usermail+"\""}, // Valeurs pour la clause WHERE
-                null, // ne pas grouper les lignes
-                null, // ne pas filtrer par goupe de ligne
-                null  // pas d'ordre
-        );
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("INSERT OR IGNORE INTO \"Utilisateur\" VALUES (\""+user.getUser()+"\",\""+user.getCountry()+"\",\""+user.getOriginCountry()+"\",\""+user.getPassword()+"\",\""+user.getBirth()+"\");");
         close();
-        String s ="";
-        if (c.moveToFirst()) {
-            s = c.getString(1);
-        }
-        c.close();
-        return s;
     }
 }
