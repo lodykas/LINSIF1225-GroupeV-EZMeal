@@ -102,4 +102,17 @@ public class SQLiteManager extends SQLiteOpenHelper {
         db.execSQL("INSERT OR IGNORE INTO \"Utilisateur\" VALUES (\""+user.getUser()+"\",\""+user.getCountry()+"\",\""+user.getOriginCountry()+"\",\""+user.getPassword()+"\",\""+user.getBirth()+"\");");
         close();
     }
+
+    public List<String> getPassword(String usermail){
+        List<String> res = new ArrayList<String>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c =db.query("\"Utilisateur\"",new String[]{"\"MotDePasse\""},("\"Usermail\" = \"" + usermail +"\"") ,null,null,null,null);
+        if(c.moveToFirst()){
+            for(int i = 0; i<c.getCount(); i++){
+                res.add(c.getString(c.getColumnIndex("MotDePasse")));
+                c.moveToNext();
+            }
+        }
+        return res;
+    }
 }

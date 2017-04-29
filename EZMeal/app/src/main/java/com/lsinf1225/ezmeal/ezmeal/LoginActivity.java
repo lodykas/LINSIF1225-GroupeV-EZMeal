@@ -33,6 +33,24 @@ public class LoginActivity extends AppCompatActivity {
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+
+        Button b = (Button) findViewById(R.id.logbutton);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String usermail = ((EditText) findViewById(R.id.usermaillog)).getText().toString();
+                String password = ((EditText) findViewById(R.id.passwordlog)).getText().toString();
+
+                SQLiteManager db =new SQLiteManager(getApplicationContext());
+                if(usermail == ""){return;}
+                List<String> res = db.getPassword(usermail);
+
+                if(res.get(0).equals(password))
+                {
+                    Toast.makeText(getApplicationContext(), res.get(0), 1000).show();
+                }
+            }
+        });
     }
 
     //on clique sur "new account" ==> on lance createProfileActivity
