@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7c6721c-c222-4bcd-b6bd-f9d17bb81a4a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EZMeal/app/src/main/java/com/lsinf1225/ezmeal/ezmeal/LoginActivity.java" afterPath="$PROJECT_DIR$/EZMeal/app/src/main/java/com/lsinf1225/ezmeal/ezmeal/LoginActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EZMeal/app/src/main/java/com/lsinf1225/ezmeal/ezmeal/SQLiteManager.java" afterPath="$PROJECT_DIR$/EZMeal/app/src/main/java/com/lsinf1225/ezmeal/ezmeal/SQLiteManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/EZMeal/app/src/main/res/layout/activity_login.xml" afterPath="$PROJECT_DIR$/EZMeal/app/src/main/res/layout/activity_login.xml" />
     </list>
     <ignored path="LINSIF1225-GroupeV-EZMeal.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,7 +23,7 @@
     <favorites_list name="LINSIF1225-GroupeV-EZMeal" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="LoginActivity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/EZMeal/app/src/main/java/com/lsinf1225/ezmeal/ezmeal/LoginActivity.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -37,8 +37,18 @@
       <file leaf-file-name="SQLiteManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EZMeal/app/src/main/java/com/lsinf1225/ezmeal/ezmeal/SQLiteManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="496">
-              <caret line="116" column="5" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
+            <state relative-caret-position="255">
+              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="activity_login.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EZMeal/app/src/main/res/layout/activity_login.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1105">
+              <caret line="65" column="46" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -59,6 +69,7 @@
       <list>
         <option value="$PROJECT_DIR$/EZMeal/app/src/main/java/com/lsinf1225/ezmeal/ezmeal/LoginActivity.java" />
         <option value="$PROJECT_DIR$/EZMeal/app/src/main/java/com/lsinf1225/ezmeal/ezmeal/SQLiteManager.java" />
+        <option value="$PROJECT_DIR$/EZMeal/app/src/main/res/layout/activity_login.xml" />
       </list>
     </option>
   </component>
@@ -93,13 +104,13 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane" />
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane />
       </pane>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -248,7 +259,7 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/EZMeal/app/src/main/java/com/lsinf1225/ezmeal/ezmeal/LoginActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
+        <state relative-caret-position="663">
           <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
           <folding />
         </state>
@@ -256,8 +267,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/EZMeal/app/src/main/java/com/lsinf1225/ezmeal/ezmeal/SQLiteManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="116" column="5" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EZMeal/app/src/main/java/com/lsinf1225/ezmeal/ezmeal/LoginActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EZMeal/app/src/main/res/layout/activity_login.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="65" column="46" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EZMeal/app/src/main/java/com/lsinf1225/ezmeal/ezmeal/SQLiteManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
           <folding />
         </state>
       </provider>

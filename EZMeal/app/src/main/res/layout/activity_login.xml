@@ -8,9 +8,9 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:layout_below="@+id/usermail"
+        android:layout_below="@+id/usermaillog"
         android:layout_marginTop="1dp"
-        android:id="@+id/password"
+        android:id="@+id/passwordlog"
         android:layout_centerHorizontal="true"
         android:hint="Password"
         android:textColorLink="?android:attr/colorMultiSelectHighlight"
@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/usermail"
+        android:id="@+id/usermaillog"
         android:hint="Usermail"
         android:layout_below="@+id/logo"
         android:layout_marginTop="25dp"
@@ -49,9 +49,9 @@
         android:layout_centerHorizontal="false"
         android:layout_marginBottom="11dp"
         android:textColorLink="?android:attr/colorMultiSelectHighlight"
-        android:layout_below="@+id/password"
-        android:layout_alignStart="@+id/password"
-        android:layout_alignLeft="@+id/password"/>
+        android:layout_below="@+id/passwordlog"
+        android:layout_alignStart="@+id/passwordlog"
+        android:layout_alignLeft="@+id/passwordlog"/>
     <Button
         android:id="@+id/cancel"
         android:layout_width="wrap_content"
@@ -61,9 +61,9 @@
         android:layout_toRightOf="@+id/textview"
         android:layout_toEndOf="@+id/textview"
         android:textColorLink="?android:attr/colorMultiSelectHighlight"
-        android:layout_alignEnd="@+id/password"
-        android:layout_alignRight="@+id/password"
-        android:layout_below="@+id/password" />
+        android:layout_alignEnd="@+id/passwordlog"
+        android:layout_alignRight="@+id/passwordlog"
+        android:layout_below="@+id/passwordlog" />
 
     <TextView
         android:id="@+id/newaccount"
