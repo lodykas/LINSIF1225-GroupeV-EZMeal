@@ -1,4 +1,4 @@
-.idea
+.idea/*
 EZMeal/*.iml
 EZMeal/.gradle
 EZMeal/local.properties
