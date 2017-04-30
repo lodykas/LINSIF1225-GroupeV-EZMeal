@@ -28,7 +28,11 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".ModifyProfileActivity"></activity>
+        <activity android:name=".ModifyProfileActivity" />
+        <activity
+            android:name=".Menuetage"
+            android:label="@string/title_activity_menuetage"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

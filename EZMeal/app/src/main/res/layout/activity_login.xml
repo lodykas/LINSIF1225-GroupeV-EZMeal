@@ -8,9 +8,9 @@
         android:layout_height="wrap_content"
         android:inputType="textPassword"
         android:ems="10"
-        android:layout_below="@+id/usermail"
+        android:layout_below="@+id/usermaillog"
         android:layout_marginTop="1dp"
-        android:id="@+id/password"
+        android:id="@+id/passwordlog"
         android:layout_centerHorizontal="true"
         android:hint="Password"
         android:textColorLink="?android:attr/colorMultiSelectHighlight"
@@ -18,20 +18,20 @@
         android:autoText="false" />
 
     <ImageView
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ezmeal"
-        android:id="@+id/logo"
-        android:cropToPadding="false"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="30dp"
+        android:cropToPadding="false"
+        app:srcCompat="@drawable/ezmeal" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textEmailAddress"
         android:ems="10"
-        android:id="@+id/usermail"
+        android:id="@+id/usermaillog"
         android:hint="Usermail"
         android:layout_below="@+id/logo"
         android:layout_marginTop="25dp"
@@ -40,37 +40,24 @@
         android:gravity="center"/>
 
     <Button
-        android:id = "@+id/log"
-        android:layout_width = "wrap_content"
-        android:layout_height = "wrap_content"
-        android:onClick = "login"
-        android:hint = "Login"
-        android:layout_alignParentBottom="false"
-        android:layout_centerHorizontal="false"
-        android:layout_marginBottom="11dp"
-        android:textColorLink="?android:attr/colorMultiSelectHighlight"
-        android:layout_below="@+id/password"
-        android:layout_alignStart="@+id/password"
-        android:layout_alignLeft="@+id/password"/>
-    <Button
-        android:id="@+id/cancel"
+        android:id="@+id/logbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Cancel"
         android:layout_alignParentBottom="false"
-        android:layout_toRightOf="@+id/textview"
-        android:layout_toEndOf="@+id/textview"
-        android:textColorLink="?android:attr/colorMultiSelectHighlight"
-        android:layout_alignEnd="@+id/password"
-        android:layout_alignRight="@+id/password"
-        android:layout_below="@+id/password" />
+        android:layout_below="@+id/passwordlog"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="11dp"
+        android:layout_marginTop="45dp"
+        android:hint="Login"
+        android:onClick="login"
+        android:textColorLink="?android:attr/colorMultiSelectHighlight" />
 
     <TextView
         android:id="@+id/newaccount"
         android:text="New account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/log"
+        android:layout_below="@+id/logbutton"
         android:layout_marginRight="27dp"
         android:layout_marginEnd="27dp"
         android:clickable="true"

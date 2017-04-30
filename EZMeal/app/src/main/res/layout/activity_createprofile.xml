@@ -5,7 +5,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/usermail"
+        android:id="@+id/usermaillog"
         android:layout_marginTop="30dp"
         android:layout_marginRight="90dp"
         android:layout_marginLeft="60dp"
@@ -18,8 +18,8 @@
         android:id="@+id/usermailedit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/usermail"
-        android:layout_alignTop="@+id/usermail"
+        android:layout_toRightOf="@+id/usermaillog"
+        android:layout_alignTop="@+id/usermaillog"
         android:hint="@string/usermail"
         android:inputType="text"
         android:paddingLeft="10dp"
@@ -41,11 +41,11 @@
         />
 
     <TextView
-        android:id="@+id/password"
+        android:id="@+id/passwordlog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/passwordedit"
-        android:layout_alignLeft="@+id/usermail"
+        android:layout_alignLeft="@+id/usermaillog"
         android:text="@string/password" />
 
     <RadioGroup
@@ -77,7 +77,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/sexSelect"
-        android:layout_alignLeft="@+id/usermail"
+        android:layout_alignLeft="@+id/usermaillog"
         android:text="@string/sex" />
 
     <EditText
@@ -99,7 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/birthedit"
-        android:layout_alignLeft="@+id/usermail"
+        android:layout_alignLeft="@+id/usermaillog"
         android:text="@string/birthday" />
 
     <EditText
@@ -121,7 +121,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/countryedit"
-        android:layout_alignLeft="@+id/usermail"
+        android:layout_alignLeft="@+id/usermaillog"
         android:text="@string/country" />
 
     <EditText
@@ -142,7 +142,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/origincountryedit"
-        android:layout_alignLeft="@+id/usermail"
+        android:layout_alignLeft="@+id/usermaillog"
         android:text="@string/origincountry"
         android:id="@+id/textView" />
 

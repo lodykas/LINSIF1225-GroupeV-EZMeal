@@ -15,6 +15,8 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.appindexing.Thing;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.util.List;
+
 /**
  * Created by Lodycas on 23-04-17.
  */
