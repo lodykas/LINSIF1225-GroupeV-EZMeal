@@ -49,7 +49,8 @@ public class LoginActivity extends AppCompatActivity {
 
                 if(res.get(0).equals(password))
                 {
-                    Toast.makeText(getApplicationContext(), res.get(0), 1000).show();
+                    Intent menu= new Intent(getApplicationContext(),Menuetage.class);
+                    startActivity(menu);
                 }
             }
         });
