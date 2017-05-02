@@ -12,12 +12,12 @@ import android.view.ViewGroup;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Fragment3.OnFragmentInteractionListener} interface
+ * {@link Fragment4.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Fragment3#newInstance} factory method to
+ * Use the {@link Fragment4#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Fragment3 extends Fragment {
+public class Fragment4 extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,7 +29,7 @@ public class Fragment3 extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public Fragment3() {
+    public Fragment4() {
         // Required empty public constructor
     }
 
@@ -39,11 +39,11 @@ public class Fragment3 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment3.
+     * @return A new instance of fragment Fragment4.
      */
     // TODO: Rename and change types and number of parameters
-    public static Fragment3 newInstance(String param1, String param2) {
-        Fragment3 fragment = new Fragment3();
+    public static Fragment4 newInstance(String param1, String param2) {
+        Fragment4 fragment = new Fragment4();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,16 +61,15 @@ public class Fragment3 extends Fragment {
     }
 
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        View view= inflater.inflate(R.layout.fragment_fragment3, container, false);
+        View view= inflater.inflate(R.layout.fragment_fragment4, container, false);
 
         // NOTE : We are calling the onFragmentInteraction() declared in the MainActivity
         // ie we are sending "Fragment 1" as title parameter when fragment1 is activated
         if (mListener != null) {
-            mListener.onFragmentInteraction("Fragment 3");
+            mListener.onFragmentInteraction("Fragment 4");
         }
 
         // Here we will can create click listners etc for all the gui elements on the fragment.
@@ -79,6 +78,7 @@ public class Fragment3 extends Fragment {
 
         return view;
     }
+
 
 
     @Override
@@ -108,8 +108,11 @@ public class Fragment3 extends Fragment {
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface OnFragmentInteractionListener {
-        // NOTE : We changed the Uri to String.
-        void onFragmentInteraction(String title);
+
+
+        public interface OnFragmentInteractionListener {
+            // NOTE : We changed the Uri to String.
+            void onFragmentInteraction(String title);
+        }
+
     }
-}

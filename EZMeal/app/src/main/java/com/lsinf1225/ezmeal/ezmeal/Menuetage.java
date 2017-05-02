@@ -22,6 +22,7 @@ public class Menuetage extends AppCompatActivity
         Fragment1.OnFragmentInteractionListener,
         Fragment2.OnFragmentInteractionListener,
         Fragment3.OnFragmentInteractionListener,
+        Fragment4.OnFragmentInteractionListener,
 
         NavigationView.OnNavigationItemSelectedListener {
 
@@ -103,9 +104,12 @@ public class Menuetage extends AppCompatActivity
                 fragment = new Fragment1();
             } else if (id == R.id.nav_frag2) {
                 fragment = new Fragment2();
-            }else if (id == R.id.nav_frag3) {
+            } else if (id == R.id.nav_frag3) {
                 fragment = new Fragment3();
+            }else if (id == R.id.nav_frag4) {
+                fragment = new Fragment4();
             }
+
 
             //NOTE: Fragment changing code
             if (fragment != null) {
@@ -128,4 +132,5 @@ public class Menuetage extends AppCompatActivity
         // NOTE:  Code to replace the toolbar title based current visible fragment
         getSupportActionBar().setTitle(title);
     }
+
 }

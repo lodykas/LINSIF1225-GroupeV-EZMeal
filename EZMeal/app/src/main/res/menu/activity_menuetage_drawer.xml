@@ -4,17 +4,23 @@
     <!-- Note:  android:checkableBehavior="single" -->
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_frag1"
-            android:icon="@drawable/bowlgrand"
-            android:title="EZ to eat" />
+        android:id="@+id/nav_frag1"
+        android:icon="@drawable/cutlery"
+        android:title="EZ to taste" />
         <item
             android:id="@+id/nav_frag2"
-            android:icon="@drawable/glass"
-            android:title="EZ to drink" />
+            android:icon="@drawable/cookingv"
+            android:title="EZ to eat" />
         <item
             android:id="@+id/nav_frag3"
-            android:icon="@drawable/chef"
+            android:icon="@drawable/coffee"
+            android:title="EZ to drink" />
+        <item
+            android:id="@+id/nav_frag4"
+            android:icon="@drawable/stat"
             android:title="EZ to track" />
+
+
 
     </group>
 

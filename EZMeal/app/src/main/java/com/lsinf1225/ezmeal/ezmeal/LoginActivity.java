@@ -43,14 +43,14 @@ public class LoginActivity extends AppCompatActivity {
                 String usermail = ((EditText) findViewById(R.id.usermaillog)).getText().toString();
                 String password = ((EditText) findViewById(R.id.passwordlog)).getText().toString();
 
-                SQLiteManager db =new SQLiteManager(getApplicationContext());
-                if(usermail == ""){return;}
-                List<String> res = db.getPassword(usermail);
-
-                if(res.get(0).equals(password))
-                {
-                    Intent menu= new Intent(getApplicationContext(),Menuetage.class);
-                    startActivity(menu);
+                SQLiteManager db = new SQLiteManager(getApplicationContext());
+                if (!usermail.equals("")) {
+                    List<String> res = db.getPassword(usermail);
+                    System.out.println("pd " + res.get(0));
+                    if (res.get(0).equals(password)) {
+                        Intent menu = new Intent(getApplicationContext(), Menuetage.class);
+                        startActivity(menu);
+                    }
                 }
             }
         });
