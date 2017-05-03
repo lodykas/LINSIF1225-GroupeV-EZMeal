@@ -22,6 +22,8 @@ import android.widget.ExpandableListView.OnGroupCollapseListener;
 import android.widget.ExpandableListView.OnGroupExpandListener;
 import android.widget.Toast;
 
+import static com.lsinf1225.ezmeal.ezmeal.R.id.parent;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -69,14 +71,7 @@ public class Fragment2 extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-    ListView mListView;
-    String[] prenoms = new String[]{
-            "Antoine", "Benoit", "Cyril", "David", "Eloise", "Florent",
-            "Gerard", "Hugo", "Ingrid", "Jonathan", "Kevin", "Logan",
-            "Mathieu", "Noemie", "Olivia", "Philippe", "Quentin", "Romain",
-            "Sophie", "Tristan", "Ulric", "Vincent", "Willy", "Xavier",
-            "Yann", "Zoé"
-    };
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -88,19 +83,13 @@ public class Fragment2 extends Fragment {
     }
 
 
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fragment2, container, false);
-        // NOTE : We are calling the onFragmentInteraction() declared in the MainActivity
-// ie we are sending "Fragment 1" as title parameter when fragment1 is activated
         if (mListener != null) {
             mListener.onFragmentInteraction("Fragment 2");
         }
-// Here we will can create click listners etc for all the gui elements on the fragment.
-// For eg: Button btn1= (Button) view.findViewById(R.id.frag1_btn1);
-// btn1.setOnclickListener(...
-
+        
 
         // get the listview
         expListView = (ExpandableListView) view.findViewById(R.id.lvExp);
@@ -115,48 +104,49 @@ public class Fragment2 extends Fragment {
         return view;
 
     }
+
+
+
+
     /*
      * Preparing the list data
      */
+
     private void prepareListData() {
         listDataHeader = new ArrayList<String>();
         listDataChild = new HashMap<String, List<String>>();
 
         // Adding child data
-        listDataHeader.add("Top 250");
-        listDataHeader.add("Now Showing");
-        listDataHeader.add("Coming Soon..");
+        listDataHeader.add("Appetizers and Snack Recipes");
+        listDataHeader.add("Main dishes");
+        listDataHeader.add("Dessert");
 
         // Adding child data
-        List<String> top250 = new ArrayList<String>();
-        top250.add("The Shawshank Redemption");
-        top250.add("The Godfather");
-        top250.add("The Godfather: Part II");
-        top250.add("Pulp Fiction");
-        top250.add("The Good, the Bad and the Ugly");
-        top250.add("The Dark Knight");
-        top250.add("12 Angry Men");
+        List<String> app = new ArrayList<String>();
+        app.add("Hot");
+        app.add("Cold");
+        app.add("Soups");
+        app.add("By country");
 
-        List<String> nowShowing = new ArrayList<String>();
-        nowShowing.add("The Conjuring");
-        nowShowing.add("Despicable Me 2");
-        nowShowing.add("Turbo");
-        nowShowing.add("Grown Ups 2");
-        nowShowing.add("Red 2");
-        nowShowing.add("The Wolverine");
+        List<String> dishes= new ArrayList<String>();
+        dishes.add("Chicken");
+        dishes.add("Beef");
+        dishes.add("Pork");
+        dishes.add("Fish");
+        dishes.add("Vegan");
+        dishes.add("By country");
 
-        List<String> comingSoon = new ArrayList<String>();
-        comingSoon.add("2 Guns");
-        comingSoon.add("The Smurfs 2");
-        comingSoon.add("The Spectacular Now");
-        comingSoon.add("The Canyons");
-        comingSoon.add("Europa Report");
+        List<String> dessert = new ArrayList<String>();
+        dessert.add("Quick and easy");
+        dessert.add("Hot");
+        dessert.add("Ice cream");
+        dessert.add("Birthday cake");
+        dessert.add("By country");
 
-        listDataChild.put(listDataHeader.get(0), top250); // Header, Child data
-        listDataChild.put(listDataHeader.get(1), nowShowing);
-        listDataChild.put(listDataHeader.get(2), comingSoon);
+        listDataChild.put(listDataHeader.get(0), app); // Header, Child data
+        listDataChild.put(listDataHeader.get(1), dishes);
+        listDataChild.put(listDataHeader.get(2), dessert);
     }
-
 
     @Override
     public void onAttach(Context context) {
