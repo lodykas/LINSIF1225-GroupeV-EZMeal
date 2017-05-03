@@ -33,7 +33,7 @@ public class CreateProfileActivity extends AppCompatActivity {
                 String country = ((EditText) findViewById(R.id.countryedit)).getText().toString();
                 String oriCountry = ((EditText) findViewById(R.id.origincountryedit)).getText().toString();
 
-                if (usermail == "" || password == "" || birth == "" || country == "" || oriCountry == "" || sexB == null){
+                if (usermail == " " || password == " " || birth == " " || country == " " || oriCountry == " " || sexB == null){
                     Toast.makeText(getApplicationContext(), "All fields are mandatory!", 3000).show();
                 }
                 else {//if everything's complete, I create the object and update the database
