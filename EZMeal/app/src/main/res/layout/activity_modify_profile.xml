@@ -5,10 +5,8 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!--get usermail de user-->
-
     <EditText
-        android:id="@+id/passwordedit"
+        android:id="@+id/passwordedit2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="98dp"
@@ -29,13 +27,13 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/passwordedit"
+        android:layout_below="@+id/passwordedit2"
         android:text="Please re enter your new password " />
 
     <!-- get birthday de user-->
 
     <EditText
-        android:id="@+id/countryedit"
+        android:id="@+id/countryedit2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="100dp"
@@ -57,11 +55,11 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/countryedit"
+        android:layout_below="@+id/countryedit2"
         android:text="Please write your new living" />
 
     <Button
-        android:id="@+id/button101"
+        android:id="@+id/button201"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="OK"
@@ -69,13 +67,12 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <EditText
+    <TextView
         android:id="@+id/Messageformodifprofil"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:inputType="textPersonName"
-        android:text="You can only modify those informations, thank u for your comprehension !"
+        android:text="You can only modify those informations, thank you for your comprehension !"
         android:layout_below="@+id/country"
         android:layout_marginTop="41dp"
         android:layout_alignParentRight="true"

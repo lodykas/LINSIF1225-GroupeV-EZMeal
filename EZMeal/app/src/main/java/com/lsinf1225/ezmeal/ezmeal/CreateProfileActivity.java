@@ -3,10 +3,12 @@ package com.lsinf1225.ezmeal.ezmeal;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 
@@ -19,6 +21,11 @@ public class CreateProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_createprofile);
+
+        Spinner spinner = (Spinner) findViewById(R.id.allergenslist);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.allergens, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
 
         Button b = (Button) findViewById(R.id.button101);
         b.setOnClickListener(new View.OnClickListener() {
@@ -40,7 +47,7 @@ public class CreateProfileActivity extends AppCompatActivity {
                     User user = new User(usermail, sexB.getText().charAt(0), password, birth, country, oriCountry);
                     SQLiteManager db = new SQLiteManager(getApplicationContext());
                     db.addUser(user);
-                    Toast.makeText(getApplicationContext(), "Bienvenue, " + user.getUser() + "!", 3000).show();
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.createsuccess,usermail), 3000).show();
 
                 }
             }

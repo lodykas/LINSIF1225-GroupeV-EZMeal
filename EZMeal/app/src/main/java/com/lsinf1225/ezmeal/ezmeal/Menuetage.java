@@ -87,6 +87,7 @@ public class Menuetage extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.modifyprofile) {
             Intent modify = new Intent(getApplicationContext(),ModifyProfileActivity.class);
+            modify.putExtra("usermail",getIntent().getStringExtra("usermail"));
             startActivity(modify);
         }
 
