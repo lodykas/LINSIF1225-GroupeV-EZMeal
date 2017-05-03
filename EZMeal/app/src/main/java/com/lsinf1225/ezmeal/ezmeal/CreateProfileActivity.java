@@ -11,6 +11,8 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import static android.R.attr.id;
+
 
 /**
  * Created by Lodycas on 21-04-17.

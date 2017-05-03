@@ -89,7 +89,7 @@ public class Fragment2 extends Fragment {
         if (mListener != null) {
             mListener.onFragmentInteraction("Fragment 2");
         }
-        
+
 
         // get the listview
         expListView = (ExpandableListView) view.findViewById(R.id.lvExp);

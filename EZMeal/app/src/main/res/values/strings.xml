@@ -11,7 +11,9 @@
     <string-array name="allergens">
         <item>Lactose</item>
         <item>Gluten</item>
-        <item>Fruits secs</item>
+        <item>Peanuts</item>
+        <item>Banana</item>
+        <item>Eggs</item>
     </string-array>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

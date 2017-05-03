@@ -155,4 +155,24 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
+    <Spinner
+        android:id="@+id/allergenslist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/allergens"
+        android:layout_alignLeft="@+id/origincountryedit"
+        android:layout_alignStart="@+id/origincountryedit"
+        android:layout_alignRight="@+id/origincountryedit"
+        android:layout_alignEnd="@+id/origincountryedit" />
+
+    <TextView
+        android:id="@+id/allergens"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/origincountryedit"
+        android:layout_marginTop="22dp"
+        android:text="Allergens" />
+
 </RelativeLayout>
