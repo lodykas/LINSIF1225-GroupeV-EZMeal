@@ -61,6 +61,13 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onResume(){
+        super.onResume();
+        ((EditText) findViewById(R.id.usermaillog)).setText(null);
+        ((EditText) findViewById(R.id.passwordlog)).setText(null);
+    }
+
     //on clique sur "new account" ==> on lance createProfileActivity
     public void onClick(View v) {
         Intent intent = new Intent(getApplicationContext(), CreateProfileActivity.class);

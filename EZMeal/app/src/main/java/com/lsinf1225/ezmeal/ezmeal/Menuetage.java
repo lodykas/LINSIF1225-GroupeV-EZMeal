@@ -1,5 +1,6 @@
 package com.lsinf1225.ezmeal.ezmeal;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -84,8 +85,10 @@ public class Menuetage extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        if (id == R.id.modifyprofile) {
+            Intent modify = new Intent(getApplicationContext(),ModifyProfileActivity.class);
+            modify.putExtra("usermail",getIntent().getStringExtra("usermail"));
+            startActivity(modify);
         }
 
         return super.onOptionsItemSelected(item);

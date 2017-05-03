@@ -103,6 +103,12 @@ public class SQLiteManager extends SQLiteOpenHelper {
         db.execSQL("INSERT OR IGNORE INTO \"Utilisateur\" VALUES (\""+user.getUser()+"\",\""+user.getCountry()+"\",\""+user.getOriginCountry()+"\",\""+user.getPassword()+"\",\""+user.getBirth()+"\");");
         close();
     }
+    public void updateUser(String usermail, String password, String livingCountry){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("UPDATE \"Utilisateur\" SET \"Résidence\"=\""+livingCountry+"\" WHERE \"Usermail\"=\""+usermail+"\";");
+        db.execSQL("UPDATE \"Utilisateur\" SET \"MotDePasse\"=\""+password+"\" WHERE \"Usermail\"=\""+usermail+"\";");
+        close();
+    }
 
     public List<String> getPassword(String usermail){
         List<String> res = new ArrayList<String>();

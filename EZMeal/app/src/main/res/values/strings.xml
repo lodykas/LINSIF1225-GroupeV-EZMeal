@@ -6,8 +6,13 @@
     <string name="country">Living country</string>
     <string name="origincountry">Country of origin</string>
     <string name="birthday">Birthday</string>
-    <string name="Toast1">Bienvenue, %1$s, étrange %2$s!</string>
+    <string name="createsuccess">Bienvenue, %1$s!</string>
     <string name="title_activity_menuetage">Menuetage</string>
+    <string-array name="allergens">
+        <item>Lactose</item>
+        <item>Gluten</item>
+        <item>Fruits secs</item>
+    </string-array>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
