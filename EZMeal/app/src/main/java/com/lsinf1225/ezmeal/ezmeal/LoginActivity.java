@@ -55,6 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                 if(res.get(0).equals(password))
                 {
                     Intent menu= new Intent(getApplicationContext(),Menuetage.class);
+                    menu.putExtra("usermail",usermail);
                     startActivity(menu);
                 }
             }
