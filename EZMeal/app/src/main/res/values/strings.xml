@@ -7,13 +7,25 @@
     <string name="origincountry">Country of origin</string>
     <string name="birthday">Birthday</string>
     <string name="createsuccess">Bienvenue, %1$s!</string>
-    <string name="title_activity_menuetage">Menuetage</string>
+    <string name="title_activity_menuetage">EZMeal</string>
     <string-array name="allergens">
+        <item>None</item>
         <item>Lactose</item>
         <item>Gluten</item>
         <item>Peanuts</item>
         <item>Banana</item>
         <item>Eggs</item>
+    </string-array>
+    <string-array name="Planets">
+        <item>Sun</item>
+        <item>Mercury</item>
+        <item>Venus</item>
+        <item>Earth</item>
+        <item>Mars</item>
+        <item>Jupiter</item>
+        <item>Saturn</item>
+        <item>Uranus</item>
+        <item>Neptune</item>
     </string-array>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>

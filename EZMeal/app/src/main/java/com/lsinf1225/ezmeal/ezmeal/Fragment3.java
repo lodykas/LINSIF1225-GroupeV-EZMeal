@@ -69,7 +69,7 @@ public class Fragment3 extends Fragment {
         // NOTE : We are calling the onFragmentInteraction() declared in the MainActivity
         // ie we are sending "Fragment 1" as title parameter when fragment1 is activated
         if (mListener != null) {
-            mListener.onFragmentInteraction("Fragment 3");
+            //mListener.onFragmentInteraction("Fragment 3");
         }
 
         // Here we will can create click listners etc for all the gui elements on the fragment.
