@@ -3,9 +3,15 @@ package com.lsinf1225.ezmeal.ezmeal;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.List;
 
 
 /**
@@ -13,7 +19,7 @@ import android.view.ViewGroup;
  * Activities that contain this fragment must implement the
  * {@link Fragment3.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Fragment3#newInstance} factory method to
+ * Use the {@link Fragment1#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class Fragment3 extends Fragment {
@@ -38,7 +44,7 @@ public class Fragment3 extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Fragment3.
+     * @return A new instance of fragment Fragment1.
      */
     // TODO: Rename and change types and number of parameters
     public static Fragment3 newInstance(String param1, String param2) {
@@ -62,21 +68,19 @@ public class Fragment3 extends Fragment {
 
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        View view= inflater.inflate(R.layout.fragment_drinks, container, false);
-
-        // NOTE : We are calling the onFragmentInteraction() declared in the MainActivity
-        // ie we are sending "Fragment 1" as title parameter when fragment1 is activated
-        if (mListener != null) {
-            //mListener.onFragmentInteraction("Fragment 3");
-        }
-
-        // Here we will can create click listners etc for all the gui elements on the fragment.
-        // For eg: Button btn1= (Button) view.findViewById(R.id.frag1_btn1);
-        // btn1.setOnclickListener(...
-
+    public View onCreateView(LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.list_fragment, container, false);
+        ListView lv = (ListView) view.findViewById(R.id.list_recipes);
+        MyListAdapter adapter = new MyListAdapter(getContext());
+        lv.setAdapter(adapter);
+        //getListView().setOnItemClickListener(this);
         return view;
+    }
+
+    @Override
+    public void onActivityCreated(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
     }
 
 

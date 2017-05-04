@@ -18,7 +18,7 @@ public class MyListAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 17;
+        return 10;
     }
 
     @Override
