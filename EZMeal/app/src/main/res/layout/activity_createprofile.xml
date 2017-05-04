@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/usermaillog"
@@ -155,24 +155,49 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
-    <Spinner
-        android:id="@+id/allergenslist"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/allergens"
-        android:layout_alignLeft="@+id/origincountryedit"
-        android:layout_alignStart="@+id/origincountryedit"
-        android:layout_alignRight="@+id/origincountryedit"
-        android:layout_alignEnd="@+id/origincountryedit" />
-
     <TextView
         android:id="@+id/allergens"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/textView"
-        android:layout_alignStart="@+id/textView"
         android:layout_below="@+id/origincountryedit"
         android:layout_marginTop="22dp"
-        android:text="Allergens" />
+        android:text="@string/allergens"
+        android:layout_centerHorizontal="true"/>
+
+    <CheckBox
+        android:id="@+id/banana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_below="@id/allergens"
+        android:text="@string/banana"/>
+    <CheckBox
+        android:id="@+id/gluten"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/origincountryedit"
+        android:layout_below="@id/allergens"
+        android:text="@string/gluten"/>
+    <CheckBox
+        android:id="@+id/eggs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_below="@id/banana"
+        android:text="@string/eggs"/>
+    <CheckBox
+        android:id="@+id/peanuts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/gluten"
+        android:layout_below="@id/banana"
+        android:text="@string/peanuts"/>
+    <CheckBox
+        android:id="@+id/lactose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_below="@id/peanuts"
+        android:text="@string/lactose"/>
 
 </RelativeLayout>

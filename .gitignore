@@ -1,6 +1,7 @@
 .idea/*
 EZMeal/*.iml
 EZMeal/.gradle
+EZMeal/app/build.gradle
 EZMeal/local.properties
 EZMeal/.idea/
 EZMeal/.DS_Store
