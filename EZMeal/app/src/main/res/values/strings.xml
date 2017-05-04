@@ -7,15 +7,14 @@
     <string name="origincountry">Country of origin</string>
     <string name="birthday">Birthday</string>
     <string name="createsuccess">Bienvenue, %1$s!</string>
-    <string name="title_activity_menuetage">Menuetage</string>
-    <string-array name="allergens">
-        <item>Lactose</item>
-        <item>Gluten</item>
-        <item>Peanuts</item>
-        <item>Banana</item>
-        <item>Eggs</item>
-    </string-array>
+    <string name="allergens">Allergens</string>
+    <string name="lactose">Lactose</string>
+    <string name="gluten">Gluten</string>
+    <string name="peanuts">Peanuts</string>
+    <string name="banana">Banana</string>
+    <string name="eggs">Eggs</string>
 
+    <string name="title_activity_menuetage">Menuetage</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 

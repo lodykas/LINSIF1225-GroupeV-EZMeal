@@ -109,6 +109,12 @@ public class SQLiteManager extends SQLiteOpenHelper {
         db.execSQL("UPDATE \"Utilisateur\" SET \"MotDePasse\"=\""+password+"\" WHERE \"Usermail\"=\""+usermail+"\";");
         close();
     }
+    public void addAllergen(String usermail, String allergen)
+    {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("INSERT OR IGNORE INTO \"Allergène\" VALUES (\""+usermail+"\",\""+allergen+"\")");
+        close();
+    }
 
     public List<String> getPassword(String usermail){
         List<String> res = new ArrayList<String>();
