@@ -48,6 +48,8 @@ public class SearchableActivity extends AppCompatActivity{
                     recipe.setText(name);
                 }
             };
+
+            l.setAdapter(c);
         }
     }
 }
