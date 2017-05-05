@@ -58,6 +58,10 @@ public class LoginActivity extends AppCompatActivity {
                     menu.putExtra("usermail",usermail);
                     startActivity(menu);
                 }
+                else {
+                    Toast.makeText(getApplicationContext(), "Password invalid", 1000).show();
+                    return;
+                }
             }
         });
     }
