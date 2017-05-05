@@ -9,8 +9,11 @@ import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 
 import java.sql.Blob;
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.lsinf1225.ezmeal.ezmeal.R.string.usermail;
 
 
 public class SQLiteManager extends SQLiteOpenHelper {
@@ -150,8 +153,32 @@ public class SQLiteManager extends SQLiteOpenHelper {
         //Cursor c = db.query("\"Recette\"",new String[]{"\"_id\"","\"NomRecette\""},("\"NomRecette\" = \"" + query +"\"") ,null,null,null,null);
         return c;
     }
-    public Blob getImage() {
+    public Recipe[] getRecipe(int tabSize){
+        ArrayList<Recipe> res=new ArrayList<Recipe>();
         SQLiteDatabase db = getReadableDatabase();
-        return null;
+        Cursor c =db.query("\"Recommandations\"",new String[]{"\"Recette\""},("\"Usermail\" = \"" + usermail +"\"") ,null,null,null,null);
+        if(c.moveToFirst()){
+            for(int i = 0; i<tabSize; i++){
+                String nom=c.getString(c.getColumnIndex("Recette"));
+                Cursor c2= db.query("Recette", null, "NomRecette=\""+nom+"\"", null, null, null, null);
+                if(c2.moveToFirst()){
+                    for(int j=0;j<tabSize;j++){
+                        String name=c2.getString(c2.getColumnIndex("NomRecette"));
+                        String image=c2.getString(c2.getColumnIndex("Image"));
+                        String instruc=c2.getString(c2.getColumnIndex("Instructions"));
+                        String date=c2.getString(c2.getColumnIndex("DatedAjout"));
+                        String sentence=c2.getString(c2.getColumnIndex(""));
+                        res.add(new Recipe(name,image,instruc,date,sentence));
+                        c2.moveToNext();
+                    }
+                }
+                c2.close();
+
+                c.moveToNext();
+            }
+        }
+        c.close();
+        Recipe[] rt = new Recipe[tabSize];
+        return res.toArray(rt);
     }
 }
