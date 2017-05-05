@@ -1,5 +1,6 @@
 package com.lsinf1225.ezmeal.ezmeal;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,6 +25,8 @@ public class ModifyProfileActivity extends AppCompatActivity {
                 SQLiteManager db = new SQLiteManager(getApplicationContext());
                 db.updateUser(getIntent().getStringExtra("usermail"),password,country);
                 Toast.makeText(getApplicationContext()," Data updated "+getIntent().getStringExtra("usermail"), 1000).show();
+                Intent retour = new Intent(getApplicationContext(), Fragment1.class);
+                startActivity(retour);
             }
         });
     }

@@ -18,7 +18,7 @@ public class MyListAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return 10;
+        return 5;
     }
 
     @Override
@@ -36,6 +36,10 @@ public class MyListAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.list_fragment_item, parent, false);
+        SQLiteManager db= new SQLiteManager(context);
+
+       // SQLiteManager db =new SQLiteManager;
+
 //        TextView textView = (TextView) rowView.findViewById(R.id.label);
 //        ImageView imageView = (ImageView) rowView.findViewById(R.id.icon);
 //        textView.setText(values[position]);

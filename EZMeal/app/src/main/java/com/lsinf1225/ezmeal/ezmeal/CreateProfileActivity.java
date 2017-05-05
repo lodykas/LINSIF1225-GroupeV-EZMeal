@@ -1,5 +1,6 @@
 package com.lsinf1225.ezmeal.ezmeal;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -71,9 +72,12 @@ public class CreateProfileActivity extends AppCompatActivity {
                     }
 
                     Toast.makeText(getApplicationContext(), getResources().getString(R.string.createsuccess,usermail), 3000).show();
-
+                    Intent retour = new Intent(getApplicationContext(), LoginActivity.class);
+                    startActivity(retour);
                 }
             }
         });
     }
+
+
 }
