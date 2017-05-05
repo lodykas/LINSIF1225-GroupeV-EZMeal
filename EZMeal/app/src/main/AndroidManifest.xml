@@ -39,7 +39,10 @@
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".ModifyProfileActivity" />
+        <activity
+            android:name=".ModifyProfileActivity"
+            android:label="@string/title_activity_modify_profile"
+            />
         <activity
             android:name=".Menuetage"
             android:label="@string/title_activity_menuetage"

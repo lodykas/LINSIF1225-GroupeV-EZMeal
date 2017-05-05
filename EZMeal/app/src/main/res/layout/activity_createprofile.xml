@@ -48,17 +48,39 @@
         android:layout_alignLeft="@+id/usermaillog"
         android:text="@string/password" />
 
+    <EditText
+        android:id="@+id/passwordedit2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:layout_marginTop="30dp"
+        android:layout_alignLeft="@+id/usermailedit"
+        android:layout_below="@+id/passwordedit"
+        android:background="@color/white"
+        />
+
+    <TextView
+        android:id="@+id/passwordlog2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/passwordedit2"
+        android:layout_alignLeft="@+id/passwordlog"
+        android:text="Password Confirm" />
+
     <RadioGroup
         android:id="@+id/sexSelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_below="@+id/passwordedit"
+        android:layout_below="@+id/passwordedit2"
         android:layout_marginTop="30dp"
-        android:layout_alignRight="@+id/passwordedit"
-        android:layout_alignEnd="@+id/passwordedit"
-        android:layout_alignLeft="@+id/passwordedit"
-        android:layout_alignStart="@+id/passwordedit">
+        android:layout_alignRight="@+id/passwordedit2"
+        android:layout_alignEnd="@+id/passwordedit2"
+        android:layout_alignLeft="@+id/passwordedit2"
+        android:layout_alignStart="@+id/passwordedit2">
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -151,7 +173,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="OK"
-        android:layout_marginBottom="91dp"
+        android:layout_marginBottom="31dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 

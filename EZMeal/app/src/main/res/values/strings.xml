@@ -8,6 +8,7 @@
     <string name="birthday">Birthday</string>
     <string name="createsuccess">Bienvenue, %1$s!</string>
     <string name="title_activity_menuetage">EZMeal</string>
+    <string name="title_activity_modify_profile">Modify Profile</string>
     <string-array name="allergens">
         <item>None</item>
         <item>Lactose</item>
