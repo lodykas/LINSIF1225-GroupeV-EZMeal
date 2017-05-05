@@ -44,7 +44,11 @@
             android:name=".Menuetage"
             android:label="@string/title_activity_menuetage"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            />
+            >
+            <meta-data android:name="android.app.default_searchable"
+                android:value=".SearchableActivity" />
+        </activity>
+
     </application>
 
 </manifest>
