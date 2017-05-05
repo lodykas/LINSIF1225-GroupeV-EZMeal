@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 
+import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -138,5 +139,9 @@ public class SQLiteManager extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         Cursor c = db.query("\"Recette\"",new String[]{"\"NomRecette\""},("\"NomRecette\" = \"" + query +"\"") ,null,null,null,null);
         return c;
+    }
+    public Blob getImage() {
+        SQLiteDatabase db = getReadableDatabase();
+        return null;
     }
 }
