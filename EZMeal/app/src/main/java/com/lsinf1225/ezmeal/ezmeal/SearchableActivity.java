@@ -35,7 +35,7 @@ public class SearchableActivity extends AppCompatActivity{
             CursorAdapter c = new CursorAdapter(getApplicationContext(),db.research(query)) {
                 @Override
                 public View newView(Context context, Cursor cursor, ViewGroup parent) {
-                    return LayoutInflater.from(context).inflate(R.layout.search_item, parent, false);
+                    return LayoutInflater.from(context).inflate(R.layout.list_fragment_item, parent, false);
                 }
 
                 @Override
