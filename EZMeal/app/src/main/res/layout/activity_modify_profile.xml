@@ -9,26 +9,26 @@
         android:id="@+id/passwordedit2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="98dp"
+        android:layout_marginTop="122dp"
         android:background="@color/white"
         android:hint="@string/password"
         android:inputType="textPassword"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_toRightOf="@+id/button201" />
 
     <TextView
         android:id="@+id/passwordlog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:text="Re-enter your new password "
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignBottom="@+id/passwordedit2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
-        android:layout_below="@+id/passwordedit2"
-        android:text="Please re enter your new password " />
+        android:layout_alignTop="@+id/passwordedit2" />
 
     <!-- get birthday de user-->
 
@@ -36,27 +36,26 @@
         android:id="@+id/countryedit2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="97dp"
         android:background="@color/white"
         android:hint="@string/country"
         android:inputType="text"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:layout_below="@+id/passwordlog"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_below="@+id/passwordedit2"
+        android:layout_alignLeft="@+id/passwordedit2"
+        android:layout_alignStart="@+id/passwordedit2" />
     <!-- get living country de user-->
 
     <TextView
         android:id="@+id/country"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/countryedit2"
-        android:text="Please write your new living" />
+        android:text="Write your new living country"
+        android:layout_alignTop="@+id/countryedit2"
+        android:layout_alignLeft="@+id/passwordlog"
+        android:layout_alignStart="@+id/passwordlog"
+        android:layout_alignBottom="@+id/countryedit2" />
 
     <Button
         android:id="@+id/button201"
