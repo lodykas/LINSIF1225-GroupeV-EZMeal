@@ -119,6 +119,11 @@ public class SQLiteManager extends SQLiteOpenHelper {
         close();
     }
 
+    public void addEffectues (String usermail, String NomRecette) {
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("INSERT OR IGNORE INTO \"Effectués\" VALUES ( \"" + NomRecette + "\",\""+usermail+"\")");
+        close();
+    }
     public List<String> getPassword(String usermail){
         List<String> res = new ArrayList<String>();
         SQLiteDatabase db = getReadableDatabase();
