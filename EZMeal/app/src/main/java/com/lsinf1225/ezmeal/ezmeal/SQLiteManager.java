@@ -150,4 +150,8 @@ public class SQLiteManager extends SQLiteOpenHelper {
         //Cursor c = db.query("\"Recette\"",new String[]{"\"_id\"","\"NomRecette\""},("\"NomRecette\" = \"" + query +"\"") ,null,null,null,null);
         return c;
     }
+    public Blob getImage() {
+        SQLiteDatabase db = getReadableDatabase();
+        return null;
+    }
 }
