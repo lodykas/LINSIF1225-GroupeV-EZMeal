@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteStatement;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
@@ -63,9 +64,20 @@ public class SQLiteManager extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Recette\" ( _id INTEGER PRIMARY KEY AUTOINCREMENT,\"NomRecette\" NOT NULL,\"Image\" NOT NULL,\"Instructions\" NOT NULL,\"DateDAjout\" NOT NULL,\"Origine\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Catégories\" (\"NomRecette\" NOT NULL,\"Catégories\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Sous_catégorie\" (\"NomRecette\" NOT NULL,\"Sous_catégorie\" NOT NULL);");
-        db.execSQL("INSERT INTO \"Recette\" VALUES (\"Soupe de carottes\",Null,'L');");
 
-
+        SQLiteStatement s = db.compileStatement("INSERT INTO \"Recette\"(\"NomRecette\",\"Image\",\"Instructions\",\"DateDAjout\",\"Origine\") VALUES(?,?,?,?,?)");
+        s.bindString(1,"Soupe à l'oignon");
+        s.bindString(2,"soupeoignon.png");
+        s.bindString(3,"mixer les oignons");
+        s.bindString(4,"05/05/17");
+        s.bindString(5,"occidentale");
+        s.execute();
+        s.bindString(1,"Macaroni au fromage");
+        s.bindString(2,"soupeoignon.png");
+        s.bindString(3,"cuire les pâtes");
+        s.bindString(4,"05/05/17");
+        s.bindString(5,"italienne");
+        s.execute();
 
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Liste\" (\"NomRecette\" NOT NULL,\"Ingrédient\" NOT NULL,\"Quantité\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Informations\" (\"NomRecette\" PRIMARY KEY,\"Description\" NOT NULL,\"Difficulté\" NOT NULL,\"TempsCuisson\" NOT NULL,\"TempsPreparation\" NOT NULL,\"NbrePersonnes\" NOT NULL);");
