@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,10 +48,10 @@ public class MyListAdapter extends BaseAdapter {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.list_fragment_item, parent, false);
-        ImageButton ib=(ImageButton) convertView.findViewById(R.id.image_recipe);
+        ImageButton ib=(ImageButton) rowView.findViewById(R.id.image_recipe);
         //ib.setImageDrawable();
-        TextView tv=(TextView) convertView.findViewById(R.id.details_recipes);
-        TextView phrase=(TextView) convertView.findViewById(R.id.sentence_recipes);
+        TextView tv=(TextView) rowView.findViewById(R.id.details_recipes);
+        TextView phrase=(TextView) rowView.findViewById(R.id.sentence_recipes);
 
 
 

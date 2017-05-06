@@ -66,17 +66,35 @@ public class SQLiteManager extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Sous_catégorie\" (\"NomRecette\" NOT NULL,\"Sous_catégorie\" NOT NULL);");
 
         SQLiteStatement s = db.compileStatement("INSERT INTO \"Recette\"(\"NomRecette\",\"Image\",\"Instructions\",\"DateDAjout\",\"Origine\") VALUES(?,?,?,?,?)");
-        s.bindString(1,"Soupe à l'oignon");
+        s.bindString(1,"soupe à l'oignon");
         s.bindString(2,"soupeoignon");
         s.bindString(3,"mixer les oignons");
         s.bindString(4,"05/05/17");
         s.bindString(5,"occidentale");
         s.execute();
-        s.bindString(1,"Macaroni au fromage");
-        s.bindString(2,"soupeoignon.");
+        s.bindString(1,"macaroni au fromage");
+        s.bindString(2,"macaronifromage");
         s.bindString(3,"cuire les pâtes");
         s.bindString(4,"05/05/17");
         s.bindString(5,"italienne");
+        s.execute();
+        s.bindString(1,"spaguetti bolognaise");
+        s.bindString(2,"spaguettibolognaise");
+        s.bindString(3,"cuire les pâtes, faites revenir le steak haché, ajouter les tomates");
+        s.bindString(4,"06/05/17");
+        s.bindString(5,"italienne");
+        s.execute();
+        s.bindString(1,"foire de légumes");
+        s.bindString(2,"soupeoignon.");
+        s.bindString(3,"préparez tout les légumes separément.");
+        s.bindString(4,"06/05/17");
+        s.bindString(5,"occidentale");
+        s.execute();
+        s.bindString(1,"mousse au chocolat");
+        s.bindString(2,"moussechocolat");
+        s.bindString(3,"battre les blancs d'oeufs en neige, incorporez-y le mélange du chocolat, beurre et jaune d'oeuf.");
+        s.bindString(4,"06/05/17");
+        s.bindString(5,"occidentale");
         s.execute();
 
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Liste\" (\"NomRecette\" NOT NULL,\"Ingrédient\" NOT NULL,\"Quantité\" NOT NULL);");
