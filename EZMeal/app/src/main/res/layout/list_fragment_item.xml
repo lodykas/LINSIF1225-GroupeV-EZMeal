@@ -21,7 +21,8 @@
         android:text="Title"
         android:textSize="50sp"
         android:layout_below="@+id/image_recipe"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:gravity="center"/>
 
     <TextView
         android:id="@+id/details_recipes"
@@ -29,9 +30,9 @@
         android:layout_height="wrap_content"
         android:text="Time-quantity"
         android:textSize="20sp"
-        android:layout_alignTop="@+id/title_recipe"
+        android:layout_below="@+id/title_recipe"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="70dp" />
+        android:layout_marginTop="30dp"/>
 
     <TextView
         android:id="@+id/sentence_recipes"

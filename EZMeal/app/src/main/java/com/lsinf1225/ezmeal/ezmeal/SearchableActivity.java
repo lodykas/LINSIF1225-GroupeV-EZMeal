@@ -3,13 +3,16 @@ package com.lsinf1225.ezmeal.ezmeal;
 import android.app.SearchManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -40,12 +43,13 @@ public class SearchableActivity extends AppCompatActivity{
 
                 @Override
                 public void bindView(View view, Context context, Cursor cursor) {
-                    // Find fields to populate in inflated template
-                    TextView recipe = (TextView) view.findViewById(R.id.searchitem_name);
-                    // Extract properties from cursor
-                    String name = cursor.getString(cursor.getColumnIndexOrThrow("NomRecette"));
-                    // Populate fields with extracted properties
-                    recipe.setText(name);
+                    TextView recipe = (TextView) view.findViewById(R.id.title_recipe);
+                    recipe.setText(cursor.getString(cursor.getColumnIndexOrThrow("NomRecette")));
+                    ImageButton im = (ImageButton) view.findViewById(R.id.image_recipe);
+                    Resources r = getResources();
+                    int id = r.getIdentifier(cursor.getString(cursor.getColumnIndexOrThrow("Image")).split("\\.")[0], "drawable", getPackageName());
+                    im.setImageDrawable(r.getDrawable(id));
+
                 }
             };
 

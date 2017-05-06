@@ -67,13 +67,13 @@ public class SQLiteManager extends SQLiteOpenHelper {
 
         SQLiteStatement s = db.compileStatement("INSERT INTO \"Recette\"(\"NomRecette\",\"Image\",\"Instructions\",\"DateDAjout\",\"Origine\") VALUES(?,?,?,?,?)");
         s.bindString(1,"Soupe à l'oignon");
-        s.bindString(2,"soupeoignon.png");
+        s.bindString(2,"soupeoignon");
         s.bindString(3,"mixer les oignons");
         s.bindString(4,"05/05/17");
         s.bindString(5,"occidentale");
         s.execute();
         s.bindString(1,"Macaroni au fromage");
-        s.bindString(2,"soupeoignon.png");
+        s.bindString(2,"soupeoignon.");
         s.bindString(3,"cuire les pâtes");
         s.bindString(4,"05/05/17");
         s.bindString(5,"italienne");
@@ -161,8 +161,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
     public Cursor research(String query)
     {
         SQLiteDatabase db = getReadableDatabase();
-        Cursor c = db.query("\"Recette\"",new String[]{"\"_id\"","\"NomRecette\""},null ,null,null,null,null);
-        //Cursor c = db.query("\"Recette\"",new String[]{"\"_id\"","\"NomRecette\""},("\"NomRecette\" = \"" + query +"\"") ,null,null,null,null);
+        Cursor c = db.query("\"Recette\"",new String[]{"*"},("instr(\"NomRecette\",\""+query+"\") > 0") ,null,null,null,null);
         return c;
     }
     public Recipe[] getRecipe(int tabSize){
