@@ -111,9 +111,9 @@ public class Fragment2 extends Fragment {
 
             @Override
             public void onGroupExpand(int groupPosition) {
-                Toast.makeText(getContext(),
-                        listDataHeader.get(groupPosition) + " Expanded",
-                        Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(),
+                      //  listDataHeader.get(groupPosition) + " Expanded",
+                       // Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -122,9 +122,9 @@ public class Fragment2 extends Fragment {
 
             @Override
             public void onGroupCollapse(int groupPosition) {
-                Toast.makeText(getContext(),
-                        listDataHeader.get(groupPosition) + " Collapsed",
-                        Toast.LENGTH_SHORT).show();
+               // Toast.makeText(getContext(),
+                       // listDataHeader.get(groupPosition) + " Collapsed",
+                        //Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -136,14 +136,14 @@ public class Fragment2 extends Fragment {
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition, long id) {
                 // TODO Auto-generated method stub
-                Toast.makeText(
-                        getContext(),
-                        listDataHeader.get(groupPosition)
-                                + " : "
-                                + listDataChild.get(
-                                listDataHeader.get(groupPosition)).get(
-                                childPosition), Toast.LENGTH_SHORT)
-                        .show();
+                //Toast.makeText(
+                       // getContext(),
+                        //listDataHeader.get(groupPosition)
+                               // + " : "
+                               // + listDataChild.get(
+                                //listDataHeader.get(groupPosition)).get(
+                                //childPosition), Toast.LENGTH_SHORT)
+                       // .show();
                 return false;
             }
         });

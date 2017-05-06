@@ -76,8 +76,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="84dp"
         android:ems="10"
-        android:text="Only those informations can be changed !"
-        android:textColor="@android:color/holo_red_dark"
+        android:text="Only those informations can be changed."
+        android:textColor="#000000"
         android:textSize="18sp" />
 
     <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"

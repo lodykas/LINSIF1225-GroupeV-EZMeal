@@ -5,7 +5,6 @@
         android:id="@+id/modifyprofil"
         android:icon="@drawable/chefv"
         android:orderInCategory="100"
-        android:title="Modify profil
-"
+        android:title="Edit profile"
         app:showAsAction="never" />
 </menu>
