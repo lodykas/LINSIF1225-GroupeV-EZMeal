@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.sqlite.SQLiteStatement;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
@@ -51,6 +52,33 @@ public class SQLiteManager extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Utilisateur\" (\"Usermail\" PRIMARY KEY,\"Résidence\" NOT NULL,\"PaysDOrigine\" NOT NULL,\"MotDePasse\" NOT NULL,\"DateDeNaissance\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Recommandations\" (\"Usermail\" NOT NULL,\"Recette\" NOT NULL);");
+        SQLiteStatement s = db.compileStatement("INSERT INTO \"Recommandations\"(\"Usermail\",\"Recette\") VALUES(?,?)");
+        s.bindString(1,"blabla");
+        s.bindString(2,"soupe à l'oignon");
+        s.execute();
+        s.bindString(1,"blabla");
+        s.bindString(2,"macaroni au fromage");
+        s.execute();
+        s.bindString(1,"blabla");
+        s.bindString(2,"spaguetti bolognaise");
+        s.execute();
+        s.bindString(1,"blabla");
+        s.bindString(2,"foire de légumes");
+        s.execute();
+        s.bindString(1,"a");
+        s.bindString(2,"soupe à l'oignon");
+        s.execute();
+        s.bindString(1,"a");
+        s.bindString(2,"macaroni au fromage");
+        s.execute();
+        s.bindString(1,"a");
+        s.bindString(2,"spaguetti bolognaise");
+        s.execute();
+        s.bindString(1,"a");
+        s.bindString(2,"foire de légumes");
+        s.execute();
+
+
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Effectués\" (\"Recette\" NOT NULL, \"Username\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Consommés\" (\"Ingrédient\" NOT NULL, \"Username\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Allergène\" (\"Usermail\" NOT NULL,\"Allergène\" NOT NULL);");
@@ -65,37 +93,37 @@ public class SQLiteManager extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Catégories\" (\"NomRecette\" NOT NULL,\"Catégories\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Sous_catégorie\" (\"NomRecette\" NOT NULL,\"Sous_catégorie\" NOT NULL);");
 
-        SQLiteStatement s = db.compileStatement("INSERT INTO \"Recette\"(\"NomRecette\",\"Image\",\"Instructions\",\"DateDAjout\",\"Origine\") VALUES(?,?,?,?,?)");
-        s.bindString(1,"soupe à l'oignon");
-        s.bindString(2,"soupeoignon");
-        s.bindString(3,"mixer les oignons");
-        s.bindString(4,"05/05/17");
-        s.bindString(5,"occidentale");
-        s.execute();
-        s.bindString(1,"macaroni au fromage");
-        s.bindString(2,"macaronifromage");
-        s.bindString(3,"cuire les pâtes");
-        s.bindString(4,"05/05/17");
-        s.bindString(5,"italienne");
-        s.execute();
-        s.bindString(1,"spaguetti bolognaise");
-        s.bindString(2,"spaguettibolognaise");
-        s.bindString(3,"cuire les pâtes, faites revenir le steak haché, ajouter les tomates");
-        s.bindString(4,"06/05/17");
-        s.bindString(5,"italienne");
-        s.execute();
-        s.bindString(1,"foire de légumes");
-        s.bindString(2,"soupeoignon.");
-        s.bindString(3,"préparez tout les légumes separément.");
-        s.bindString(4,"06/05/17");
-        s.bindString(5,"occidentale");
-        s.execute();
-        s.bindString(1,"mousse au chocolat");
-        s.bindString(2,"moussechocolat");
-        s.bindString(3,"battre les blancs d'oeufs en neige, incorporez-y le mélange du chocolat, beurre et jaune d'oeuf.");
-        s.bindString(4,"06/05/17");
-        s.bindString(5,"occidentale");
-        s.execute();
+        SQLiteStatement r = db.compileStatement("INSERT INTO \"Recette\"(\"NomRecette\",\"Image\",\"Instructions\",\"DateDAjout\",\"Origine\") VALUES(?,?,?,?,?)");
+        r.bindString(1,"soupe à l'oignon");
+        r.bindString(2,"soupeoignon");
+        r.bindString(3,"mixer les oignons");
+        r.bindString(4,"05/05/17");
+        r.bindString(5,"occidentale");
+        r.execute();
+        r.bindString(1,"macaroni au fromage");
+        r.bindString(2,"macaronifromage");
+        r.bindString(3,"cuire les pâtes");
+        r.bindString(4,"05/05/17");
+        r.bindString(5,"italienne");
+        r.execute();
+        r.bindString(1,"spaguetti bolognaise");
+        r.bindString(2,"spaguettibolognaise");
+        r.bindString(3,"cuire les pâtes, faites revenir le steak haché, ajouter les tomates");
+        r.bindString(4,"06/05/17");
+        r.bindString(5,"italienne");
+        r.execute();
+        r.bindString(1,"foire de légumes");
+        r.bindString(2,"soupeoignon");
+        r.bindString(3,"préparez tout les légumes separément.");
+        r.bindString(4,"06/05/17");
+        r.bindString(5,"occidentale");
+        r.execute();
+        r.bindString(1,"mousse au chocolat");
+        r.bindString(2,"moussechocolat");
+        r.bindString(3,"battre les blancs d'oeufs en neige, incorporez-y le mélange du chocolat, beurre et jaune d'oeuf.");
+        r.bindString(4,"06/05/17");
+        r.bindString(5,"occidentale");
+        r.execute();
 
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Liste\" (\"NomRecette\" NOT NULL,\"Ingrédient\" NOT NULL,\"Quantité\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Informations\" (\"NomRecette\" PRIMARY KEY,\"Description\" NOT NULL,\"Difficulté\" NOT NULL,\"TempsCuisson\" NOT NULL,\"TempsPreparation\" NOT NULL,\"NbrePersonnes\" NOT NULL);");
@@ -182,21 +210,26 @@ public class SQLiteManager extends SQLiteOpenHelper {
         Cursor c = db.query("\"Recette\"",new String[]{"*"},("instr(\"NomRecette\",\""+query+"\") > 0") ,null,null,null,null);
         return c;
     }
-    public Recipe[] getRecipe(int tabSize){
+    public Recipe[] getRecipe(int tabSize, String usermail){
         ArrayList<Recipe> res=new ArrayList<Recipe>();
         SQLiteDatabase db = getReadableDatabase();
-        Cursor c =db.query("\"Recommandations\"",new String[]{"\"Recette\""},("\"Usermail\" = \"" + usermail +"\"") ,null,null,null,null);
+        Cursor c =db.query("Recommandations",new String[]{"Recette"},("Usermail = \"" + usermail +"\"") ,null,null,null,null);
+        Log.wtf("wtf", usermail);
+        Log.wtf("test", "test0");
         if(c.moveToFirst()){
-            for(int i = 0; i<tabSize; i++){
+            Log.wtf("test", "test1");
+            for(int i = 0; i<c.getCount(); i++){   // il devrait n'y avoir qu'une seule row
+                Log.wtf("test", "test2");
                 String nom=c.getString(c.getColumnIndex("Recette"));
                 Cursor c2= db.query("Recette", null, "NomRecette=\""+nom+"\"", null, null, null, null);
                 if(c2.moveToFirst()){
-                    for(int j=0;j<tabSize;j++){
+                    for(int j=0;j<c2.getCount();j++){
+                        Log.wtf("test", "test3");
                         String name=c2.getString(c2.getColumnIndex("NomRecette"));
                         String image=c2.getString(c2.getColumnIndex("Image"));
                         String instruc=c2.getString(c2.getColumnIndex("Instructions"));
-                        String date=c2.getString(c2.getColumnIndex("DatedAjout"));
-                        String sentence=c2.getString(c2.getColumnIndex(""));
+                        String date=c2.getString(c2.getColumnIndex("DateDAjout"));
+                        String sentence=c2.getString(c2.getColumnIndex("Origine"));
                         res.add(new Recipe(name,image,instruc,date,sentence));
                         c2.moveToNext();
                     }
@@ -207,7 +240,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
             }
         }
         c.close();
-        Recipe[] rt = new Recipe[tabSize];
+        Recipe[] rt = new Recipe[res.size()];
         return res.toArray(rt);
     }
 }

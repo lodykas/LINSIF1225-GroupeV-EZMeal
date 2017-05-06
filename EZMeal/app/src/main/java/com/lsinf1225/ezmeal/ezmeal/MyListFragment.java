@@ -29,9 +29,6 @@ public class MyListFragment extends ListFragment implements OnItemClickListener 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        MyListAdapter adapter = new MyListAdapter(getContext());
-        setListAdapter(adapter);
-        getListView().setOnItemClickListener(this);
     }
 
     @Override

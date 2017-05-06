@@ -23,5 +23,6 @@ public class Recipe {
         this.sentence=sentence;
 
     }
+
 }
 

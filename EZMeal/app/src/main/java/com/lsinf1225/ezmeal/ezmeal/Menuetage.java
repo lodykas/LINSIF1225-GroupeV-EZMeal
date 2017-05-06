@@ -55,7 +55,12 @@ public class Menuetage extends AppCompatActivity
 
         //NOTE:  Open fragment1 initially.
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        ft.replace(R.id.mainFrame, new Fragment1());
+        String myMessage = getIntent().getStringExtra("usermail");
+        Bundle bundle = new Bundle();
+        bundle.putString("usermail", myMessage );
+        Fragment f = new Fragment1();
+        f.setArguments(bundle);
+        ft.replace(R.id.mainFrame, f);
         ft.commit();
     }
 
@@ -103,11 +108,19 @@ public class Menuetage extends AppCompatActivity
             Fragment fragment = null;
 
             if (id == R.id.nav_frag1) {
+                Bundle bundle = new Bundle();
+                String myMessage = getIntent().getStringExtra("usermail");
+                bundle.putString("usermail", myMessage );
                 fragment = new Fragment1();
+                fragment.setArguments(bundle);
             } else if (id == R.id.nav_frag2) {
                 fragment = new Fragment2();
             } else if (id == R.id.nav_frag3) {
+                Bundle bundle = new Bundle();
+                String myMessage = getIntent().getStringExtra("usermail");
+                bundle.putString("usermail", myMessage );
                 fragment = new Fragment3();
+                fragment.setArguments(bundle);
             }else if (id == R.id.nav_frag4) {
                 fragment = new Fragment4();
             }
