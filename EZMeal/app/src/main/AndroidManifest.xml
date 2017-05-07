@@ -39,7 +39,8 @@
         </activity>
         <activity
             android:name=".CreateProfileActivity"
-            android:label="@string/app_name" />
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -53,6 +54,58 @@
             android:label="@string/title_activity_modify_profile"
             android:screenOrientation="portrait"
             />
+        <activity
+            android:name=".Fragment1"
+            android:label="EZMeal"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".ExpandableListAdapter"
+            android:label="EZMeal"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".Fragment2"
+            android:label="EZMeal"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".Fragment3"
+            android:label="EZMeal"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".Fragment4"
+            android:label="EZMeal"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".MyListAdapterdrink"
+            android:label="EZMeal"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".MyListAdapterhome"
+            android:label="EZMeal"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".MyListFragmenthome"
+            android:label="EZMeal"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".MyListFragmentdrink"
+            android:label="EZMeal"
+            android:screenOrientation="portrait"
+            />
+        <activity
+            android:name=".Recipe"
+            android:label="EZMeal"
+            android:screenOrientation="portrait"
+            />
+
+
         <activity
             android:name=".Menuetage"
             android:label="@string/title_activity_menuetage"

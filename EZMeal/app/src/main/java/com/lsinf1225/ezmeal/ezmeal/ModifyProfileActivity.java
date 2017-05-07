@@ -35,11 +35,12 @@ public class ModifyProfileActivity extends AppCompatActivity {
                 if (password.equals(password2)) {
                     SQLiteManager db = new SQLiteManager(getApplicationContext());
                     db.updateUser(getIntent().getStringExtra("usermail"), password, country);
-                    Toast.makeText(getApplicationContext(), " Data updated " + getIntent().getStringExtra("usermail"), 1000).show();
-                    Intent retour = new Intent(getApplicationContext(), Fragment1.class);
+                    Toast.makeText(getApplicationContext(), " Data updated " + getIntent().getStringExtra("usermail"), Toast.LENGTH_LONG).show();
+                    Intent retour = new Intent(getApplicationContext(), Menuetage.class);
+                    retour.putExtra("usermail",getIntent().getStringExtra("usermail"));
                     startActivity(retour);
                 } else {
-                    Toast.makeText(getApplicationContext(), "Password not match", 1000).show();
+                    Toast.makeText(getApplicationContext(), "Password not match", Toast.LENGTH_LONG).show();
                 }
             }
         });
