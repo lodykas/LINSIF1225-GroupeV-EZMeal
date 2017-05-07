@@ -74,7 +74,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         s.bindString(1,"a");
         s.bindString(2,"spaguetti bolognaise");
         s.execute();
-        s.bindString(1,"a");
+        s.bindString(1,"usermail");
         s.bindString(2,"foire de légumes");
         s.execute();
 
@@ -90,11 +90,15 @@ public class SQLiteManager extends SQLiteOpenHelper {
 
 
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Recette\" ( _id INTEGER PRIMARY KEY AUTOINCREMENT,\"NomRecette\" NOT NULL,\"Image\" NOT NULL,\"Instructions\" NOT NULL,\"DateDAjout\" NOT NULL,\"Origine\" NOT NULL);");
-        db.execSQL("CREATE TABLE IF NOT EXISTS \"Catégories\" (\"NomRecette\" NOT NULL,\"Catégories\" NOT NULL);");
-        SQLiteStatement d= db.compileStatement("INSERT INTO\"Catégories\"(\"NomRecette\",\"Catégories\") VALUES(?,?)");
+        db.execSQL("CREATE TABLE IF NOT EXISTS \"Catégories\" (\"NomRecette\" NOT NULL,\"Catégorie\" NOT NULL);");
+        SQLiteStatement d= db.compileStatement("INSERT INTO\"Catégories\"(\"NomRecette\",\"Catégorie\") VALUES(?,?)");
         d.bindString(1,"milkshake au fruit rouges");
-        d.bindString(2,"boisson");
+        d.bindString(2,"beverage");
         d.execute();
+        d.bindString(1,"mojito");
+        d.bindString(2,"beverage");
+        d.execute();
+
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Sous_catégorie\" (\"NomRecette\" NOT NULL,\"Sous_catégorie\" NOT NULL);");
 
         SQLiteStatement r = db.compileStatement("INSERT INTO \"Recette\"(\"NomRecette\",\"Image\",\"Instructions\",\"DateDAjout\",\"Origine\") VALUES(?,?,?,?,?)");
@@ -339,19 +343,20 @@ public class SQLiteManager extends SQLiteOpenHelper {
         return res.toArray(rt);
     }
     public Recipe[] getRecipeDrink(){
-        String boisson="boisson";
+        String boisson="beverage";
         ArrayList<Recipe> res=new ArrayList<Recipe>();
         SQLiteDatabase db = getReadableDatabase();
-        Cursor c =db.query("Catégories",new String[]{"Catégories"},("Catégories = \""+boisson+"\"") ,null,null,null,null);
-        //Log.wtf("wtf", usermail);
-        //Log.wtf("test", "test0");
+        Cursor c =db.query("Catégories",new String[]{"NomRecette"},("Catégorie = \""+boisson+"\"") ,null,null,null,null);
+        Log.wtf("wtf", boisson);
+        Log.wtf("test", "test0");
         if(c.moveToFirst()){
-            //Log.wtf("test", "test1");
+            Log.wtf("test", "test1");
             for(int i = 0; i<c.getCount(); i++){   // il devrait n'y avoir qu'une seule row
-                //Log.wtf("test", "test2");
-                String nom=c.getString(c.getColumnIndex("Recette"));
+                Log.wtf("test", "test2");
+                String nom=c.getString(c.getColumnIndex("NomRecette"));
                 Cursor c2= db.query("Recette", null, "NomRecette=\""+nom+"\"", null, null, null, null);
                 if(c2.moveToFirst()){
+                    Log.wtf("t",""+c2.getCount());
                     for(int j=0;j<c2.getCount();j++){
                         Log.wtf("test", "test3");
                         String name=c2.getString(c2.getColumnIndex("NomRecette"));

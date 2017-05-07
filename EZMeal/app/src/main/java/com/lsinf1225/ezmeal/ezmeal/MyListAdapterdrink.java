@@ -2,6 +2,7 @@ package com.lsinf1225.ezmeal.ezmeal;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,11 +18,12 @@ public class MyListAdapterdrink extends BaseAdapter {
     private final Context context;
     private Recipe[] r;
 
-    public MyListAdapterdrink(Context context, String usermail) {
+    public MyListAdapterdrink(Context context) {
 
         this.context = context;
         SQLiteManager h=new SQLiteManager(context);
         r=h.getRecipeDrink();
+        Log.wtf("taille",""+r.length);
     }
 
     @Override

@@ -3,7 +3,7 @@
     <string name="usermail">Usermail</string>
     <string name="password">Password</string>
     <string name="sex">Sex</string>
-    <string name="country">Living country</string>
+    <string name="country1">Living country</string>
     <string name="origincountry">Country of origin</string>
     <string name="birthday">Birthday</string>
     <string name="createsuccess">Bienvenue, %1$s!</string>
@@ -23,6 +23,17 @@
     <string name="peanuts">Peanuts</string>
     <string name="banana">Banana</string>
     <string name="eggs">Eggs</string>
+    <string name="country">Choose a country</string>
+    <string-array name="country">
+        <item>United States</item>
+        <item>india</item>
+        <item>France</item>
+        <item>Germany</item>
+        <item>Denmark</item>
+        <item>South Korea</item>
+        <item>England</item>
+        <item>South Africa</item>
+    </string-array>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

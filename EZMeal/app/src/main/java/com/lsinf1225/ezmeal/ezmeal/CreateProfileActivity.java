@@ -27,6 +27,10 @@ public class CreateProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_createprofile);
 
+        Spinner spinner = (Spinner) findViewById(R.id.spinner1);
+              ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.country, android.R.layout.simple_spinner_item);
+               adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+               spinner.setAdapter(adapter);
         Button b = (Button) findViewById(R.id.button101);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
