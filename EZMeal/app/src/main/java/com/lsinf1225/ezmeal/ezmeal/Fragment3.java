@@ -67,7 +67,7 @@ public class Fragment3 extends Fragment {
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.list_drink, container, false);
         ListView lv = (ListView) view.findViewById(R.id.list_drink1);
-        MyListAdapterhome adapter = new MyListAdapterhome(getContext());
+        MyListAdapterdrink adapter = new MyListAdapterdrink(getContext());
         lv.setAdapter(adapter);
         //getListView().setOnItemClickListener(this);
         return view;

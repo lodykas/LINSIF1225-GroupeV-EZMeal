@@ -138,12 +138,6 @@ public class SQLiteManager extends SQLiteOpenHelper {
         r.bindString(4,"06/05/17");
         r.bindString(5,"us");
         r.execute();
-        r.bindString(1,"milshake au fruit rouges");
-        r.bindString(2,"berryshake");
-        r.bindString(3,"versez le lait d'amande dans le blender, rajoutez le mélange de fruits rouges congelés, versez un dilet de sirop d'agave et mixez le tout. servir dans un grand verre et parsemez de fruits rouges frais");
-        r.bindString(4,"06/05/17");
-        r.bindString(5,"us");
-        r.execute();
         r.bindString(1,"Rhum citon miel");
         r.bindString(2,"alcoolcitron");
         r.bindString(3,"dans un verre à alcool, ajoutez 3 c.à.s de rhum ainsi que de miel, remplisez le reste du verre en thé de citron froid. servez avec des tranches de citron");
