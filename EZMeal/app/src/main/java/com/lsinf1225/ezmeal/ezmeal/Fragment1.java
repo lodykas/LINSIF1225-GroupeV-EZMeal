@@ -68,7 +68,7 @@ public class Fragment1 extends Fragment {
         View view = inflater.inflate(R.layout.list_acceuil, container, false);
         ListView lv = (ListView) view.findViewById(R.id.list_recipes);
         String usermail = getArguments().getString("usermail");
-        MyListAdapter adapter = new MyListAdapter(getContext(), usermail);
+        MyListAdapterhome adapter = new MyListAdapterhome(getContext(), usermail);
         lv.setAdapter(adapter);
         //getListView().setOnItemClickListener(this);
         return view;

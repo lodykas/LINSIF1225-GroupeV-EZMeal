@@ -91,6 +91,10 @@ public class SQLiteManager extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Recette\" ( _id INTEGER PRIMARY KEY AUTOINCREMENT,\"NomRecette\" NOT NULL,\"Image\" NOT NULL,\"Instructions\" NOT NULL,\"DateDAjout\" NOT NULL,\"Origine\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Catégories\" (\"NomRecette\" NOT NULL,\"Catégories\" NOT NULL);");
+        SQLiteStatement d= db.compileStatement("INSERT INTO\"Catégories\"(\"NomRecette\",\"Catégories\") VALUES(?,?)");
+        d.bindString(1,"milkshake au fruit rouges");
+        d.bindString(2,"boisson");
+        d.execute();
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Sous_catégorie\" (\"NomRecette\" NOT NULL,\"Sous_catégorie\" NOT NULL);");
 
         SQLiteStatement r = db.compileStatement("INSERT INTO \"Recette\"(\"NomRecette\",\"Image\",\"Instructions\",\"DateDAjout\",\"Origine\") VALUES(?,?,?,?,?)");
@@ -305,6 +309,40 @@ public class SQLiteManager extends SQLiteOpenHelper {
         ArrayList<Recipe> res=new ArrayList<Recipe>();
         SQLiteDatabase db = getReadableDatabase();
         Cursor c =db.query("Recommandations",new String[]{"Recette"},("Usermail = \"" + usermail +"\"") ,null,null,null,null);
+        //Log.wtf("wtf", usermail);
+        //Log.wtf("test", "test0");
+        if(c.moveToFirst()){
+            //Log.wtf("test", "test1");
+            for(int i = 0; i<c.getCount(); i++){   // il devrait n'y avoir qu'une seule row
+                //Log.wtf("test", "test2");
+                String nom=c.getString(c.getColumnIndex("Recette"));
+                Cursor c2= db.query("Recette", null, "NomRecette=\""+nom+"\"", null, null, null, null);
+                if(c2.moveToFirst()){
+                    for(int j=0;j<c2.getCount();j++){
+                       // Log.wtf("test", "test3");
+                        String name=c2.getString(c2.getColumnIndex("NomRecette"));
+                        String image=c2.getString(c2.getColumnIndex("Image"));
+                        String instruc=c2.getString(c2.getColumnIndex("Instructions"));
+                        String date=c2.getString(c2.getColumnIndex("DateDAjout"));
+                        String sentence=c2.getString(c2.getColumnIndex("Origine"));
+                        res.add(new Recipe(name,image,instruc,date,sentence));
+                        c2.moveToNext();
+                    }
+                }
+                c2.close();
+
+                c.moveToNext();
+            }
+        }
+        c.close();
+        Recipe[] rt = new Recipe[res.size()];
+        return res.toArray(rt);
+    }
+    public Recipe[] getRecipeDrink(){
+        String boisson="boisson";
+        ArrayList<Recipe> res=new ArrayList<Recipe>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c =db.query("Catégories",new String[]{"Catégories"},("Catégories = \""+boisson+"\"") ,null,null,null,null);
         //Log.wtf("wtf", usermail);
         //Log.wtf("test", "test0");
         if(c.moveToFirst()){

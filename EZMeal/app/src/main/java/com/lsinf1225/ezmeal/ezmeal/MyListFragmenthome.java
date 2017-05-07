@@ -16,7 +16,7 @@ import android.widget.Toast;
  */
 
 
-public class MyListFragment extends ListFragment implements OnItemClickListener {
+public class MyListFragmenthome extends ListFragment implements OnItemClickListener {
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {

@@ -65,10 +65,9 @@ public class Fragment3 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.list_acceuil, container, false);
+        View view = inflater.inflate(R.layout.list_drink, container, false);
         ListView lv = (ListView) view.findViewById(R.id.list_recipes);
-        String usermail = getArguments().getString("usermail");
-        MyListAdapter adapter = new MyListAdapter(getContext(), usermail);
+        MyListAdapterhome adapter = new MyListAdapterhome(getContext());
         lv.setAdapter(adapter);
         //getListView().setOnItemClickListener(this);
         return view;
