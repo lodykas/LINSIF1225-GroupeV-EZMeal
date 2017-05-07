@@ -12,7 +12,6 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="36dp"
         android:adjustViewBounds="true"
-        android:elevation="0dp"
         android:scaleType="fitCenter"
         app:srcCompat="@drawable/berryshake" />
 
@@ -20,31 +19,34 @@
         android:id="@+id/title_recipe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:text="Title"
-        android:textSize="50sp"
         android:layout_below="@+id/image_recipe"
         android:layout_centerHorizontal="true"
-        android:gravity="center"/>
+        android:layout_marginTop="18dp"
+        android:gravity="center"
+        android:text="Title"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="50sp" />
 
     <TextView
         android:id="@+id/details_recipes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Time-quantity"
-        android:textSize="20sp"
         android:layout_below="@+id/title_recipe"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:text="Time-quantity"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/sentence_recipes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/details_recipes"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
         android:text="Sentence"
-        android:textSize="20sp"
-        android:layout_below="@+id/details_recipes"
-        android:layout_centerHorizontal="true" />
+        android:textColor="@android:color/darker_gray"
+        android:textSize="20sp" />
 
 </RelativeLayout>
