@@ -51,6 +51,7 @@
         <activity
             android:name=".ModifyProfileActivity"
             android:label="@string/title_activity_modify_profile"
+            android:screenOrientation="portrait"
             />
         <activity
             android:name=".Menuetage"
