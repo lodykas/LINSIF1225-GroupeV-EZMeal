@@ -21,12 +21,17 @@ public class ModifyProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String password = ((EditText) findViewById(R.id.passwordedit2)).getText().toString();
+                String password2 = ((EditText) findViewById(R.id.passwordedit)).getText().toString();
                 String country = ((EditText) findViewById(R.id.countryedit2)).getText().toString();
-                SQLiteManager db = new SQLiteManager(getApplicationContext());
-                db.updateUser(getIntent().getStringExtra("usermail"),password,country);
-                Toast.makeText(getApplicationContext()," Data updated "+getIntent().getStringExtra("usermail"), 1000).show();
-                Intent retour = new Intent(getApplicationContext(), Fragment1.class);
-                startActivity(retour);
+                if (password.equals(password2)) {
+                    SQLiteManager db = new SQLiteManager(getApplicationContext());
+                    db.updateUser(getIntent().getStringExtra("usermail"), password, country);
+                    Toast.makeText(getApplicationContext(), " Data updated " + getIntent().getStringExtra("usermail"), 1000).show();
+                    Intent retour = new Intent(getApplicationContext(), Fragment1.class);
+                    startActivity(retour);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Password not match", 1000).show();
+                }
             }
         });
     }

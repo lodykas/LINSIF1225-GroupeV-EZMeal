@@ -30,8 +30,31 @@
         android:layout_alignParentStart="true"
         android:layout_marginBottom="104dp" />
 
-    <!-- get birthday de user-->
+    <EditText
+        android:id="@+id/passwordedit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_alignBottom="@+id/passwordlog2"
+        android:layout_alignLeft="@+id/countryedit2"
+        android:layout_alignStart="@+id/countryedit2" />
 
+    <TextView
+        android:id="@+id/passwordlog2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Write your new password "
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:layout_above="@+id/countryedit2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="44dp" />
+    
     <EditText
         android:id="@+id/countryedit2"
         android:layout_width="wrap_content"
