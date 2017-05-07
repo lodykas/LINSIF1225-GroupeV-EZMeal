@@ -1,6 +1,7 @@
 package com.lsinf1225.ezmeal.ezmeal;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -110,5 +111,10 @@ public class Fragment1 extends Fragment {
     public interface OnFragmentInteractionListener {
         // NOTE : We changed the Uri to String.
         void onFragmentInteraction(String title);
+    }
+    public void onClick(View v) {
+        Intent intent = new Intent(getContext(), RecipeActivity.class);
+        startActivity(intent);
+
     }
 }

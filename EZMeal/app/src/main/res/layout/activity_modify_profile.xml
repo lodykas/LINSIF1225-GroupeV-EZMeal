@@ -63,7 +63,6 @@
         android:layout_above="@+id/button201"
         android:layout_alignParentBottom="false"
         android:layout_marginTop="30dp"
-        android:layout_toEndOf="@+id/button201"
         android:layout_toRightOf="@+id/button201">
 
     </Spinner>
@@ -75,17 +74,17 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/spinner1"
         android:layout_alignLeft="@+id/passwordlog"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="5dp"
         android:text="Choose your new living country" />
 
     <Button
         android:id="@+id/button201"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OK"
-        android:layout_marginBottom="90dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:text="OK" />
 
     <TextView
         android:id="@+id/Messageformodifprofil"
