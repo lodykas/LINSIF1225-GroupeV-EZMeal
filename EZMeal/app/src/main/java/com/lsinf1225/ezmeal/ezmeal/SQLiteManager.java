@@ -124,9 +124,100 @@ public class SQLiteManager extends SQLiteOpenHelper {
         r.bindString(4,"06/05/17");
         r.bindString(5,"occidentale");
         r.execute();
+        r.bindString(1,"milshake au fruit rouges");
+        r.bindString(2,"berryshake");
+        r.bindString(3,"versez le lait d'amande dans le blender, rajoutez le mélange de fruits rouges congelés, versez un dilet de sirop d'agave et mixez le tout. servir dans un grand verre et parsemez de fruits rouges frais");
+        r.bindString(4,"06/05/17");
+        r.bindString(5,"us");
+        r.execute();
+        r.bindString(1,"milshake au fruit rouges");
+        r.bindString(2,"berryshake");
+        r.bindString(3,"versez le lait d'amande dans le blender, rajoutez le mélange de fruits rouges congelés, versez un dilet de sirop d'agave et mixez le tout. servir dans un grand verre et parsemez de fruits rouges frais");
+        r.bindString(4,"06/05/17");
+        r.bindString(5,"us");
+        r.execute();
+        r.bindString(1,"Rhum citon miel");
+        r.bindString(2,"alcoolcitron");
+        r.bindString(3,"dans un verre à alcool, ajoutez 3 c.à.s de rhum ainsi que de miel, remplisez le reste du verre en thé de citron froid. servez avec des tranches de citron");
+        r.bindString(4,"06/05/17");
+        r.bindString(5,"tex-mex");
+        r.execute();
+        r.bindString(1,"gauffre belge");
+        r.bindString(2,"belgianwaffle");
+        r.bindString(3,"préparez la pâte à gaufre");
+        r.bindString(4,"06/05/17");
+        r.bindString(5,"europe");
+        r.execute();
+        r.bindString(1,"chocolat chaud de noel");
+        r.bindString(2,"chocochaud");
+        r.bindString(3,"dans une casserole chauffez un verre de lait en surveillant la cuisson du lait, lorsque le lait frémit doucement ajoutez y 4 barres de choclat noir concassé, mélangez bien et rajoutez à la préparation un baton de canelle, 2 clous de girofle ainsi qu'une c.à.c de muscade, sucrez à votre convenance. servez avec de la chantilly saupoudrée au cacao ");
+        r.bindString(4,"06/05/17");
+        r.bindString(5,"russie");
+        r.execute();
+        r.bindString(1,"curry japonais");
+        r.bindString(2,"curryjapan");
+        r.bindString(3,"blabla");
+        r.bindString(4,"06/05/17");
+        r.bindString(5,"asie");
+        r.execute();
+        r.bindString(1,"donut new yorkais");
+        r.bindString(2,"donut");
+        r.bindString(3,"blabla");
+        r.bindString(4,"06/05/17");
+        r.bindString(5,"us");
+        r.execute();
+        r.bindString(1,"gin tonic à la framboise");
+        r.bindString(2,"ginframboise");
+        r.bindString(3,"blabla");
+        r.bindString(4,"06/05/17");
+        r.bindString(5,"espagne");
+        r.execute();
+        r.bindString(1,"granola maison");
+        r.bindString(2,"granola");
+        r.bindString(3,"dans un bol melangez le musli avec du miel, etalez ensuite sur une plaque et enfournez 30 min à 180 degré, sortez la plaque et mélangez le tout, ajoutez des nox, noisettes et raison sec");
+        r.bindString(4,"06/05/17");
+        r.bindString(5,"suède");
+        r.execute();
+        r.bindString(1,"thai glacé thaï");
+        r.bindString(2,"icedtea");
+        r.bindString(3,"demandez à pat");
+        r.bindString(4,"06/05/17");
+        r.bindString(5,"thaïlande");
+        r.execute();
+        r.bindString(1,"macaron");
+        r.bindString(2,"macaron");
+        r.bindString(3,"paul vous servira");
+        r.bindString(4,"06/05/17");
+        r.bindString(5,"france");
+        r.execute();
+        r.bindString(1,"mojito");
+        r.bindString(2,"mojito");
+        r.bindString(3,"bjbzfz");
+        r.bindString(4,"06/05/17");
+        r.bindString(5,"cuba");
+        r.execute();
+        r.bindString(1,"boisson saine et sans allergènes");
+        r.bindString(2,"pastequeboisson");
+        r.bindString(3,"congelez des morceau de chair de pastèque, une fois les morceaux dur comme des glacons, versez un verre remplis de pastèque congelés avec un verre d'eau et une poignée de menthe. mixer le tout ");
+        r.bindString(4,"06/05/17");
+        r.bindString(5,"afrique");
+        r.execute();
+
 
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Liste\" (\"NomRecette\" NOT NULL,\"Ingrédient\" NOT NULL,\"Quantité\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Informations\" (\"NomRecette\" PRIMARY KEY,\"Description\" NOT NULL,\"Difficulté\" NOT NULL,\"TempsCuisson\" NOT NULL,\"TempsPreparation\" NOT NULL,\"NbrePersonnes\" NOT NULL);");
+        //difficulte peu etre que facile, moyen et difficile
+        SQLiteStatement i = db.compileStatement("INSERT INTO \"Informations\"(\"NomRecette\",\"Description\",\"Difficulté\",\"TempsCuisson\",\"TempsPreparation\",\"NbrePersonnes\") VALUES(?,?,?,?,?,?)");
+        i.bindString(1,"donut");
+        i.bindString(2,"colorons la vie de donut");
+        i.bindString(3,"moyen");
+        i.bindString(4,"15 min");
+        i.bindString(5,"1 h");
+        i.bindString(6,"6 personnes");
+
+
+
+
 
     }
 
@@ -214,12 +305,12 @@ public class SQLiteManager extends SQLiteOpenHelper {
         ArrayList<Recipe> res=new ArrayList<Recipe>();
         SQLiteDatabase db = getReadableDatabase();
         Cursor c =db.query("Recommandations",new String[]{"Recette"},("Usermail = \"" + usermail +"\"") ,null,null,null,null);
-        Log.wtf("wtf", usermail);
-        Log.wtf("test", "test0");
+        //Log.wtf("wtf", usermail);
+        //Log.wtf("test", "test0");
         if(c.moveToFirst()){
-            Log.wtf("test", "test1");
+            //Log.wtf("test", "test1");
             for(int i = 0; i<c.getCount(); i++){   // il devrait n'y avoir qu'une seule row
-                Log.wtf("test", "test2");
+                //Log.wtf("test", "test2");
                 String nom=c.getString(c.getColumnIndex("Recette"));
                 Cursor c2= db.query("Recette", null, "NomRecette=\""+nom+"\"", null, null, null, null);
                 if(c2.moveToFirst()){

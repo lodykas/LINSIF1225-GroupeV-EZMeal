@@ -7,7 +7,6 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,7 +37,7 @@ public class SearchableActivity extends AppCompatActivity{
             CursorAdapter c = new CursorAdapter(getApplicationContext(),db.research(query)) {
                 @Override
                 public View newView(Context context, Cursor cursor, ViewGroup parent) {
-                    return LayoutInflater.from(context).inflate(R.layout.list_fragment_item, parent, false);
+                    return LayoutInflater.from(context).inflate(R.layout.list_acceuil_recette, parent, false);
                 }
 
                 @Override

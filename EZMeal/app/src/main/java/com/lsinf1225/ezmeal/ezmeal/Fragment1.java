@@ -3,15 +3,10 @@ package com.lsinf1225.ezmeal.ezmeal;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
-
-import java.util.List;
 
 
 /**
@@ -70,7 +65,7 @@ public class Fragment1 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.list_fragment, container, false);
+        View view = inflater.inflate(R.layout.list_acceuil, container, false);
         ListView lv = (ListView) view.findViewById(R.id.list_recipes);
         String usermail = getArguments().getString("usermail");
         MyListAdapter adapter = new MyListAdapter(getContext(), usermail);

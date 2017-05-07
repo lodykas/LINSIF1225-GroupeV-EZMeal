@@ -1,22 +1,14 @@
 package com.lsinf1225.ezmeal.ezmeal;
 
 import android.content.Context;
-import android.database.Cursor;
-import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
-import android.provider.ContactsContract;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import java.sql.Blob;
 
 public class MyListAdapter extends BaseAdapter {
     private final Context context;
@@ -50,10 +42,10 @@ public class MyListAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = (LayoutInflater) context
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View rowView = inflater.inflate(R.layout.list_fragment_item, parent, false);
+        View rowView = inflater.inflate(R.layout.list_acceuil_recette, parent, false);
         //emplacements
         ImageButton ib=(ImageButton) rowView.findViewById(R.id.image_recipe);
-        TextView tv=(TextView) rowView.findViewById(R.id.details_recipes);
+        TextView tv=(TextView) rowView.findViewById(R.id.title_recipe);
         TextView phrase=(TextView) rowView.findViewById(R.id.sentence_recipes);
         Recipe rec= r[position];
         String titre=rec.title;
