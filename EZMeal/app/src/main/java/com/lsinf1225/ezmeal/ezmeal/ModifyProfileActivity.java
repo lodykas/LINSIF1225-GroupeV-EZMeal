@@ -29,10 +29,12 @@ public class ModifyProfileActivity extends AppCompatActivity {
             public void onClick(View v) {
                 String password = ((EditText) findViewById(R.id.passwordedit2)).getText().toString();
                 String password2 = ((EditText) findViewById(R.id.passwordedit)).getText().toString();
-                Spinner spinner1 = (Spinner)findViewById(R.id.spinner1);
+                Spinner spinner1 = (Spinner) findViewById(R.id.spinner1);
                 String country = spinner1.getSelectedItem().toString();
                 //String country = ((EditText) findViewById(R.id.countryedit2)).getText().toString();
-                if (password.equals(password2)) {
+                if (password.equals("") || password2.equals("")) {
+                    Toast.makeText(getApplicationContext(), "All fields are mandatory", Toast.LENGTH_LONG).show();
+                }else if (password.equals(password2)) {
                     SQLiteManager db = new SQLiteManager(getApplicationContext());
                     db.updateUser(getIntent().getStringExtra("usermail"), password, country);
                     Toast.makeText(getApplicationContext(), " Data updated " + getIntent().getStringExtra("usermail"), Toast.LENGTH_LONG).show();
