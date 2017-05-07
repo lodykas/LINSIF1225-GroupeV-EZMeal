@@ -123,27 +123,24 @@
         android:layout_alignTop="@+id/birthedit"
         android:layout_alignLeft="@+id/usermaillog"
         android:text="@string/birthday" />
-
-    <EditText
-        android:id="@+id/countryedit"
+    <Spinner
+        android:id="@+id/spinner2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:hint="@string/country"
-        android:inputType="text"
         android:layout_marginTop="30dp"
         android:layout_alignLeft="@+id/usermailedit"
-        android:layout_below="@+id/birthedit"
-        android:background="@color/white"
-        />
+        android:layout_below="@+id/birthedit">
+
+    </Spinner>
+
+
     <Spinner
         android:id="@+id/spinner1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="100dp"
-        >
+        android:layout_alignLeft="@+id/usermailedit"
+        android:layout_below="@+id/spinner2"
+        android:layout_marginTop="30dp">
 
     </Spinner>
 
@@ -151,28 +148,15 @@
         android:id="@+id/country"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/countryedit"
+        android:layout_alignTop="@+id/spinner2"
         android:layout_alignLeft="@+id/usermaillog"
         android:text="@string/country" />
 
-    <EditText
-        android:id="@+id/origincountryedit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:hint="@string/origincountry"
-        android:inputType="text"
-        android:layout_marginTop="30dp"
-        android:layout_alignLeft="@+id/usermailedit"
-        android:layout_below="@+id/countryedit"
-        android:background="@color/white"
-        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/origincountryedit"
+        android:layout_alignTop="@+id/spinner1"
         android:layout_alignLeft="@+id/usermaillog"
         android:text="@string/origincountry"
         android:id="@+id/textView" />
@@ -190,7 +174,7 @@
         android:id="@+id/allergens"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/origincountryedit"
+        android:layout_below="@+id/spinner1"
         android:layout_marginTop="22dp"
         android:text="@string/allergens"
         android:layout_centerHorizontal="true"/>
@@ -206,7 +190,7 @@
         android:id="@+id/gluten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/origincountryedit"
+        android:layout_alignLeft="@id/spinner1"
         android:layout_below="@id/allergens"
         android:text="@string/gluten"/>
     <CheckBox

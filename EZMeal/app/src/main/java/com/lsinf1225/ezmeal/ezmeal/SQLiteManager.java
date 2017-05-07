@@ -92,7 +92,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Recette\" ( _id INTEGER PRIMARY KEY AUTOINCREMENT,\"NomRecette\" NOT NULL,\"Image\" NOT NULL,\"Instructions\" NOT NULL,\"DateDAjout\" NOT NULL,\"Origine\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Catégories\" (\"NomRecette\" NOT NULL,\"Catégorie\" NOT NULL);");
         SQLiteStatement d= db.compileStatement("INSERT INTO\"Catégories\"(\"NomRecette\",\"Catégorie\") VALUES(?,?)");
-        d.bindString(1,"milkshake au fruit rouges");
+        d.bindString(1,"milshake au fruit rouges");
         d.bindString(2,"beverage");
         d.execute();
         d.bindString(1,"mojito");
@@ -347,7 +347,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         ArrayList<Recipe> res=new ArrayList<Recipe>();
         SQLiteDatabase db = getReadableDatabase();
         Cursor c =db.query("Catégories",new String[]{"NomRecette"},("Catégorie = \""+boisson+"\"") ,null,null,null,null);
-        Log.wtf("wtf", boisson);
+        Log.wtf("wtf", ""+c.getCount());
         Log.wtf("test", "test0");
         if(c.moveToFirst()){
             Log.wtf("test", "test1");
@@ -355,6 +355,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
                 Log.wtf("test", "test2");
                 String nom=c.getString(c.getColumnIndex("NomRecette"));
                 Cursor c2= db.query("Recette", null, "NomRecette=\""+nom+"\"", null, null, null, null);
+                Log.wtf("wtf2",""+c2.getCount());
                 if(c2.moveToFirst()){
                     Log.wtf("t",""+c2.getCount());
                     for(int j=0;j<c2.getCount();j++){

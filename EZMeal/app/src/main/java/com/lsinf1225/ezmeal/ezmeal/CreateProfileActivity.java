@@ -31,6 +31,12 @@ public class CreateProfileActivity extends AppCompatActivity {
               ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.country, android.R.layout.simple_spinner_item);
                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                spinner.setAdapter(adapter);
+        Spinner spinner2 = (Spinner) findViewById(R.id.spinner2);
+        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this, R.array.country, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner2.setAdapter(adapter2);
+
+
         Button b = (Button) findViewById(R.id.button101);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,8 +48,13 @@ public class CreateProfileActivity extends AppCompatActivity {
                 RadioGroup sex = (RadioGroup) findViewById(R.id.sexSelect);
                 RadioButton sexB = (RadioButton) findViewById(sex.getCheckedRadioButtonId());
                 String birth = ((EditText) findViewById(R.id.birthedit)).getText().toString();
-                String country = ((EditText) findViewById(R.id.countryedit)).getText().toString();
-                String oriCountry = ((EditText) findViewById(R.id.origincountryedit)).getText().toString();
+                Spinner spinner2 = (Spinner)findViewById(R.id.spinner2);
+                String country = spinner2.getSelectedItem().toString();
+                Spinner spinner1 = (Spinner)findViewById(R.id.spinner1);
+                String oriCountry = spinner1.getSelectedItem().toString();
+
+                //String country = ((EditText) findViewById(R.id.spinner2)).getText().toString();
+                //String oriCountry = ((EditText) findViewById(R.id.spinner1)).getText().toString();
 
                 if (usermail == " " || password == " " || password2 == " " || birth == " " || country == " " || oriCountry == " " || sexB == null){
                     Toast.makeText(getApplicationContext(), "All fields are mandatory!", 3000).show();
@@ -82,6 +93,7 @@ public class CreateProfileActivity extends AppCompatActivity {
             }
         });
     }
+
 
 
 }
