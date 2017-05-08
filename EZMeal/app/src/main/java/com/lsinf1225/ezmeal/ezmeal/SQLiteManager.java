@@ -342,7 +342,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
 
 
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Liste\" (\"NomRecette\" NOT NULL,\"Ingrédient\" NOT NULL,\"Quantité\" NOT NULL);");
-        SQLiteStatement l= db.compileStatement("INSERT INTO \"Liste\"(\"NomRecette\",\Ingrédient\",\"Quantité\") VALUES(?,?,?) ");
+        SQLiteStatement l= db.compileStatement("INSERT INTO \"Liste\"(\"NomRecette\",\"Ingrédient\",\"Quantité\") VALUES(?,?,?) ");
         l.bindString(1,"soupe à l'oignon");
         l.bindString(2,"oignon");
         l.bindString(3,"250");
@@ -504,7 +504,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         l.bindString(3,"1");
         l.execute();
         l.bindString(1,"milkshake aux fruits rouges");
-        l.bindString(2,"lait d'amande);
+        l.bindString(2,"lait d'amande");
         l.bindString(3,"1");
         l.execute();
         l.bindString(1,"milkshake aux fruits rouges");
