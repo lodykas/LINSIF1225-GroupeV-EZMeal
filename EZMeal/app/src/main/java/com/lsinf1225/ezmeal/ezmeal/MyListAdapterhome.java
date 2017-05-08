@@ -19,9 +19,10 @@ public class MyListAdapterhome extends BaseAdapter {
         this.context = context;
         SQLiteManager h=new SQLiteManager(context);
         r=h.getRecipe(10, usermail);
-        if(r.length == 0){
+        /*if(r.length == 0){
             r = new Recipe[10];
             Recipe[] temp = h.getRecipe(2,"Catégories",new String[]{"NomRecette"},"Catégorie","entree");
+            Log.d("debuggggg",temp.length+"");
             r[0] = temp[0];
             r[1] = temp[1];
             temp = h.getRecipe(2,"Catégories",new String[]{"NomRecette"},"Catégorie","beverage");
@@ -37,7 +38,7 @@ public class MyListAdapterhome extends BaseAdapter {
             r[8] = temp[0];
             temp = h.getRecipe(1,"Recette",new String[]{"NomRecette"},"NomRecette","boisson saine et sans allergènes");
             r[9] = temp[1];
-        }
+        }*/
     }
     public MyListAdapterhome(Context context) {
 
