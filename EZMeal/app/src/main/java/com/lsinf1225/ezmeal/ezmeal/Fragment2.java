@@ -174,20 +174,29 @@ public class Fragment2 extends Fragment {
         app.add("Hot");
         app.add("Cold");
         app.add("Soups");
-        app.add("By country");
+        app.add("Asian");
+        app.add("Italian");
+        app.add("American");
+        app.add("Other origine");
 
         List<String> dishes= new ArrayList<String>();
         dishes.add("Pasta");
         dishes.add("Meat");
         dishes.add("Fish");
         dishes.add("Vegetarian");
-        dishes.add("By country");
+        app.add("Asian");
+        app.add("Italian");
+        app.add("American");
+        app.add("Other origine");
 
         List<String> dessert = new ArrayList<String>();
         dessert.add("Quick and easy");
         dessert.add("Hot");
         dessert.add("Cake");
-        dessert.add("By country");
+        app.add("Asian");
+        app.add("Italian");
+        app.add("American");
+        app.add("Other origine");
 
         listDataChild.put(listDataHeader.get(0), app); // Header, Child data
         listDataChild.put(listDataHeader.get(1), dishes);
