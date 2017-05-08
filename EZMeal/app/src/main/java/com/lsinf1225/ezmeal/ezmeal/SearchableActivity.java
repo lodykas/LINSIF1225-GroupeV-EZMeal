@@ -51,9 +51,9 @@ public class SearchableActivity extends AppCompatActivity{
 
                     SQLiteManager db = new SQLiteManager(getApplicationContext());
 
-                    ((TextView) view.findViewById(R.id.sentence_recipes)).setText(cursor.getString(cursor.getColumnIndex("Origine")));
+                    /*((TextView) view.findViewById(R.id.sentence_recipes)).setText(cursor.getString(cursor.getColumnIndex("Origine")));
                     Cursor c = db.getRecipeInfo(cursor.getString(cursor.getColumnIndexOrThrow("NomRecette")));
-                    ((TextView) view.findViewById(R.id.details_recipes)).setText(c.getString(c.getColumnIndex("Difficulté")));
+                    ((TextView) view.findViewById(R.id.details_recipes)).setText(c.getString(c.getColumnIndex("Difficulté")));*/
 
 
                 }
