@@ -318,17 +318,40 @@ public class SQLiteManager extends SQLiteOpenHelper {
         ArrayList<Recipe> res=new ArrayList<Recipe>();
         SQLiteDatabase db = getReadableDatabase();
         Cursor c =db.query("Recommandations",new String[]{"Recette"},("Usermail = \"" + usermail +"\"") ,null,null,null,null);
-        //Log.wtf("wtf", usermail);
-        //Log.wtf("test", "test0");
         if(c.moveToFirst()){
-            //Log.wtf("test", "test1");
-            for(int i = 0; i<c.getCount(); i++){   // il devrait n'y avoir qu'une seule row
-                //Log.wtf("test", "test2");
+            for(int i = 0; i<c.getCount(); i++){
                 String nom=c.getString(c.getColumnIndex("Recette"));
                 Cursor c2= db.query("Recette", null, "NomRecette=\""+nom+"\"", null, null, null, null);
                 if(c2.moveToFirst()){
-                    for(int j=0;j<c2.getCount();j++){
-                       // Log.wtf("test", "test3");
+                    for(int j=0;j<c2.getCount() && res.size()<tabSize; j++){
+                        String name=c2.getString(c2.getColumnIndex("NomRecette"));
+                        String image=c2.getString(c2.getColumnIndex("Image"));
+                        String instruc=c2.getString(c2.getColumnIndex("Instructions"));
+                        String date=c2.getString(c2.getColumnIndex("DateDAjout"));
+                        String sentence=c2.getString(c2.getColumnIndex("Origine"));
+                        res.add(new Recipe(name,image,instruc,date,sentence));
+                        c2.moveToNext();
+                    }
+                }
+                c2.close();
+
+                c.moveToNext();
+            }
+        }
+        c.close();
+        Recipe[] rt = new Recipe[res.size()];
+        return res.toArray(rt);
+    }
+    public Recipe[] getRecipe(int tabSize, String table,String[] element, String cond1, String cond2){
+        ArrayList<Recipe> res=new ArrayList<Recipe>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c =db.query(table,element,(cond1+"= \"" +cond2 +"\"") ,null,null,null,null);
+        if(c.moveToFirst()){
+            for(int i = 0; i<c.getCount(); i++){
+                String nom=c.getString(c.getColumnIndex("Recette"));
+                Cursor c2= db.query("Recette", null, "NomRecette=\""+nom+"\"", null, null, null, null);
+                if(c2.moveToFirst()){
+                    for(int j=0; j< c2.getCount() && res.size() <= tabSize; j++){
                         String name=c2.getString(c2.getColumnIndex("NomRecette"));
                         String image=c2.getString(c2.getColumnIndex("Image"));
                         String instruc=c2.getString(c2.getColumnIndex("Instructions"));
@@ -382,5 +405,10 @@ public class SQLiteManager extends SQLiteOpenHelper {
         c.close();
         Recipe[] rt = new Recipe[res.size()];
         return res.toArray(rt);
+    }
+    public Cursor getRecipeInfo (String recipeName){
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c = db.query("Informations",new String[]{"*"},("NomRecette="+recipeName) ,null,null,null,null);
+        return c;
     }
 }

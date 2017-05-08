@@ -46,8 +46,15 @@ public class SearchableActivity extends AppCompatActivity{
                     recipe.setText(cursor.getString(cursor.getColumnIndexOrThrow("NomRecette")));
                     ImageButton im = (ImageButton) view.findViewById(R.id.image_recipe);
                     Resources r = getResources();
-                    int id = r.getIdentifier(cursor.getString(cursor.getColumnIndexOrThrow("Image")).split("\\.")[0], "drawable", getPackageName());
+                    int id = r.getIdentifier(cursor.getString(cursor.getColumnIndex("Image")).split("\\.")[0], "drawable", getPackageName());
                     im.setImageDrawable(r.getDrawable(id));
+
+                    SQLiteManager db = new SQLiteManager(getApplicationContext());
+
+                    ((TextView) view.findViewById(R.id.sentence_recipes)).setText(cursor.getString(cursor.getColumnIndex("Origine")));
+                    Cursor c = db.getRecipeInfo(cursor.getString(cursor.getColumnIndexOrThrow("NomRecette")));
+                    ((TextView) view.findViewById(R.id.details_recipes)).setText(c.getString(c.getColumnIndex("Difficulté")));
+
 
                 }
             };
