@@ -15,6 +15,9 @@ import android.widget.Spinner;
 import android.widget.DatePicker;
 import android.widget.Toast;
 import java.util.Calendar;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import static android.R.attr.id;
 import android.app.DatePickerDialog;
 
@@ -92,6 +95,9 @@ public class CreateProfileActivity extends AppCompatActivity {
                 } else if (!(password.equals(password2))) {
                     Toast.makeText(getApplicationContext(), "Password not match !", 3000).show();
                 }
+                else if((!emailAddressValidator(usermail))){
+                    Toast.makeText(getApplicationContext(), "Usermail must be a valid email", 3000).show();
+                }
                 else {//if everything's complete, I create the object and update the database
                     User user = new User(usermail, sexB.getText().charAt(0), password, birth, country, oriCountry);
                     SQLiteManager db = new SQLiteManager(getApplicationContext());
@@ -123,7 +129,20 @@ public class CreateProfileActivity extends AppCompatActivity {
                 }
             }
         });
+
     }
+    public static boolean emailAddressValidator(String emailId) {
+        Pattern pattern = Pattern.compile("\\w+([-+.]\\w+)*" + "\\@"
+                + "\\w+([-.]\\w+)*" + "\\." + "\\w+([-.]\\w+)*");
+
+        Matcher matcher = pattern.matcher(emailId);
+        if (matcher.matches())
+            return true;
+        else
+            return false;
+    }
+
+
 
 
 
