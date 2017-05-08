@@ -116,8 +116,8 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/passwordedit2"
         android:background="@color/white"
-        android:hint="Select Date"
-        android:inputType="datetime"
+        android:hint="DD/MM/YYYY"
+        android:inputType="date"
         android:layout_marginBottom="5dp"
         android:layout_above="@+id/country"
         android:layout_below="@+id/sexSelect" />

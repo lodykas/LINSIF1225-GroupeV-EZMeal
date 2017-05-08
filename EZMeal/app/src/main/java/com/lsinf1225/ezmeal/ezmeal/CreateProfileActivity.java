@@ -43,32 +43,7 @@ public class CreateProfileActivity extends AppCompatActivity {
         spinner2.setAdapter(adapter2);
 
 
-        final EditText date = (EditText) findViewById(R.id.birthedit);
 
-        date.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                final Calendar c = Calendar.getInstance();
-                int mYear = c.get(Calendar.YEAR);
-                int mMonth = c.get(Calendar.MONTH);
-                int mDay = c.get(Calendar.DAY_OF_MONTH);
-
-                DatePickerDialog datePickerDialog = new DatePickerDialog(CreateProfileActivity.this,
-                        new DatePickerDialog.OnDateSetListener() {
-
-                            @Override
-                            public void onDateSet(DatePicker view, int year,
-                                                  int monthOfYear, int dayOfMonth) {
-
-                                date.setText(dayOfMonth + "/"
-                                        + (monthOfYear + 1) + "/" + year);
-
-                            }
-                        }, mYear, mMonth, mDay);
-                datePickerDialog.show();
-            }
-        });
 
         Button b = (Button) findViewById(R.id.button101);
         b.setOnClickListener(new View.OnClickListener() {
@@ -97,6 +72,9 @@ public class CreateProfileActivity extends AppCompatActivity {
                 }
                 else if((!emailAddressValidator(usermail))){
                     Toast.makeText(getApplicationContext(), "Usermail must be a valid email", 3000).show();
+                }
+                else if(!(DateValidator(birth))){
+                    Toast.makeText(getApplicationContext(), "Birthday invalid", 3000).show();
                 }
                 else {//if everything's complete, I create the object and update the database
                     User user = new User(usermail, sexB.getText().charAt(0), password, birth, country, oriCountry);
@@ -134,8 +112,16 @@ public class CreateProfileActivity extends AppCompatActivity {
     public static boolean emailAddressValidator(String emailId) {
         Pattern pattern = Pattern.compile("\\w+([-+.]\\w+)*" + "\\@"
                 + "\\w+([-.]\\w+)*" + "\\." + "\\w+([-.]\\w+)*");
-
         Matcher matcher = pattern.matcher(emailId);
+        if (matcher.matches())
+            return true;
+        else
+            return false;
+    }
+    public static boolean DateValidator(String date) {
+       String val= "^(0[1-9]|[12][0-9]|3[01])[- /.](0[1-9]|1[012])[- /.](19|20)\\d{2}$";
+
+        Matcher matcher = Pattern.compile(val).matcher(date);
         if (matcher.matches())
             return true;
         else
