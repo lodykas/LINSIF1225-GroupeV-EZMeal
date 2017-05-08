@@ -146,9 +146,20 @@ public class SQLiteManager extends SQLiteOpenHelper {
         r.execute();
         r.bindString(1,"gauffre belge");
         r.bindString(2,"belgianwaffle");
-        r.bindString(3,"préparez la pâte à gaufre");
-        r.bindString(4,"06/05/17");
-        r.bindString(5,"europe");
+        r.bindString(3,"tamiser la farine.\n" +
+                "séparer les jaunes et les blancs des oeufs en ne gardant que 4 blancs.\n" +
+                "faire fondre légèrement le beurre au bain-marie; il doit être liquide et à peine tiède.\n" +
+                "couper la gousse de vanille dans sa longueur et récupérer les graines.\n" +
+                "mélanger la farine, les cinq jaunes d'oeufs, le sucre fin, les graines de vanille, une pincée de sel, le lait et le beurre fondu.\n" +
+                "battre les 4 blancs d'oeufs en neige très ferme.\n" +
+                "incorporer les blancs en neige à la préparation. A faire très délicatement afin de ne pas briser la mousse.\n" +
+                "laisser reposer durant 45 minutes bien à couvert.\n" +
+                "la pâte doit être un peu moins liquide qu'une pâte à crêpe.\n" +
+                "cuire les gaufres dans un fer bien chaud.\n" +
+                "dès que la ou les portions de pâte sont versées, il faut fermer le gaufrier et le renverser de suite pour avoir des gaufres régulières et gonflées.\n" +
+                "aussitôt que la gaufre est dorée sur les deux faces, la sortir du fer, la saupoudrer de sucre glace et servir très chaud.");
+        r.bindString(4,"08/05/17");
+        r.bindString(5,"belge");
         r.execute();
         r.bindString(1,"chocolat chaud de noel");
         r.bindString(2,"chocochaud");

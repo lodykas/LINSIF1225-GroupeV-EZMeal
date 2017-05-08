@@ -3,10 +3,12 @@ package com.lsinf1225.ezmeal.ezmeal;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.view.Gravity;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -16,6 +18,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 public class Menuetage extends AppCompatActivity
         //Note : OnFragmentInteractionListener of all the fragments
@@ -64,15 +67,34 @@ public class Menuetage extends AppCompatActivity
         ft.commit();
     }
 
-    @Override
-    public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }
-    }
+   // @Override
+   // public void onBackPressed() {
+        //DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        //if (drawer.isDrawerOpen(GravityCompat.START)) {
+           // drawer.closeDrawer(GravityCompat.START);
+       // } else {
+            //super.onBackPressed();
+     //   }
+   // }
+   boolean doubleBackToExitPressedOnce = false;
+   @Override
+   public void onBackPressed() {
+       if (doubleBackToExitPressedOnce) {
+           super.onBackPressed();
+           return;
+       }
+
+       this.doubleBackToExitPressedOnce = true;
+       Toast.makeText(this, "Please click BACK again to sign out", Toast.LENGTH_SHORT).show();
+
+       new Handler().postDelayed(new Runnable() {
+
+           @Override
+           public void run() {
+               doubleBackToExitPressedOnce=false;
+           }
+       }, 2000);
+   }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
