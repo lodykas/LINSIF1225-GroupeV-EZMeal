@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.lsinf1225.ezmeal.ezmeal">
-
     //NE METTEZ PAS D ACTIVITE AVEC DES INTENT FILTRER AVEC android.intent.action.MAIN
     <application
         android:allowBackup="true"
@@ -9,27 +8,24 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        <activity android:name=".SearchableActivity" >
+        <activity android:name=".SearchableActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
-            <meta-data android:name="android.app.searchable"
-                android:resource="@xml/searchable"/>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
         </activity>
         <activity
             android:name=".RecipeActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name">
-
-        </activity>
-
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"></activity>
         //Ce qui se lance quand on ouvre l'appli
         <activity
             android:name=".LoginActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name">
-
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
             <intent-filter>
                 //cette partie doit etre unique !!! ne recopiez pas cette partie svp
                 <action android:name="android.intent.action.MAIN" />
@@ -40,7 +36,7 @@
         <activity
             android:name=".CreateProfileActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait" />
         <!--
  ATTENTION: This was auto-generated to add Google Play services to your project for
      App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -52,67 +48,54 @@
         <activity
             android:name=".ModifyProfileActivity"
             android:label="@string/title_activity_modify_profile"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Fragment1"
             android:label="EZMeal"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ExpandableListAdapter"
             android:label="EZMeal"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Fragment2"
             android:label="EZMeal"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Fragment3"
             android:label="EZMeal"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Fragment4"
             android:label="EZMeal"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MyListAdapterdrink"
             android:label="EZMeal"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MyListAdapterhome"
             android:label="EZMeal"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MyListFragmenthome"
             android:label="EZMeal"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MyListFragmentdrink"
             android:label="EZMeal"
-            android:screenOrientation="portrait"
-            />
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Recipe"
             android:label="EZMeal"
-            android:screenOrientation="portrait"
-            />
-
-
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Menuetage"
             android:label="@string/title_activity_menuetage"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
-            >
-            <meta-data android:name="android.app.default_searchable"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <meta-data
+                android:name="android.app.default_searchable"
                 android:value=".SearchableActivity" />
         </activity>
     </application>
