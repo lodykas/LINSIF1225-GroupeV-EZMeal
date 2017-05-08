@@ -102,34 +102,33 @@
         android:layout_alignLeft="@+id/usermaillog"
         android:text="@string/sex" />
 
-    <EditText
-        android:id="@+id/birthedit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:hint="DD/MM/YYYY"
-        android:inputType="datetime"
-        android:layout_marginTop="30dp"
-        android:layout_alignLeft="@+id/usermailedit"
-        android:layout_below="@+id/sexSelect"
-        android:background="@color/white"
-        />
-
     <TextView
         android:id="@+id/birth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/birthedit"
-        android:layout_alignLeft="@+id/usermaillog"
-        android:text="@string/birthday" />
+        android:layout_alignLeft="@id/usermaillog"
+        android:layout_above="@+id/country"
+        android:layout_below="@+id/sexSelect"
+        android:text="Birthday"/>
+    <EditText
+        android:id="@+id/birthedit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/passwordedit2"
+        android:background="@color/white"
+        android:hint="Select Date"
+        android:layout_marginBottom="5dp"
+        android:layout_above="@+id/country"
+        android:layout_below="@+id/sexSelect" />
+
+
     <Spinner
         android:id="@+id/spinner2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:layout_alignLeft="@+id/usermailedit"
-        android:layout_below="@+id/birthedit">
+        android:layout_below="@+id/sexSelect">
 
     </Spinner>
 

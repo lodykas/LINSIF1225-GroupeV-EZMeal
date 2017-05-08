@@ -12,9 +12,11 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.DatePicker;
 import android.widget.Toast;
-
+import java.util.Calendar;
 import static android.R.attr.id;
+import android.app.DatePickerDialog;
 
 
 /**
@@ -38,11 +40,39 @@ public class CreateProfileActivity extends AppCompatActivity {
         spinner2.setAdapter(adapter2);
 
 
+        final EditText date = (EditText) findViewById(R.id.birthedit);
+
+        date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final Calendar c = Calendar.getInstance();
+                int mYear = c.get(Calendar.YEAR);
+                int mMonth = c.get(Calendar.MONTH);
+                int mDay = c.get(Calendar.DAY_OF_MONTH);
+
+                DatePickerDialog datePickerDialog = new DatePickerDialog(CreateProfileActivity.this,
+                        new DatePickerDialog.OnDateSetListener() {
+
+                            @Override
+                            public void onDateSet(DatePicker view, int year,
+                                                  int monthOfYear, int dayOfMonth) {
+
+                                date.setText(dayOfMonth + "/"
+                                        + (monthOfYear + 1) + "/" + year);
+
+                            }
+                        }, mYear, mMonth, mDay);
+                datePickerDialog.show();
+            }
+        });
+
         Button b = (Button) findViewById(R.id.button101);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //I get all the data the user entered
+
                 String usermail = ((EditText) findViewById(R.id.usermailedit)).getText().toString();
                 String password = ((EditText) findViewById(R.id.passwordedit)).getText().toString();
                 String password2 = ((EditText) findViewById(R.id.passwordedit2)).getText().toString();
