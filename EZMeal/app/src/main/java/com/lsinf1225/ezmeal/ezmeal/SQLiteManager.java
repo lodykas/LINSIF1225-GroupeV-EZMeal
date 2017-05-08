@@ -60,10 +60,10 @@ public class SQLiteManager extends SQLiteOpenHelper {
         s.bindString(2,"macaroni au fromage");
         s.execute();
         s.bindString(1,"blabla");
-        s.bindString(2,"spaguetti bolognaise");
+        s.bindString(2,"spaghetti bolognaise");
         s.execute();
         s.bindString(1,"blabla");
-        s.bindString(2,"foire de légumes");
+        s.bindString(2,"salade césar");
         s.execute();
         s.bindString(1,"a");
         s.bindString(2,"soupe à l'oignon");
@@ -72,7 +72,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         s.bindString(2,"macaroni au fromage");
         s.execute();
         s.bindString(1,"a");
-        s.bindString(2,"spaguetti bolognaise");
+        s.bindString(2,"spaghetti bolognaise");
         s.execute();
         s.bindString(1,"usermail");
         s.bindString(2,"foire de légumes");
@@ -104,25 +104,51 @@ public class SQLiteManager extends SQLiteOpenHelper {
         SQLiteStatement r = db.compileStatement("INSERT INTO \"Recette\"(\"NomRecette\",\"Image\",\"Instructions\",\"DateDAjout\",\"Origine\") VALUES(?,?,?,?,?)");
         r.bindString(1,"soupe à l'oignon");
         r.bindString(2,"soupeoignon");
-        r.bindString(3,"mixer les oignons");
+        r.bindString(3,"dans une casserole à gros fond, faites fondre le beurre ou chauffer l'huile d'olive, dorer à petit feu les oignons finement émincés. lorsqu'il est transparent, ajouter la farine en saupoudrant et en mélangeant sans cesse à la cuiller en bois. \n" +
+                "saler et poivrer au moulin. mouiller ensuite, toujours en remuant, avec le consommé et porter à ébullition.\n" +
+                "diminuer à petits frémissements et poursuivre la cuisson pendant 30 minutes. pendant ce temps, faire fondre un peu de beurre et d'huile d'olive dans un grand wok et frire les tranches de pain coupées à la dimension des bols à soupe.\n" +
+                "quelques minutes avant la fin de la cuisson, ajouter le porto (optionnel), mélanger bien et servir dans des bols individuels.\n" +
+                "placer les bols côte à côte sur une grille allant au four, couvrir le centre de chaque bol avec un morceau de pain frit, casser au milieu du pain un oeuf sans le blanc, saupoudrer avec le parmesan et hop, au grill maximum pendant quelques moments, histoire de faire prendre un peu de couleur à l'appareil.\n" +
+                "bon appétit.");
         r.bindString(4,"05/05/17");
         r.bindString(5,"occidentale");
         r.execute();
         r.bindString(1,"macaroni au fromage");
         r.bindString(2,"macaronifromage");
-        r.bindString(3,"cuire les pâtes");
+        r.bindString(3,"coupez les fromages en morceaux. mettre la crème dans une casserole, la faire bouillir et réduire 3 mn à feu doux. hors du feu, rajoutez les fromages mais seulement la moitié du parmesan en mélangeant vivement. \n" +
+                "remettez à feu doux jusqu'à ce que le mélange soit lisse. poivrez et relevez de muscade. \n" +
+                "pendant ce temps, faîtes cuire les pâtes suivant le temps indiqué sur votre paquet (pâtes fraîches c'est encore meilleur). \n" +
+                "egouttez les pâtes, versez-les dans la casserole contenant la sauce aux trois fromages. mélangez rapidement, parsemez du reste de parmesan et servez.");
         r.bindString(4,"05/05/17");
         r.bindString(5,"italienne");
         r.execute();
-        r.bindString(1,"spaguetti bolognaise");
+        r.bindString(1,"spaghetti bolognaise");
         r.bindString(2,"spaguettibolognaise");
-        r.bindString(3,"cuire les pâtes, faites revenir le steak haché, ajouter les tomates");
+        r.bindString(3,"hachez l'ail, l'oignon, puis coupez la carotte et le céleri en petits dés (enlevez les principales nervures du céleri). \n" +
+                "\n" +
+                "faites chauffer l'huile dans une casserole assez grande. faites revenir l'ail, l'oignon, la carotte et le céleri à feu doux pendant 5 min en remuant.\n" +
+                "\n" +
+                "augmenter la flamme, puis ajoutez le boeuf. faites brunir et remuez de façon à ce que la viande ne fasse pas de gros paquets. \n" +
+                "\n" +
+                "ajoutez le bouillon, le vin rouge, les tomates préalablement coupées assez grossièrement, le sucre et le persil haché. portez à ébullition.\n" +
+                "\n" +
+                "baisser ensuite le feu et laissez mijoter à couvert 1h à 1h30, de façon à ce que le vin s'évapore. \n" +
+                "\n" +
+                "faites cuire les spaghetti, puis mettez-les dans un plat. ajoutez la sauce bolognaise.");
         r.bindString(4,"06/05/17");
         r.bindString(5,"italienne");
         r.execute();
-        r.bindString(1,"foire de légumes");
+        r.bindString(1,"salade césar");
         r.bindString(2,"soupeoignon");
-        r.bindString(3,"préparez tout les légumes separément.");
+        r.bindString(3,"préchauffez votre four à 210-220°C . \n" +
+                "détachez les feuilles de salade, lavez-les, découpez-les en lamelles, essorez-les. \n" +
+                "coupez le pain en dés. Faites-les griller au four en surveillant bien la cuisson car c'est très rapide (environ 1 à 2 mn). \n" +
+                "chauffez 4 cuillerées à soupe d'huile dans une poêle. ajoutez l'ail écrasé. faites rissoler les dés de pain en croûtons. Laissez-les refroidir. \n" +
+                "faites cuire les oeufs mollets : lorsque l'eau commence à bouillir, diminuez la source de chaleur et laissez cuire 2 mn. rincez-les tout de suite à l'eau froide puis écalez-les. \n" +
+                "pressez les citrons et versez le jus dans un bol. ajoutez l'huile d'olive goutte à goutte. Salez et poivrez. \n" +
+                "mettez la salade dans un saladier et versez dessus la sauce. mélangez bien le tout et laissez de côté pendant une dizaine de minutes afin que la salade s'imprègne bien de la sauce. \n" +
+                "coupez les oeufs en 4, dans le sens de la longueur. mélangez-les à la salade afin que le jaune se mêle à la sauce, puis ajoutez le parmesan râpé et les croûtons. \n" +
+                "servez aussitôt.");
         r.bindString(4,"06/05/17");
         r.bindString(5,"occidentale");
         r.execute();

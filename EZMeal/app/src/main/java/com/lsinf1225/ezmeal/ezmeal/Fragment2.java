@@ -177,6 +177,7 @@ public class Fragment2 extends Fragment {
         app.add("By country");
 
         List<String> dishes= new ArrayList<String>();
+        dishes.add("Pasta");
         dishes.add("Meat");
         dishes.add("Fish");
         dishes.add("Vegetarian");
@@ -185,7 +186,6 @@ public class Fragment2 extends Fragment {
         List<String> dessert = new ArrayList<String>();
         dessert.add("Quick and easy");
         dessert.add("Hot");
-        dessert.add("Ice cream");
         dessert.add("Cake");
         dessert.add("By country");
 
