@@ -472,7 +472,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         Cursor c =db.query(table,element,(cond1+"= \"" +cond2 +"\"") ,null,null,null,null);
         if(c.moveToFirst()){
             for(int i = 0; i<c.getCount(); i++){
-                String nom=c.getString(c.getColumnIndex("Recette"));
+                String nom=c.getString(c.getColumnIndex("NomRecette"));
                 Cursor c2= db.query("Recette", null, "NomRecette=\""+nom+"\"", null, null, null, null);
                 if(c2.moveToFirst()){
                     for(int j=0; j< c2.getCount() && res.size() <= tabSize; j++){
@@ -532,7 +532,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
     }
     public Cursor getRecipeInfo (String recipeName){
         SQLiteDatabase db = getReadableDatabase();
-        Cursor c = db.query("Informations",new String[]{"*"},("NomRecette="+recipeName) ,null,null,null,null);
+        Cursor c = db.query("Informations",new String[]{"*"},("NomRecette=\""+recipeName+"\"") ,null,null,null,null);
         return c;
     }
 }
