@@ -104,7 +104,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         d.bindString(1,"macaroni au fromage");
         d.bindString(2,"plat");
         d.execute();
-        d.bindString(1,"spahetti bolognaise");
+        d.bindString(1,"spaghetti bolognaise");
         d.bindString(2,"plat");
         d.execute();
         d.bindString(1,"salade césar");
@@ -119,7 +119,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         d.bindString(1,"gaufre belge");
         d.bindString(2,"dessert");
         d.execute();
-        d.bindString(1,"chocolat chaud de noell");
+        d.bindString(1,"chocolat chaud de noel");
         d.bindString(2,"beverage");
         d.execute();
         d.bindString(1,"curry japonais");
@@ -137,7 +137,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         d.bindString(1,"thé glacé thaï");
         d.bindString(2,"beverage");
         d.execute();
-        d.bindString(1,"crepe sucree");
+        d.bindString(1,"crepes sucree");
         d.bindString(2,"dessert");
         d.execute();
         d.bindString(1,"boisson saine et sans allergènes");
@@ -220,7 +220,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         r.bindString(5,"grecque");
         r.execute();
         r.bindString(1,"mousse au chocolat");
-        r.bindString(2,"moussechocolat");
+        r.bindString(2,"mac");
         r.bindString(3,"séparer les blancs des jaunes d'oeufs.\n" +
                 "\n" +
                 "faire ramollir le chocolat dans une casserole au bain-marie. \n" +
@@ -813,39 +813,39 @@ public class SQLiteManager extends SQLiteOpenHelper {
         l.bindString(2,"thé thaï");
         l.bindString(3,"1");
         l.execute();
-        l.bindString(1,"crepe sucree");
+        l.bindString(1,"crepes sucree");
         l.bindString(2,"farine");
         l.bindString(3,"250");
         l.execute();
-        l.bindString(1,"crepe sucree");
+        l.bindString(1,"crepes sucree");
         l.bindString(2,"oeufs");
         l.bindString(3,"4");
         l.execute();
-        l.bindString(1,"crepe sucree");
+        l.bindString(1,"crepes sucree");
         l.bindString(2,"lait");
         l.bindString(3,"50");
         l.execute();
-        l.bindString(1,"crepe sucree");
+        l.bindString(1,"crepes sucree");
         l.bindString(2,"beurre");
         l.bindString(3,"50");
         l.execute();
-        l.bindString(1,"crepe sucree");
+        l.bindString(1,"crepes sucree");
         l.bindString(2,"sucre en poudre");
         l.bindString(3,"85");
         l.execute();
-        l.bindString(1,"crepe sucree");
+        l.bindString(1,"crepes sucree");
         l.bindString(2,"sucre de canne");
         l.bindString(3,"10");
         l.execute();
-        l.bindString(1,"crepe sucree");
+        l.bindString(1,"crepes sucree");
         l.bindString(2,"sucre vanillé");
         l.bindString(3,"5");
         l.execute();
-        l.bindString(1,"crepe sucree");
+        l.bindString(1,"crepes sucree");
         l.bindString(2,"cognac");
         l.bindString(3,"15");
         l.execute();
-        l.bindString(1,"crepe sucree");
+        l.bindString(1,"crepes sucree");
         l.bindString(2,"sel");
         l.bindString(3,"1");
         l.execute();
@@ -1129,7 +1129,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         i.bindString(5,"0");
         i.bindString(6,"4");
         i.execute();
-        i.bindString(1,"chocolate chaud de noel");
+        i.bindString(1,"chocolat chaud de noel");
         i.bindString(2,"ne prenez point froid");
         i.bindString(3,"moyen");
         i.bindString(4,"10");
@@ -1192,13 +1192,6 @@ public class SQLiteManager extends SQLiteOpenHelper {
         i.bindString(5,"30");
         i.bindString(6,"4");
         i.execute();
-        i.bindString(1,"soupe à l'oignon");
-        i.bindString(2,"réchauffez votre coeur");
-        i.bindString(3,"moyen");
-        i.bindString(4,"30");
-        i.bindString(5,"40");
-        i.bindString(6,"4");
-        i.execute();
         i.bindString(1,"perle de coco");
         i.bindString(2,"l'été toute l'année");
         i.bindString(3,"moyen");
@@ -1255,6 +1248,14 @@ public class SQLiteManager extends SQLiteOpenHelper {
         i.bindString(5,"0");
         i.bindString(6,"1");
         i.execute();
+        i.bindString(1,"salade césar");
+        i.bindString(2,"plus que croquant");
+        i.bindString(3,"facile");
+        i.bindString(4,"20");
+        i.bindString(5,"0");
+        i.bindString(6,"4");
+        i.execute();
+
 
 
 
