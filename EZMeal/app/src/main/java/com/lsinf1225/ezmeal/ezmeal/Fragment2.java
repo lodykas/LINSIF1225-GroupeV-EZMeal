@@ -183,7 +183,6 @@ public class Fragment2 extends Fragment {
         app.add("Other origine");
 
         List<String> dishes= new ArrayList<String>();
-        dishes.add("Pasta");
         dishes.add("Meat");
         dishes.add("Fish");
         dishes.add("Vegetarian");

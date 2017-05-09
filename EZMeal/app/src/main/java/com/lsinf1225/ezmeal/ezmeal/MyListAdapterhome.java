@@ -29,9 +29,9 @@ public class MyListAdapterhome extends BaseAdapter {
             r[2] = temp[0];
             temp = h.getRecipe(2,"Catégories",new String[]{"NomRecette"},"Catégorie","dessert");
             r[3] = temp[0];
-            temp = h.getRecipe(1,"Recette",new String[]{"NomRecette"},"NomRecette","boisson saine et sans allergènes");
+            temp = h.getRecipe(1,"Recette",new String[]{"NomRecette"},"NomRecette","Boisson saine et sans allergènes");
             r[4] = temp[0];
-            temp = h.getRecipe(1,"Recette",new String[]{"NomRecette"},"NomRecette","granola maison");
+            temp = h.getRecipe(1,"Recette",new String[]{"NomRecette"},"NomRecette","Granola maison");
             r[5] = temp[0];
         }
     }
