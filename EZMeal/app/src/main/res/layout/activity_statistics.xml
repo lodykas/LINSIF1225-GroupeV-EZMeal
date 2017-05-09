@@ -69,7 +69,7 @@
         android:layout_marginLeft="44dp"
         android:layout_marginStart="44dp"
         android:layout_marginTop="31dp"
-        android:text="preferential origin :" />
+        android:text="Preferential origin :" />
 
     <TextView
         android:id="@+id/textView7"

@@ -52,31 +52,31 @@ public class SQLiteManager extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Utilisateur\" (\"Usermail\" PRIMARY KEY,\"Résidence\" NOT NULL,\"PaysDOrigine\" NOT NULL,\"MotDePasse\" NOT NULL,\"DateDeNaissance\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Recommandations\" (\"Usermail\" NOT NULL,\"Recette\" NOT NULL);");
-        SQLiteStatement s = db.compileStatement("INSERT INTO \"Recommandations\"(\"Usermail\",\"Recette\") VALUES(?,?)");
-        s.bindString(1,"blabla");
-        s.bindString(2,"soupe à l'oignon");
-        s.execute();
-        s.bindString(1,"blabla");
-        s.bindString(2,"macaroni au fromage");
-        s.execute();
-        s.bindString(1,"blabla");
-        s.bindString(2,"spaghetti bolognaise");
-        s.execute();
-        s.bindString(1,"blabla");
-        s.bindString(2,"salade césar");
-        s.execute();
-        s.bindString(1,"a");
-        s.bindString(2,"soupe à l'oignon");
-        s.execute();
-        s.bindString(1,"a");
-        s.bindString(2,"macaroni au fromage");
-        s.execute();
-        s.bindString(1,"a");
-        s.bindString(2,"spaghetti bolognaise");
-        s.execute();
-        s.bindString(1,"usermail");
-        s.bindString(2,"foire de légumes");
-        s.execute();
+        //SQLiteStatement s = db.compileStatement("INSERT INTO \"Recommandations\"(\"Usermail\",\"Recette\") VALUES(?,?)");
+        //s.bindString(1,"blabla");
+       // s.bindString(2,"soupe à l'oignon");
+       // s.execute();
+        //s.bindString(1,"blabla");
+       // s.bindString(2,"macaroni au fromage");
+       // s.execute();
+       // s.bindString(1,"blabla");
+       // s.bindString(2,"spaghetti bolognaise");
+       // s.execute();
+       // s.bindString(1,"blabla");
+       // s.bindString(2,"salade césar");
+       // s.execute();
+        //s.bindString(1,"a");
+       // s.bindString(2,"soupe à l'oignon");
+        //s.execute();
+        //s.bindString(1,"a");
+        //s.bindString(2,"macaroni au fromage");
+        //s.execute();
+       // s.bindString(1,"a");
+       // s.bindString(2,"spaghetti bolognaise");
+        //s.execute();
+       // s.bindString(1,"usermail");
+       // s.bindString(2,"foire de légumes");
+       // s.execute();
 
 
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Effectués\" (\"Recette\" NOT NULL, \"Username\" NOT NULL);");
@@ -92,7 +92,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Recette\" ( _id INTEGER PRIMARY KEY AUTOINCREMENT,\"NomRecette\" NOT NULL,\"Image\" NOT NULL,\"Instructions\" NOT NULL,\"DateDAjout\" NOT NULL,\"Origine\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Catégories\" (\"NomRecette\" NOT NULL,\"Catégorie\" NOT NULL);");
         SQLiteStatement d= db.compileStatement("INSERT INTO\"Catégories\"(\"NomRecette\",\"Catégorie\") VALUES(?,?)");
-        d.bindString(1,"milshake au fruit rouges");
+        d.bindString(1,"milshake aux fruits rouges");
         d.bindString(2,"beverage");
         d.execute();
         d.bindString(1,"mojito");
@@ -110,9 +110,6 @@ public class SQLiteManager extends SQLiteOpenHelper {
         d.bindString(1,"salade césar");
         d.bindString(2,"entree");
         d.execute();
-        d.bindString(1,"salade césar");
-        d.bindString(2,"plat");
-        d.execute();
         d.bindString(1,"mousse au chocolat");
         d.bindString(2,"dessert");
         d.execute();
@@ -122,7 +119,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         d.bindString(1,"gaufre belge");
         d.bindString(2,"dessert");
         d.execute();
-        d.bindString(1,"chocolat chaud");
+        d.bindString(1,"chocolat chaud de noell");
         d.bindString(2,"beverage");
         d.execute();
         d.bindString(1,"curry japonais");
@@ -143,11 +140,29 @@ public class SQLiteManager extends SQLiteOpenHelper {
         d.bindString(1,"crepe sucree");
         d.bindString(2,"dessert");
         d.execute();
-        d.bindString(1,"mojito");
+        d.bindString(1,"boisson saine et sans allergènes");
         d.bindString(2,"beverage");
         d.execute();
-        d.bindString(1,"boisson saine et sans allergènes");
-        d.bindString(2,"bevrage");
+        d.bindString(1,"mini pizza");
+        d.bindString(2,"entree");
+        d.execute();
+        d.bindString(1,"oignon rings");
+        d.bindString(2,"entree");
+        d.execute();
+        d.bindString(1,"fish and chips");
+        d.bindString(2,"plat");
+        d.execute();
+        d.bindString(1,"brochette satay");
+        d.bindString(2,"entree");
+        d.execute();
+        d.bindString(1,"cake au banane");
+        d.bindString(2,"dessert");
+        d.execute();
+        d.bindString(1,"perle de coco");
+        d.bindString(2,"dessert");
+        d.execute();
+        d.bindString(1,"meringue italienne");
+        d.bindString(2,"dessert");
         d.execute();
 
 
@@ -191,7 +206,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         r.bindString(5,"italienne");
         r.execute();
         r.bindString(1,"salade césar");
-        r.bindString(2,"soupeoignon");
+        r.bindString(2,"saladecesar");
         r.bindString(3,"préchauffez votre four à 210-220°C . \n" +
                 "détachez les feuilles de salade, lavez-les, découpez-les en lamelles, essorez-les. \n" +
                 "coupez le pain en dés. Faites-les griller au four en surveillant bien la cuisson car c'est très rapide (environ 1 à 2 mn). \n" +
@@ -339,6 +354,89 @@ public class SQLiteManager extends SQLiteOpenHelper {
         r.bindString(4,"17/04/17");
         r.bindString(5,"africaine");
         r.execute();
+        r.bindString(1,"mini pizza");
+        r.bindString(2,"minipizza");
+        r.bindString(3,"préchauffer le four à 220°C.\n" +
+                "disposez sous la grille du four une feuille de papier aluminium, afin de le préserver si l'huile ou le fromage coule...\n" +
+                "disposez sur cette même grille vos pains 'pitta', face lisse au-dessus.\n" +
+                "sur chaque pain, mettre une cuillère à soupe de chair de tomate, saler, poivrer (ajouter éventuellement les herbes de provence).\n" +
+                "ensuite, ajouter le jambon émincé, les champignons émincés et disposer quelques olives.\n" +
+                "recouvrir chaque pizza de fines tranches de mozzarella, y verser un filet d'huile d'olive.\n" +
+                "cuire à four chaud une petite demi-heure.\n" +
+                "vous pouvez bien entendu varier les garnitures à l'infini ! (poivrons, anchois, coeurs d'artichauts, saucisson,ananas...)");
+        r.bindString(4,"18/04/2017");
+        r.bindString(5,"italienne");
+        r.execute();
+        r.bindString(1,"oignon rings");
+        r.bindString(2,"oignonrings");
+        r.bindString(3,"peler et trancher les oignons, séparer les rondelles d'oignons.\n" +
+                "pour la pâte à frire :\n" +
+                "mélanger la farine, le jaune d'œuf, le lait, l'huile et le sel jusqu'à obtenir une pâte homogène.\n" +
+                "incorporer délicatement le blanc d'œuf monté en neige. \n" +
+                "tremper les oignons dans la pâte de manière à bien les recouvrir.\n" +
+                "puis, les faire frire dans une friteuse ou une poêle remplie d'huile.\n" +
+                "déposer les onion rings sur du sopalin, pour enlever le trop plein d'huile.\n" +
+                "déguster, en trempant les onion rings dans la sauce choisie.\n");
+        r.bindString(4,"19/04/2017");
+        r.bindString(5,"americaine");
+        r.execute();
+        r.bindString(1,"fish and chips");
+        r.bindString(2,"fishchips");
+        r.bindString(3,"faire chauffer votre friteuse/votre poêle avec l'huile (huile bien chaude).\n" +
+                "couper le poisson dans la largeur pour obtenir des minis pavés de poisson. réserver au frais.\n" +
+                "ciseler du persil et l'échalote.\n" +
+                "ajouter dans la quantité désirée du fromage blanc dans un bol, incorporer le persil et l'échalote préalablement ciselée et ajouter le piment/paprika, le sel et le poivre.\n" +
+                "réserver au frais.\n" +
+                "battre l’œuf entier dans un récipient et mettre la farine dans un plat.\n" +
+                "tremper les tranches de poisson dans l’œuf battu et mettre dans la farine.\n" +
+                "faire frire le poisson jusqu'a obtenir coloration. Une fois cuit, enlever l’excès d'huile avec un essuie-tout.");
+        r.bindString(4,"20/04/2017");
+        r.bindString(5,"anglaise");
+        r.execute();
+        r.bindString(1,"brochette satay");
+        r.bindString(2,"satay");
+        r.bindString(3,"mettre le poulet dans la marinade pendant au moins 2h.\n" +
+                "sauce : broyer les cacahuètes (du beurre d'arachide peut faire l'affaire).\n" +
+                "verser la moitié du lait dans une casserole, ajouter le curry, chauffer à feu doux pendant 3 min.\n" +
+                "ajouter la crème de cacahuète, le sucre, le jus de citron et le reste du lait de coco. mélanger bien et laisser cuire 20 à 30 mn\n" +
+                "faire cuire vos brochettes de poulet. servir avec la sauce et une salade de concombre.\n" +
+                "on peut tout aussi bien utiliser du porc ou du boeuf en brochettes.\n");
+        r.bindString(4,"21/04/2017");
+        r.bindString(5,"asie");
+        r.execute();
+        r.bindString(1,"cake au banane");
+        r.bindString(2,"cakebanane");
+        r.bindString(3,"beurrez un moule à cake avec un peu de beurre. \n" +
+                "préchauffez le four à 180°C (thermostat 6).\n" +
+                "râpez le zeste de citron, puis pressez-le pour en extraire le jus. \n" +
+                "ecrasez ensuite le beurre avec une fourchettte, puis ajoutez-lui au fur et à mesure, le sucre, le sucre vanillé, le zeste du citron et les oeufs battus en omelette.\n" +
+                "pelez les bananes, coupez-les en petites rondelles, et arrosez-les du jus du citron, puis écrasez-les à la fourchette. \n" +
+                "ajoutez la purée ainsi obtenue à la préparation aux oeufs, puis la farine et la levure; vous devez obtenir une pâte bien consistante. \n" +
+                "versez le tout dans le moule, et enfournez pendant 45 min.\n" +
+                "pour vérifier la cuisson du gâteau, piquez-le avec un couteau avant de le sortir du four : si la lame ressort bien sèche, c'est que le gâteau est cuit.\n" +
+                "laissez-le reposer 5 min dans le four éteint avant de le démouler. dégustez-le froid.");
+        r.bindString(4,"22/04/2017");
+        r.bindString(5,"français");
+        r.execute();
+        r.bindString(1,"perle de coco");
+        r.bindString(2,"boulecoco");
+        r.bindString(3,"verser le lait de coco et le verre d'eau dans une casserole et faire chauffer. Ecraser les bananes et mettre de côté. \n" +
+                "quand le mélange est chaud, versez environ la moitié du sachet de tapioca ainsi que les bananes écrasées. mélanger sans cesser de remuer jusqu'à ce que le tapioca soit devenu transparent. \n" +
+                "truc : si le tapioca à collé au fond de la casserole, mettre à tremper toute la nuit dans de l'eau bien chaude.\n" +
+                "confectionner des boules de la taille voulue. on peut les rouler dans de la noix de coco râpée ou du sucre glace.");
+        r.bindString(4,"23/04/2017");
+        r.bindString(5,"asiatique");
+        r.execute();
+        r.bindString(1,"meringue italienne");
+        r.bindString(2,"meringue");
+        r.bindString(3,"dans un saladier, monter les blancs en neige avec le sucre et le sel. \n" +
+                "réserver au frais 48 h.\n" +
+                "former des meringues avec une poche à douille.\n" +
+                "enfourner à 120°C (thermostat 4) pendant 30 min.\n");
+        r.bindString(4,"24/04/2017");
+        r.bindString(5,"italienne");
+        r.execute();
+
 
 
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Liste\" (\"NomRecette\" NOT NULL,\"Ingrédient\" NOT NULL,\"Quantité\" NOT NULL);");
@@ -779,6 +877,208 @@ public class SQLiteManager extends SQLiteOpenHelper {
         l.bindString(2,"menthe");
         l.bindString(3,"5");
         l.execute();
+        l.bindString(1,"mini pizza");
+        l.bindString(2,"pain pitta");
+        l.bindString(3,"4");
+        l.execute();
+        l.bindString(1,"mini pizza");
+        l.bindString(2,"tomate");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"mini pizza");
+        l.bindString(2,"jambon");
+        l.bindString(3,"4");
+        l.execute();
+        l.bindString(1,"mini pizza");
+        l.bindString(2,"champignons");
+        l.bindString(3,"4");
+        l.execute();
+        l.bindString(1,"mini pizza");
+        l.bindString(2,"olive noires");
+        l.bindString(3,"416");
+        l.execute();
+        l.bindString(1,"mini pizza");
+        l.bindString(2,"mozarella");
+        l.bindString(3,"2");
+        l.execute();
+        l.bindString(1,"mini pizza");
+        l.bindString(2,"huile d'olive");
+        l.bindString(3,"10");
+        l.execute();
+        l.bindString(1,"mini pizza");
+        l.bindString(2,"sel");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"mini pizza");
+        l.bindString(2,"poivre");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"mini pizza");
+        l.bindString(2,"herbes de provence");
+        l.bindString(3,"4");
+        l.execute();
+        l.bindString(1,"oignon rings");
+        l.bindString(2,"oignon");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"oignon rings");
+        l.bindString(2,"farine");
+        l.bindString(3,"100");
+        l.execute();
+        l.bindString(1,"oignon rings");
+        l.bindString(2,"oeufs");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"oignon rings");
+        l.bindString(2,"sel");
+        l.bindString(3, "1");
+        l.execute();
+        l.bindString(1,"oignon rings");
+        l.bindString(2,"lait");
+        l.bindString(3,"10");
+        l.execute();
+        l.bindString(1,"oignon rings");
+        l.bindString(2,"huile");
+        l.bindString(3,"10");
+        l.execute();
+        l.bindString(1,"oignon rings");
+        l.bindString(2,"sauce");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"fish and chips");
+        l.bindString(2,"oeuf");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"fish and chips");
+        l.bindString(2,"farine");
+        l.bindString(3,"20");
+        l.execute();
+        l.bindString(1,"fish and chips");
+        l.bindString(2,"fromage blanc");
+        l.bindString(3,"20");
+        l.execute();
+        l.bindString(1,"fish and chips");
+        l.bindString(2,"échalote");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"fish and chips");
+        l.bindString(2,"piment");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"fish and chips");
+        l.bindString(2,"paprika");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"fish and chips");
+        l.bindString(2,"persil");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"fish and chips");
+        l.bindString(2,"sel");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"fish and chips");
+        l.bindString(2,"poivre");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"brochette satay");
+        l.bindString(2,"poulet");
+        l.bindString(3,"500");
+        l.execute();
+        l.bindString(1,"brochette satay");
+        l.bindString(2,"sucre brun");
+        l.bindString(3,"10");
+        l.execute();
+        l.bindString(1,"brochette satay");
+        l.bindString(2,"coriandre");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"brochette satay");
+        l.bindString(2,"curcuma");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"brochette satay");
+        l.bindString(2,"cumin en poudre");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"brochette satay");
+        l.bindString(2,"lait de coco");
+        l.bindString(3,"18");
+        l.execute();
+        l.bindString(1,"brochette satay");
+        l.bindString(2,"cacahuètes");
+        l.bindString(3,"50");
+        l.execute();
+        l.bindString(1,"brochette satay");
+        l.bindString(2,"sel");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"brochette satay");
+        l.bindString(2,"pâte de curry rouge");
+        l.bindString(3,"2");
+        l.execute();
+        l.bindString(1,"brochette satay");
+        l.bindString(2,"citron");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"cake au banane");
+        l.bindString(2,"bananes");
+        l.bindString(3,"3");
+        l.execute();
+        l.bindString(1,"cake au banane");
+        l.bindString(2,"farine");
+        l.bindString(3,"200");
+        l.execute();
+        l.bindString(1,"cake au banane");
+        l.bindString(2,"sucre en poudre");
+        l.bindString(3,"200");
+        l.execute();
+        l.bindString(1,"cake au banane");
+        l.bindString(2,"beurre");
+        l.bindString(3,"100");
+        l.execute();
+        l.bindString(1,"cake au banane");
+        l.bindString(2,"oeufs");
+        l.bindString(3,"3");
+        l.execute();
+        l.bindString(1,"cake au banane");
+        l.bindString(2,"sucre vanillé");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"cake au banane");
+        l.bindString(2,"citron");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"perle de coco");
+        l.bindString(2,"tapioca");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"perle de coco");
+        l.bindString(2,"lait de coco");
+        l.bindString(3,"1");
+        l.execute();
+        l.bindString(1,"perle de coco");
+        l.bindString(2,"bananes");
+        l.bindString(3,"2");
+        l.execute();
+        l.bindString(1,"perle de coco");
+        l.bindString(2,"eau");
+        l.bindString(3,"30");
+        l.execute();
+        l.bindString(1,"perle de coco");
+        l.bindString(2,"sucre en poudre");
+        l.bindString(3,"30");
+        l.execute();
+        l.bindString(1,"meringue italienne");
+        l.bindString(2,"sucre semoule");
+        l.bindString(3,"150");
+        l.execute();
+        l.bindString(1,"meringue italienne");
+        l.bindString(2,"sel");
+        l.bindString(3,"1");
+        l.execute();
+
+
 
 
 
