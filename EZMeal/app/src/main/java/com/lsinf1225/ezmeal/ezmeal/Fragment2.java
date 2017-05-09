@@ -16,6 +16,8 @@ import java.util.List;
 import android.widget.ExpandableListView;
 import android.widget.Toast;
 
+import static android.R.attr.data;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -79,54 +81,54 @@ public class Fragment2 extends Fragment {
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_food, container, false);
         if (mListener != null) {
-            //mListener.onFragmentInteraction("Fragment 2");
+            mListener.onFragmentInteraction("Fragment 2");
         }
 
 
         // get the listview
         expListView = (ExpandableListView) view.findViewById(R.id.lvExp);
 
-        // preparing list data
+       // preparing list data
         prepareListData();
 
         listAdapter = new ExpandableListAdapter(getContext(), listDataHeader, listDataChild);
 
-        // setting list adapter
+         //setting list adapter
         expListView.setAdapter(listAdapter);
 
 
-        // Listview Group click listener
+        //Listview Group click listener
         expListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
 
             @Override
             public boolean onGroupClick(ExpandableListView parent, View v,
                                         int groupPosition, long id) {
-                // Toast.makeText(getApplicationContext(),
-                // "Group Clicked " + listDataHeader.get(groupPosition),
-                // Toast.LENGTH_SHORT).show();
+                 //Toast.makeText(getContext(),
+                 //"Group Clicked " + listDataHeader.get(groupPosition),
+                 //Toast.LENGTH_SHORT).show();
                 return false;
             }
         });
 
-        // Listview Group expanded listener
+         //Listview Group expanded listener
         expListView.setOnGroupExpandListener(new ExpandableListView.OnGroupExpandListener() {
 
             @Override
             public void onGroupExpand(int groupPosition) {
                 //Toast.makeText(getContext(),
-                      //  listDataHeader.get(groupPosition) + " Expanded",
-                       // Toast.LENGTH_SHORT).show();
+                      // listDataHeader.get(groupPosition) + " Expanded",
+                      // Toast.LENGTH_SHORT).show();
             }
         });
 
-        // Listview Group collasped listener
+         //Listview Group collasped listener
         expListView.setOnGroupCollapseListener(new ExpandableListView.OnGroupCollapseListener() {
 
             @Override
             public void onGroupCollapse(int groupPosition) {
-               // Toast.makeText(getContext(),
-                       // listDataHeader.get(groupPosition) + " Collapsed",
-                        //Toast.LENGTH_SHORT).show();
+                //Toast.makeText(getContext(),
+                       //listDataHeader.get(groupPosition) + " Collapsed",
+                       // Toast.LENGTH_SHORT).show();
 
             }
         });
@@ -137,15 +139,16 @@ public class Fragment2 extends Fragment {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition, long id) {
-                // TODO Auto-generated method stub
-                //Toast.makeText(
-                       // getContext(),
-                        //listDataHeader.get(groupPosition)
-                               // + " : "
-                               // + listDataChild.get(
-                                //listDataHeader.get(groupPosition)).get(
-                                //childPosition), Toast.LENGTH_SHORT)
-                       // .show();
+                 //TODO Auto-generated method stub
+                Toast.makeText(
+                        getContext(),
+                        listDataHeader.get(groupPosition)
+                                + " : "
+                                + listDataChild.get(
+                                        listDataHeader.get(groupPosition)).get(
+                                childPosition), Toast.LENGTH_SHORT)
+                        .show();
+
                 return false;
             }
         });

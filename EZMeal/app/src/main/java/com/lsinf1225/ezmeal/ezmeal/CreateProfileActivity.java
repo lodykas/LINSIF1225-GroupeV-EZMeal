@@ -100,6 +100,10 @@ public class CreateProfileActivity extends AppCompatActivity {
                     if(c.isChecked()){
                         db.addAllergen(usermail, c.getText().toString());
                     }
+                    c = (CheckBox) findViewById(R.id.soy);
+                    if(c.isChecked()){
+                        db.addAllergen(usermail, c.getText().toString());
+                    }
 
                     Toast.makeText(getApplicationContext(), getResources().getString(R.string.createsuccess,usermail), 3000).show();
                     Intent retour = new Intent(getApplicationContext(), LoginActivity.class);

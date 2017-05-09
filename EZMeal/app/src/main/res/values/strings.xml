@@ -16,6 +16,7 @@
         <item>Peanuts</item>
         <item>Banana</item>
         <item>Eggs</item>
+        <item>Soy</item>
     </string-array>
     <string name="allergens">Allergens</string>
     <string name="lactose">Lactose</string>

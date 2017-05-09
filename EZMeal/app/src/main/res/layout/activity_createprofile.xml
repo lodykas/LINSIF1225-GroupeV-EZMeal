@@ -214,5 +214,12 @@
         android:layout_alignLeft="@+id/textView"
         android:layout_below="@id/peanuts"
         android:text="@string/lactose"/>
+    <CheckBox
+        android:id="@+id/soy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/peanuts"
+        android:layout_below="@id/eggs"
+        android:text="Soy"/>
 
 </RelativeLayout>
