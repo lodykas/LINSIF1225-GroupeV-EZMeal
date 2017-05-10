@@ -34,9 +34,9 @@ public class SearchableActivity extends AppCompatActivity{
 
             ListView l = (ListView) findViewById(R.id.listsearch);
             SQLiteManager db = new SQLiteManager(getApplicationContext());
-            Cursor c = db.research(query);
-            if c.getCount() > 0 && c != null) {
-                CursorAdapter c = new CursorAdapter(getApplicationContext(), c) {
+            Cursor cu = db.research(query);
+            if( cu.getCount() > 0 && cu != null) {
+                CursorAdapter c = new CursorAdapter(getApplicationContext(), cu) {
                     @Override
                     public View newView(Context context, Cursor cursor, ViewGroup parent) {
                         return LayoutInflater.from(context).inflate(R.layout.list_acceuil_recette, parent, false);
