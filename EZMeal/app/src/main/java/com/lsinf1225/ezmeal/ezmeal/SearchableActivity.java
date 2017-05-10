@@ -35,7 +35,7 @@ public class SearchableActivity extends AppCompatActivity{
             ListView l = (ListView) findViewById(R.id.listsearch);
             SQLiteManager db = new SQLiteManager(getApplicationContext());
             Cursor c = db.research(query);
-            if c.getCount() > 0 && c != null) {
+            if (c.getCount() > 0 && c != null) {
                 CursorAdapter c = new CursorAdapter(getApplicationContext(), c) {
                     @Override
                     public View newView(Context context, Cursor cursor, ViewGroup parent) {
