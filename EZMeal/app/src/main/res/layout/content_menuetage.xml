@@ -12,9 +12,11 @@
     <!-- Note : This is the container Frame Layout for all the fragmetns-->
     <RelativeLayout
         android:id="@+id/mainFrame"
-        android:layout_width="584dp"
-        android:layout_height="871dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"></RelativeLayout>
+        tools:layout_editor_absoluteY="8dp">
+
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

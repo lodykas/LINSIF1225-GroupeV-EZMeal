@@ -86,9 +86,8 @@
         android:id="@+id/button_stat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:text="CALCULATE"
         android:layout_alignParentBottom="true"
-        android:layout_toRightOf="@+id/textView6"
-        android:layout_toEndOf="@+id/textView6" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:text="CALCULATE" />
 </RelativeLayout>

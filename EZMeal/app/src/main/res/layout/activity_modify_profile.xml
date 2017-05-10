@@ -9,50 +9,49 @@
         android:id="@+id/passwordedit2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/passwordlog2"
+        android:layout_toRightOf="@+id/button201"
         android:background="@color/white"
         android:hint="@string/password"
         android:inputType="textPassword"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:layout_alignBottom="@+id/passwordlog"
-        android:layout_alignLeft="@+id/spinner1"
-        android:layout_alignStart="@+id/spinner1" />
+        android:paddingRight="10dp" />
 
     <TextView
         android:id="@+id/passwordlog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/spinner1"
+        android:layout_above="@+id/button201"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginBottom="130dp"
+        android:layout_marginBottom="600dp"
         android:layout_marginLeft="22dp"
         android:layout_marginStart="22dp"
         android:text="Write your new password " />
-    <EditText
-           android:id="@+id/passwordedit"
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:background="@color/white"
-           android:hint="@string/password"
-            android:inputType="textPassword"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:layout_alignBottom="@+id/passwordlog2"
-            android:layout_alignLeft="@+id/spinner1"
-           android:layout_alignStart="@+id/spinner1" />
 
-       <TextView
-            android:id="@+id/passwordlog2"
-            android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-            android:text="Write your new password "
-           android:layout_marginLeft="22dp"
-           android:layout_marginStart="22dp"
-            android:layout_above="@+id/spinner1"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginBottom="70dp" />
+    <EditText
+        android:id="@+id/passwordedit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/passwordlog"
+        android:layout_toEndOf="@+id/button201"
+        android:background="@color/white"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+
+    <TextView
+        android:id="@+id/passwordlog2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button201"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="550dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:text="Write your new password " />
 
 
     <!-- get birthday de user-->
@@ -60,11 +59,10 @@
         android:id="@+id/spinner1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button201"
-        android:layout_alignParentBottom="false"
+
+        android:layout_alignBaseline="@+id/country"
+        android:layout_marginBottom="50dp"
         android:layout_toEndOf="@+id/button201"
-        android:layout_toRightOf="@+id/button201"
-        android:layout_marginBottom="40dp"
         android:paddingBottom="0dp">
 
 
@@ -74,14 +72,16 @@
         android:id="@+id/country"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/spinner1"
 
-        android:layout_marginBottom="0dp"
-        android:text="Choose your new living country"
-        android:layout_alignRight="@+id/passwordlog2"
-        android:layout_alignEnd="@+id/passwordlog2"
-        android:layout_alignLeft="@+id/passwordlog2"
-        android:layout_alignStart="@+id/passwordlog2" />
+        android:layout_above="@+id/button201"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="false"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="500dp"
+        android:layout_marginLeft="22dp"
+        android:layout_marginStart="22dp"
+        android:text="Choose your new living country" />
 
     <Button
         android:id="@+id/button201"
@@ -96,7 +96,6 @@
         android:id="@+id/Messageformodifprofil"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/passwordedit2"
         android:layout_alignLeft="@+id/passwordlog"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/spinner1"
