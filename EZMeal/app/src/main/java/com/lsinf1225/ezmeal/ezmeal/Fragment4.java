@@ -6,10 +6,6 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.TextView;
-
-import java.util.List;
 
 
 /**
@@ -61,7 +57,6 @@ public class Fragment4 extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
 
 
@@ -69,46 +64,7 @@ public class Fragment4 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view= inflater.inflate(R.layout.fragment_statistics, container, false);
-        Button b = (Button) view.findViewById(R.id.calculate);
-        b.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                SQLiteManager db = new SQLiteManager(getActivity().getApplication());
-                String usermail = getActivity().getIntent().getStringExtra("usermail");
-                TextView recipeshow = (TextView)getActivity().findViewById(R.id.MostRecipeShow);
-                List<String> Recipes = db.mostRecipe(usermail);
-                String mostRecipe = Recipes.get(0).toString();
-                recipeshow.setText(mostRecipe);
 
-                TextView ingredientshow = (TextView)getActivity().findViewById(R.id.MostIngredientShow);
-                List<String> Ingredients = db.mostIngredient(usermail);
-                String mostIngredient = Ingredients.get(0).toString();
-                ingredientshow.setText(mostIngredient);
-
-                TextView originshow = (TextView)getActivity().findViewById(R.id.OriginShow);
-                List<String> Origins = db.mostOrigin(usermail);
-                String mostOrigin = Origins.get(0).toString();
-                originshow.setText(mostOrigin);
-
-                TextView categoryshow = (TextView)getActivity().findViewById(R.id.CategoryShow);
-                List<String> Categorys = db.mostCategory(usermail);
-                String mostCategory = Categorys.get(0).toString();
-                categoryshow.setText(mostCategory);
-
-                TextView timeshow = (TextView)getActivity().findViewById(R.id.TimeShow);
-                List<String> Times = db.mostTime(usermail);
-                String mostTime = Times.get(0).toString();
-                timeshow.setText(mostTime);
-
-                TextView allergeneshow = (TextView)getActivity().findViewById(R.id.AllergeneShow);
-                List<String> Allergenes = db.AllergenesConsomm(usermail);
-                String allergenes = "";
-                for (int i=0; i<Allergenes.size(); i++) {
-                    allergenes += Allergenes.get(i) + " ";
-                }
-                allergeneshow.setText(allergenes);
-            }
-        });
         // NOTE : We are calling the onFragmentInteraction() declared in the MainActivity
         // ie we are sending "Fragment 1" as title parameter when fragment1 is activated
         if (mListener != null) {

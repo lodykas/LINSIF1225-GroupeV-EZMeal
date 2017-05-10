@@ -2120,6 +2120,10 @@ public class SQLiteManager extends SQLiteOpenHelper {
     {
         SQLiteDatabase db = getReadableDatabase();
         Cursor c = db.rawQuery("SELECT DISTINCT * FROM Recette C WHERE (instr(NomRecette,\""+query+"\") > 0 OR instr(Origine,\""+query+"\") > 0)",null);
+
+        //Cursor c = db.rawQuery("SELECT R.NomRecette, Image, Instructions, DateDajout, Origine FROM Recette R, Categorie C WHERE R.NomRecette=C.NomRecette ",null);
+        //Cursor c = db.query("\"Recette\"",new String[]{"*"},("instr(\"NomRecette\",\""+query+"\") > 0 ") ,null,null,null,null);
+
         return c;
     }
     public Recipe[] getRecipe(int tabSize, String usermail){
@@ -2214,126 +2218,6 @@ public class SQLiteManager extends SQLiteOpenHelper {
         Recipe[] rt = new Recipe[res.size()];
         return res.toArray(rt);
     }
-
-    public List<String> mostRecipe(String usermail){
-        List<String> res = new ArrayList<String>();
-        List<String> ret = new ArrayList<>();
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor c =db.query("\"Effectués\"",new String[]{"\"Recette\""},("\"Username\" = \"" + usermail +"\"") ,null,null,null,null);
-        if(c.moveToFirst()){
-            for(int i = 0; i<c.getCount(); i++){
-                res.add(c.getString(c.getColumnIndex("Recette")));
-                c.moveToNext();
-            }
-        }
-        c.close();
-        int count=0;
-        int comparateur=0;
-        for (int i=0; i<res.size(); i++) {
-            count=0;
-            for (int j=0; j<res.size(); j++) {
-                if(res.get(i).equals(res.get(j))) {
-                    count++;
-                }
-            }
-            if (count>comparateur) {
-                ret.clear();
-                ret.add(res.get(i));
-            }
-        }
-        return ret;
-    }
-
-    public List<String> mostIngredient(String usermail){
-        List<String> res = new ArrayList<String>();
-        List<String> ret = new ArrayList<>();
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor c =db.query("\"Consommés\"",new String[]{"\"Ingrédient\""},("\"Username\" = \"" + usermail +"\"") ,null,null,null,null);
-        if(c.moveToFirst()){
-            for(int i = 0; i<c.getCount(); i++){
-                res.add(c.getString(c.getColumnIndex("Ingrédient")));
-                c.moveToNext();
-            }
-        }
-        c.close();
-        int count=0;
-        int comparateur=0;
-        for (int i=0; i<res.size(); i++) {
-            count=0;
-            for (int j=0; j<res.size(); j++) {
-                if(res.get(i).equals(res.get(j))) {
-                    count++;
-                }
-            }
-            if (count>comparateur) {
-                ret.clear();
-                ret.add(res.get(i));
-            }
-        }
-        return ret;
-    }
-
-    public String getOriginRecipe(String recette) {
-        String ret = "";
-        List<String> res = new ArrayList<String>();
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor c =db.query("\"Recette\"",new String[]{"\"Origine\""},("\"NomRecette\" = \"" + recette +"\"") ,null,null,null,null);
-        if(c.moveToFirst()){
-            for(int i = 0; i<c.getCount(); i++){
-                res.add(c.getString(c.getColumnIndex("Origine")));
-                c.moveToNext();
-            }
-        }
-        c.close();
-        ret=res.get(0);
-        return ret;
-    }
-
-    public List<String> mostOrigin(String usermail){
-        List<String> res = new ArrayList<String>();
-        List<String> ret = new ArrayList<>();
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor c =db.query("\"Effectués\"",new String[]{"\"Recette\""},("\"Username\" = \"" + usermail +"\"") ,null,null,null,null);
-        if(c.moveToFirst()){
-            for(int i = 0; i<c.getCount(); i++){
-                res.add(c.getString(c.getColumnIndex("Recette")));
-                c.moveToNext();
-            }
-        }
-        c.close();
-        int count=0;
-        int comparateur=0;
-        for (int i=0; i<res.size(); i++) {
-            count=0;
-            for (int j=0; j<res.size(); j++) {
-                if(getOriginRecipe(res.get(i)).equals(getOriginRecipe(res.get(j)))) {
-                    count++;
-                }
-            }
-            if (count>comparateur) {
-                ret.clear();
-                ret.add(getOriginRecipe(res.get(i)));
-            }
-        }
-        return ret;
-    }
-
-    public String getCategoryRecipe(String recette) {
-        String ret = "";
-        List<String> res = new ArrayList<String>();
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor c =db.query("\"Catégories\"",new String[]{"\"Catégorie\""},("\"NomRecette\" = \"" + recette +"\"") ,null,null,null,null);
-        if(c.moveToFirst()){
-            for(int i = 0; i<c.getCount(); i++){
-                res.add(c.getString(c.getColumnIndex("Catégorie")));
-                c.moveToNext();
-            }
-        }
-        c.close();
-        ret=res.get(0);
-        return ret;
-    }
-
     public Recipe[] getRecipeCat(String cat,String scat){
 
         ArrayList<Recipe> res=new ArrayList<Recipe>();
@@ -2364,144 +2248,14 @@ public class SQLiteManager extends SQLiteOpenHelper {
             }
         }
         c.close();
-        db.close();
         Recipe[] rt = new Recipe[res.size()];
         return res.toArray(rt);
     }
-
-    public List<String> mostCategory(String usermail){
-        List<String> res = new ArrayList<String>();
-        List<String> ret = new ArrayList<>();
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor c =db.query("\"Effectués\"",new String[]{"\"Recette\""},("\"Username\" = \"" + usermail +"\"") ,null,null,null,null);
-        if(c.moveToFirst()){
-            for(int i = 0; i<c.getCount(); i++){
-                res.add(c.getString(c.getColumnIndex("Recette")));
-                c.moveToNext();
-            }
-        }
-        c.close();
-        int count=0;
-        int comparateur=0;
-        for (int i=0; i<res.size(); i++) {
-            count=0;
-            for (int j=0; j<res.size(); j++) {
-                if(getCategoryRecipe(res.get(i)).equals(getCategoryRecipe(res.get(j)))) {
-                    count++;
-                }
-            }
-            if (count>comparateur) {
-                ret.clear();
-                ret.add(getCategoryRecipe(res.get(i)));
-            }
-        }
-        return ret;
-    }
-
-    public String getTimeRecipe(String recette) {
-        String ret = "";
-        List<String> res = new ArrayList<String>();
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor c =getRecipeInfo(recette);
-        if(c.moveToFirst()){
-            for(int i = 0; i<c.getCount(); i++){
-                res.add(Integer.toString(Integer.parseInt(c.getString(c.getColumnIndex("TempsCuisson")))+Integer.parseInt(c.getString(c.getColumnIndex("TempsPreparation")))));
-                c.moveToNext();
-            }
-        }
-        c.close();
-        ret=res.get(0);
-        return ret;
-    }
-
-
-    public List<String> mostTime(String usermail){
-        List<String> res = new ArrayList<String>();
-        List<String> ret = new ArrayList<>();
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor c =db.query("\"Effectués\"",new String[]{"\"Recette\""},("\"Username\" = \"" + usermail +"\"") ,null,null,null,null);
-        if(c.moveToFirst()){
-            for(int i = 0; i<c.getCount(); i++){
-                res.add(c.getString(c.getColumnIndex("Recette")));
-                c.moveToNext();
-            }
-        }
-        c.close();
-        int count=0;
-        int comparateur=0;
-        for (int i=0; i<res.size(); i++) {
-            count=0;
-            for (int j=0; j<res.size(); j++) {
-                if(getTimeRecipe(res.get(i))==(getTimeRecipe(res.get(j)))) {
-                    count++;
-                }
-            }
-            if (count>comparateur) {
-                ret.clear();
-                ret.add(getTimeRecipe(res.get(i)));
-            }
-        }
-        return ret;
-    }
-
     public Cursor getRecipeInfo (String recipeName){
         SQLiteDatabase db = getReadableDatabase();
         Cursor c = db.rawQuery("SELECT * FROM Informations WHERE NomRecette=\""+recipeName+"\"",null);
         return c;
     }
 
-    public String getAllerIngrédient(String ingrédient) {
-        List<String> res = new ArrayList<>();
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor c =db.query("\"Ingrédients\"",new String[]{"\"Allergène\""},("\"Ingrédient\" = \"" + ingrédient +"\"") ,null,null,null,null);
-        if(c.moveToFirst()){
-            for(int i = 0; i<c.getCount(); i++){
-                res.add(c.getString(c.getColumnIndex("Allergène")));
-                c.moveToNext();
-            }
-        }
-        c.close();
-        return res.get(0);
-    }
-    public List<String> ListeIngredients(String recette) {
-        List<String> res = new ArrayList<>();
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor c =db.query("\"Liste\"",new String[]{"\"Ingrédient\""},("\"NomRecette\" = \"" + recette +"\"") ,null,null,null,null);
-        if(c.moveToFirst()){
-            for(int i = 0; i<c.getCount(); i++){
-                res.add(c.getString(c.getColumnIndex("Recette")));
-                c.moveToNext();
-            }
-        }
-        c.close();
-        return res;
-    }
-
-    public List<String> AllergenesConsomm(String usermail){
-        List<String> res = new ArrayList<String>();
-        List<String> ret = new ArrayList<>();
-        List<String> allerUsr = getAllergene(usermail);
-        SQLiteDatabase db = getReadableDatabase();
-        Cursor c =db.query("\"Effectués\"",new String[]{"\"Recette\""},("\"Username\" = \"" + usermail +"\"") ,null,null,null,null);
-        if(c.moveToFirst()){
-            for(int i = 0; i<c.getCount(); i++){
-                res.add(c.getString(c.getColumnIndex("Recette")));
-                c.moveToNext();
-            }
-        }
-        c.close();
-        List<String> ingr;
-        for (int i=0; i<res.size(); i++) {
-            ingr = ListeIngredients(res.get(i));
-            for (int j=0; j<ingr.size();j++) {
-                for (int k = 0; k < allerUsr.size(); k++) {
-                    if (getAllerIngrédient(ingr.get(j)).equals(allerUsr.get(k))) {
-                        ret.add(getAllerIngrédient(ingr.get(j)));
-                    }
-                }
-            }
-        }
-        return ret;
-    }
 
 }
