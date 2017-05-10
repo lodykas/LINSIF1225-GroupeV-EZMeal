@@ -1892,6 +1892,42 @@ public class SQLiteManager extends SQLiteOpenHelper {
         Recipe[] rt = new Recipe[res.size()];
         return res.toArray(rt);
     }
+    public Recipe[] getRecipeCat(String cat){
+
+        ArrayList<Recipe> res=new ArrayList<Recipe>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c =db.query("Catégories",new String[]{"NomRecette"},("Catégorie = \""+cat+"\"") ,null,null,null,null);
+        Log.wtf("wtf", ""+c.getCount());
+        Log.wtf("test", "test0");
+        if(c.moveToFirst()){
+            Log.wtf("test", "test1");
+            for(int i = 0; i<c.getCount(); i++){   // il devrait n'y avoir qu'une seule row
+                Log.wtf("test", "test2");
+                String nom=c.getString(c.getColumnIndex("NomRecette"));
+                Cursor c2= db.query("Recette", null, "NomRecette=\""+nom+"\"", null, null, null, null);
+                Log.wtf("wtf2",""+c2.getCount());
+                if(c2.moveToFirst()){
+                    Log.wtf("t",""+c2.getCount());
+                    for(int j=0;j<c2.getCount();j++){
+                        Log.wtf("test", "test3");
+                        String name=c2.getString(c2.getColumnIndex("NomRecette"));
+                        String image=c2.getString(c2.getColumnIndex("Image"));
+                        String instruc=c2.getString(c2.getColumnIndex("Instructions"));
+                        String date=c2.getString(c2.getColumnIndex("DateDAjout"));
+                        String sentence=c2.getString(c2.getColumnIndex("Origine"));
+                        res.add(new Recipe(name,image,instruc,date,sentence));
+                        c2.moveToNext();
+                    }
+                }
+                c2.close();
+
+                c.moveToNext();
+            }
+        }
+        c.close();
+        Recipe[] rt = new Recipe[res.size()];
+        return res.toArray(rt);
+    }
     public Cursor getRecipeInfo (String recipeName){
         SQLiteDatabase db = getReadableDatabase();
         Cursor c = db.query("Informations",new String[]{"*"},("NomRecette=\""+recipeName+"\"") ,null,null,null,null);
