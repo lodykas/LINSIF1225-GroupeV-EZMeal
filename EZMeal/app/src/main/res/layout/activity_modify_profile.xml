@@ -27,7 +27,8 @@
         android:layout_marginBottom="300dp"
         android:layout_marginLeft="22dp"
         android:layout_marginStart="22dp"
-        android:text="Write your new password " />
+        android:text="Write your new password "
+        android:textColor="@android:color/holo_red_dark" />
 
     <EditText
         android:id="@+id/passwordedit"
@@ -54,7 +55,8 @@
         android:layout_marginBottom="250dp"
         android:layout_marginLeft="22dp"
         android:layout_marginStart="22dp"
-        android:text="Write your new password " />
+        android:text="Write your new password "
+        android:textColor="@android:color/holo_red_dark" />
 
     <Spinner
         android:id="@+id/spinner1"
@@ -83,7 +85,8 @@
         android:layout_marginBottom="200dp"
         android:layout_marginLeft="22dp"
         android:layout_marginStart="22dp"
-        android:text="Choose your new living country" />
+        android:text="Choose your new living country"
+        android:textColor="@android:color/holo_red_dark" />
 
     <Button
         android:id="@+id/button201"
@@ -107,23 +110,7 @@
         android:ems="10"
         android:text="Only those informations can be changed."
         android:textAlignment="center"
-        android:textColor="#000000"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/MessageforIndicateprofil"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/passwordlog"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/spinner1"
-        android:layout_alignStart="@+id/passwordlog"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="300dp"
-        android:ems="10"
-        android:text="Your informations"
-        android:textAlignment="center"
-        android:textColor="#000000"
+        android:textColor="@android:color/holo_red_dark"
         android:textSize="18sp" />
 
     <TextView
@@ -142,6 +129,7 @@
         android:layout_above="@+id/button201"
         android:text=" : "
         android:layout_marginRight="20dp"
+        android:layout_toRightOf="@id/button201"
         android:layout_toEndOf="@id/button201"
         android:layout_marginBottom="120dp" />
 
@@ -161,6 +149,7 @@
         android:layout_above="@+id/button201"
         android:text=" : "
         android:layout_marginRight="20dp"
+        android:layout_toRightOf="@id/button201"
         android:layout_toEndOf="@id/button201"
         android:layout_marginBottom="80dp" />
 
@@ -180,6 +169,7 @@
         android:layout_above="@+id/button201"
         android:text=" : "
         android:layout_marginRight="20dp"
+        android:layout_toRightOf="@id/button201"
         android:layout_toEndOf="@id/button201"
         android:layout_marginBottom="40dp" />
 
@@ -199,6 +189,7 @@
         android:layout_above="@+id/button201"
         android:text=" : "
         android:layout_marginRight="20dp"
+        android:layout_toRightOf="@id/button201"
         android:layout_toEndOf="@id/button201"
         android:layout_marginBottom="5dp" />
     <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
