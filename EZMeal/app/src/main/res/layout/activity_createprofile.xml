@@ -1,135 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/usermaillog"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="90dp"
-        android:layout_marginLeft="60dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/usermail"
-        />
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="90dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/usermail" />
 
     <EditText
         android:id="@+id/usermailedit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/usermaillog"
         android:layout_alignTop="@+id/usermaillog"
+        android:layout_toRightOf="@+id/usermaillog"
+        android:background="@color/white"
         android:hint="@string/usermail"
         android:inputType="textEmailAddress"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:background="@color/white"/>
+        android:paddingRight="10dp" />
 
     <EditText
         android:id="@+id/passwordedit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:layout_marginTop="30dp"
         android:layout_alignLeft="@+id/usermailedit"
         android:layout_below="@+id/usermailedit"
+        android:layout_marginTop="30dp"
         android:background="@color/white"
-        />
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
 
     <TextView
         android:id="@+id/passwordlog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/passwordedit"
         android:layout_alignLeft="@+id/usermaillog"
+        android:layout_alignTop="@+id/passwordedit"
         android:text="@string/password" />
 
     <EditText
         android:id="@+id/passwordedit2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:layout_marginTop="30dp"
         android:layout_alignLeft="@+id/usermailedit"
         android:layout_below="@+id/passwordedit"
+        android:layout_marginTop="30dp"
         android:background="@color/white"
-        />
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
 
     <TextView
         android:id="@+id/passwordlog2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/passwordedit2"
         android:layout_alignLeft="@+id/passwordlog"
+        android:layout_alignTop="@+id/passwordedit2"
         android:text="Password Confirm" />
 
     <RadioGroup
         android:id="@+id/sexSelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@+id/passwordedit2"
-        android:layout_marginTop="30dp"
-        android:layout_alignRight="@+id/passwordedit2"
         android:layout_alignEnd="@+id/passwordedit2"
         android:layout_alignLeft="@+id/passwordedit2"
-        android:layout_alignStart="@+id/passwordedit2">
+        android:layout_alignRight="@+id/passwordedit2"
+        android:layout_alignStart="@+id/passwordedit2"
+        android:layout_below="@+id/passwordedit2"
+        android:layout_marginTop="30dp"
+        android:orientation="horizontal">
+
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="M"
             android:buttonTint="@color/colorAccent"
-            />
+            android:text="M" />
+
         <RadioButton
             android:layout_width="wrap_content"
-            android:text="F"
             android:layout_height="wrap_content"
-            android:buttonTint="@color/colorAccent"/>
+            android:buttonTint="@color/colorAccent"
+            android:text="F" />
     </RadioGroup>
 
     <TextView
         android:id="@+id/sex"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/sexSelect"
         android:layout_alignLeft="@+id/usermaillog"
+        android:layout_alignTop="@+id/sexSelect"
         android:text="@string/sex" />
 
     <TextView
         android:id="@+id/birth"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/usermaillog"
         android:layout_above="@+id/country"
+        android:layout_alignLeft="@id/usermaillog"
         android:layout_below="@+id/sexSelect"
-        android:text="Birthday"/>
+        android:text="Birthday" />
+
     <EditText
         android:id="@+id/birthedit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/country"
         android:layout_alignRight="@+id/passwordedit2"
+        android:layout_below="@+id/sexSelect"
+        android:layout_marginBottom="5dp"
         android:background="@color/white"
         android:hint="DD/MM/YYYY"
-        android:inputType="date"
-        android:layout_marginBottom="5dp"
-        android:layout_above="@+id/country"
-        android:layout_below="@+id/sexSelect" />
+        android:inputType="date" />
 
 
     <Spinner
         android:id="@+id/spinner2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
         android:layout_alignLeft="@+id/usermailedit"
-        android:layout_below="@+id/sexSelect">
+        android:layout_below="@+id/sexSelect"
+        android:layout_marginTop="40dp">
 
     </Spinner>
 
@@ -148,36 +148,36 @@
         android:id="@+id/country"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/spinner2"
         android:layout_alignLeft="@+id/usermaillog"
+        android:layout_alignTop="@+id/spinner2"
         android:text="@string/country" />
 
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/spinner1"
         android:layout_alignLeft="@+id/usermaillog"
-        android:text="@string/origincountry"
-        android:id="@+id/textView" />
+        android:layout_alignTop="@+id/spinner1"
+        android:text="@string/origincountry" />
 
     <Button
         android:id="@+id/button101"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="OK"
-        android:layout_marginBottom="31dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="31dp"
+        android:text="OK" />
 
     <TextView
         android:id="@+id/allergens"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/spinner1"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
-        android:text="@string/allergens"
-        android:layout_centerHorizontal="true"/>
+        android:text="@string/allergens" />
 
     <CheckBox
         android:id="@+id/banana"
@@ -185,41 +185,46 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView"
         android:layout_below="@id/allergens"
-        android:text="@string/banana"/>
+        android:text="@string/banana" />
+
     <CheckBox
         android:id="@+id/gluten"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@id/spinner1"
         android:layout_below="@id/allergens"
-        android:text="@string/gluten"/>
+        android:text="@string/gluten" />
+
     <CheckBox
         android:id="@+id/eggs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView"
         android:layout_below="@id/banana"
-        android:text="@string/eggs"/>
+        android:text="@string/eggs" />
+
     <CheckBox
         android:id="@+id/peanuts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/gluten"
         android:layout_below="@id/banana"
-        android:text="@string/peanuts"/>
+        android:text="@string/peanuts" />
+
     <CheckBox
         android:id="@+id/lactose"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView"
         android:layout_below="@id/peanuts"
-        android:text="@string/lactose"/>
+        android:text="@string/lactose" />
+
     <CheckBox
         android:id="@+id/soy"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/peanuts"
         android:layout_below="@id/eggs"
-        android:text="Soy"/>
+        android:text="Soy" />
 
 </RelativeLayout>

@@ -83,8 +83,337 @@ public class SQLiteManager extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Consommés\" (\"Ingrédient\" NOT NULL, \"Username\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Allergène\" (\"Usermail\" NOT NULL,\"Allergène\" NOT NULL);");
 
-        /*db.execSQL("CREATE TABLE IF NOT EXISTS \"Ingrédients\" (\"Libellé\" PRIMARY KEY, \"Allergène\", \"Unité\" NOT NULL);");
+        db.execSQL("CREATE TABLE IF NOT EXISTS \"Ingrédients\" (\"Libellé\" PRIMARY KEY, \"Allergène\", \"Unité\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Famille\" (\"Ingrédient\" NOT NULL, \"famille\" NOT NULL);");
+         SQLiteStatement in=db.compileStatement("INSERT INTO\"Ingrédients\"(\"Libellé\",\"Allergène\",\"Unité\")VALUES(?,?,?)");
+        in.bindString(1,"parmesan");
+        in.bindString(2,"Lactose");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"fruits rouges congelés");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"creme liquide");
+        in.bindString(2,"Lactose");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"céleri");
+        in.bindString(2," ");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"carotte");
+        in.bindString(2," ");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"pastèque");
+        in.bindString(2," ");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"farine");
+        in.bindString(2,"Gluten");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"beurre");
+        in.bindString(2,"Lactose");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"oignon");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"lait d'amande");
+        in.bindString(2," ");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"consommé de volaille");
+        in.bindString(2,"Soy");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"macaronis longs ou de pennes");
+        in.bindString(2,"Gluten");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"poivre");
+        in.bindString(2," ");
+        in.bindString(3,"pincée");
+        in.execute();
+        in.bindString(1,"sel");
+        in.bindString(2," ");
+        in.bindString(3,"pincée");
+        in.execute();
+        in.bindString(1,"fromage à raclette sans croûte");
+        in.bindString(2,"Lactose");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"noix de muscade");
+        in.bindString(2," ");
+        in.bindString(3,"pincée");
+        in.execute();
+        in.bindString(1,"tomates");
+        in.bindString(2," ");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"vin rouge");
+        in.bindString(2," ");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"viande hachée");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"bouillon");
+        in.bindString(2," ");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"huile");
+        in.bindString(2," ");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"huile d'olive");
+        in.bindString(2," ");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"huile d'arachide");
+        in.bindString(2,"Peanuts");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"gousse d'ail");
+        in.bindString(2," ");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"citron");
+        in.bindString(2," ");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"chocolat");
+        in.bindString(2," ");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"salade romaine");
+        in.bindString(2," ");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"persil");
+        in.bindString(2," ");
+        in.bindString(3,"pincée");
+        in.execute();
+        in.bindString(1,"sucre");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"sucre vanillé");
+        in.bindString(2," ");
+        in.bindString(3,"sachet");
+        in.execute();
+        in.bindString(1,"citron vert");
+        in.bindString(2," ");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"sirop d'agave");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"rhum blanc");
+        in.bindString(2," ");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"feuilles de menthe");
+        in.bindString(2," ");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"cannelle");
+        in.bindString(2," ");
+        in.bindString(3,"pincée");
+        in.execute();
+        in.bindString(1,"lait");
+        in.bindString(2,"Lactose");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"chantilly");
+        in.bindString(2,"Lactose");
+        in.bindString(3,"pompe");
+        in.execute();
+        in.bindString(1,"cacao");
+        in.bindString(2," ");
+        in.bindString(3,"cuillière à café");
+        in.execute();
+        in.bindString(1,"navets");
+        in.bindString(2," ");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"pommes de terre");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"courgettes");
+        in.bindString(2," ");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"curry japonais");
+        in.bindString(2,"Soy");
+        in.bindString(3,"paquet");
+        in.execute();
+        in.bindString(1,"cassonade");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"levure");
+        in.bindString(2," ");
+        in.bindString(3,"sachet");
+        in.execute();
+        in.bindString(1,"amande");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"flocons d'avoine");
+        in.bindString(2,"Gluten");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"gin");
+        in.bindString(2," ");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"noisette");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"noix");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"noix de cajou");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"lait concentré");
+        in.bindString(2,"Lactose");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"miel");
+        in.bindString(2," ");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"thé thaï");
+        in.bindString(2," ");
+        in.bindString(3,"cuillière à soupe");
+        in.execute();
+        in.bindString(1,"lait de soja");
+        in.bindString(2,"Soy");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"sucre de canne");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"cognac");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"olive noires");
+        in.bindString(2," ");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"herbes de provence");
+        in.bindString(2," ");
+        in.bindString(3,"pincée");
+        in.execute();
+        in.bindString(1,"champignons");
+        in.bindString(2," ");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"sauce");
+        in.bindString(2," ");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"échalote");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"piment");
+        in.bindString(2," ");
+        in.bindString(3,"pincée");
+        in.execute();
+        in.bindString(1,"poulet");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"sucre brun");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"paprika");
+        in.bindString(2," ");
+        in.bindString(3,"pincée");
+        in.execute();
+        in.bindString(1,"coriandre");
+        in.bindString(2," ");
+        in.bindString(3,"pincée");
+        in.execute();
+        in.bindString(1,"curcuma");
+        in.bindString(2," ");
+        in.bindString(3,"pincée");
+        in.execute();
+        in.bindString(1,"bananes");
+        in.bindString(2,"Banana");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"pâte de curry rouge");
+        in.bindString(2,"Soy");
+        in.bindString(3,"cuillière à soupe");
+        in.execute();
+        in.bindString(1,"cumin en poudre");
+        in.bindString(2," ");
+        in.bindString(3,"pincée");
+        in.execute();
+        in.bindString(1,"tapioca");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"sucre semoule");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"eau");
+        in.bindString(2," ");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"oeufs");
+        in.bindString(2,"Eggs");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"tranches de pain gratinées au beurre");
+        in.bindString(2,"Gluten");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"baguette");
+        in.bindString(2,"Gluten");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"vanille");
+        in.bindString(2," ");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"sucre glace");
+        in.bindString(2," ");
+        in.bindString(3,"gr");
+        in.execute();
+        in.bindString(1,"clous de girofle");
+        in.bindString(2," ");
+        in.bindString(3,"pièce");
+        in.execute();
+        in.bindString(1,"perrier");
+        in.bindString(2," ");
+        in.bindString(3,"cl");
+        in.execute();
+        in.bindString(1,"jambon");
+        in.bindString(2," ");
+        in.bindString(3,"tranche");
+        in.execute();
+        in.bindString(1,"cacahuètes");
+        in.bindString(2,"Peanuts");
+        in.bindString(3,"gr");
+        in.execute();
         SQLiteStatement f=db.compileStatement("INSERT INTO\"Famille\"(\"Ingrédient\",\"famille\")VALUES (?,?)");
         f.bindString(1,"parmesan");
         f.bindString(2,"produit laitier");
@@ -110,7 +439,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         f.bindString(1,"oignon");
         f.bindString(2,"légumes");
         f.execute();
-        f.bindString(1,"fruits rouges congelées");
+        f.bindString(1,"fruits rouges congelés");
         f.bindString(2,"fruit");
         f.execute();
         f.bindString(1,"lait d'amande");
@@ -128,7 +457,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         f.bindString(1,"porto rouge");
         f.bindString(2,"liquide");
         f.execute();
-        f.bindString(1,"tranche de pain gratinées au beurre");
+        f.bindString(1,"tranches de pain gratinées au beurre");
         f.bindString(2,"féculents");
         f.execute();
         f.bindString(1,"oeufs");
@@ -209,7 +538,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         f.bindString(1,"citron vert");
         f.bindString(2,"fruit");
         f.execute();
-        f.bindString(1,"feuilles d menthe");
+        f.bindString(1,"feuilles de menthe");
         f.bindString(2,"condiment");
         f.execute();
         f.bindString(1,"sucre vanillé");
@@ -233,7 +562,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         f.bindString(1,"lait");
         f.bindString(2,"liquide");
         f.execute();
-        f.bindString(1,"clou de girofle");
+        f.bindString(1,"clous de girofle");
         f.bindString(2,"condiment");
         f.execute();
         f.bindString(1,"chantilly");
@@ -245,10 +574,10 @@ public class SQLiteManager extends SQLiteOpenHelper {
         f.bindString(1,"navets");
         f.bindString(2,"légumes");
         f.execute();
-        f.bindString(1,"pomme de terre");
+        f.bindString(1,"pommes de terre");
         f.bindString(2,"légumes");
         f.execute();
-        f.bindString(1,"pomme de terre");
+        f.bindString(1,"pommes de terre");
         f.bindString(2,"féculents");
         f.execute();
         f.bindString(1,"courgettes");
@@ -350,7 +679,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         f.bindString(1,"bananes");
         f.bindString(2,"fruit");
         f.execute();
-        f.bindString(1,"pâte de curry");
+        f.bindString(1,"pâte de curry rouge");
         f.bindString(2,"pate");
         f.execute();
         f.bindString(1,"cumin en poudre");
@@ -365,9 +694,6 @@ public class SQLiteManager extends SQLiteOpenHelper {
         f.bindString(1,"eau");
         f.bindString(2,"liquide");
         f.execute();
-
-        db.execSQL("INSERT INTO \"Famille\" VALUES (\"Carotte\",\"Légume\");");
-*/
 
 
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Recette\" ( _id INTEGER PRIMARY KEY AUTOINCREMENT,\"NomRecette\" NOT NULL,\"Image\" NOT NULL,\"Instructions\" NOT NULL,\"DateDAjout\" NOT NULL,\"Origine\" NOT NULL);");
@@ -1795,7 +2121,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         Cursor c = db.rawQuery("SELECT DISTINCT * FROM Recette C WHERE (instr(NomRecette,\""+query+"\") > 0 OR instr(Origine,\""+query+"\") > 0)",null);
 
-        //Cursor c = db.rawQuery("SELECT NomRecette, Image, Instructions, DateDajout, Origine FROM Recette WHERE (instr(NomRecette,\""+query+"\") > 0 OR instr(Origine,\""+query+"\") > 0) ",null);
+        //Cursor c = db.rawQuery("SELECT R.NomRecette, Image, Instructions, DateDajout, Origine FROM Recette R, Categorie C WHERE R.NomRecette=C.NomRecette ",null);
         //Cursor c = db.query("\"Recette\"",new String[]{"*"},("instr(\"NomRecette\",\""+query+"\") > 0 ") ,null,null,null,null);
 
         return c;
@@ -1892,6 +2218,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         Recipe[] rt = new Recipe[res.size()];
         return res.toArray(rt);
     }
+<<<<<<< HEAD
 
 
     public List<String> mostRecipe(String usermail){
@@ -2050,10 +2377,39 @@ public class SQLiteManager extends SQLiteOpenHelper {
         if(c.moveToFirst()){
             for(int i = 0; i<c.getCount(); i++){
                 res.add(Integer.toString(Integer.parseInt(c.getString(c.getColumnIndex("TempsCuisson")))+Integer.parseInt(c.getString(c.getColumnIndex("TempsPreparation")))));
+=======
+    public Recipe[] getRecipeCat(String cat,String scat){
+
+        ArrayList<Recipe> res=new ArrayList<Recipe>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c = db.rawQuery("SELECT DISTINCT C.NomRecette FROM Catégories C, Sous_catégorie S WHERE C.NomRecette=S.NomRecette AND Catégorie = \""+cat+"\" AND sous_catégorie=\""+scat+"\"",null);
+
+        if(c.moveToFirst()){
+
+            for(int i = 0; i<c.getCount(); i++){
+
+                String nom=c.getString(c.getColumnIndex("NomRecette"));
+                Cursor c2= db.query("Recette", null, "NomRecette=\""+nom+"\"", null, null, null, null);
+
+                if(c2.moveToFirst()){
+                    for(int j=0;j<c2.getCount();j++){
+                        String name=c2.getString(c2.getColumnIndex("NomRecette"));
+                        String image=c2.getString(c2.getColumnIndex("Image"));
+                        String instruc=c2.getString(c2.getColumnIndex("Instructions"));
+                        String date=c2.getString(c2.getColumnIndex("DateDAjout"));
+                        String sentence=c2.getString(c2.getColumnIndex("Origine"));
+                        res.add(new Recipe(name,image,instruc,date,sentence));
+                        c2.moveToNext();
+                    }
+                }
+                c2.close();
+
+>>>>>>> 166d02167c21e96387c8c07803cffc4783eee164
                 c.moveToNext();
             }
         }
         c.close();
+<<<<<<< HEAD
         ret=res.get(0);
         return ret;
     }
@@ -2087,9 +2443,14 @@ public class SQLiteManager extends SQLiteOpenHelper {
         return ret;
     }
 
+=======
+        Recipe[] rt = new Recipe[res.size()];
+        return res.toArray(rt);
+    }
+>>>>>>> 166d02167c21e96387c8c07803cffc4783eee164
     public Cursor getRecipeInfo (String recipeName){
         SQLiteDatabase db = getReadableDatabase();
-        Cursor c = db.query("Informations",new String[]{"*"},("NomRecette=\""+recipeName+"\"") ,null,null,null,null);
+        Cursor c = db.rawQuery("SELECT * FROM Informations WHERE NomRecette=\""+recipeName+"\"",null);
         return c;
     }
 
@@ -2146,6 +2507,5 @@ public class SQLiteManager extends SQLiteOpenHelper {
         }
         return ret;
     }
-
 
 }
