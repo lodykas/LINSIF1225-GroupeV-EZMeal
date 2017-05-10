@@ -65,6 +65,7 @@ public class MyListAdapterhome extends BaseAdapter {
         View rowView = inflater.inflate(R.layout.list_acceuil_recette, parent, false);
         //emplacements
         ImageButton ib=(ImageButton) rowView.findViewById(R.id.image_recipe);
+
         TextView tv=(TextView) rowView.findViewById(R.id.title_recipe);
         TextView phrase=(TextView) rowView.findViewById(R.id.sentence_recipes);
         Recipe rec= r[position];
@@ -80,6 +81,8 @@ public class MyListAdapterhome extends BaseAdapter {
         //donnees recup
 
         //String image=r.;
+
+
 
 
 

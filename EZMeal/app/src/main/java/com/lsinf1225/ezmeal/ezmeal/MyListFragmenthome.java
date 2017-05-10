@@ -36,5 +36,8 @@ public class MyListFragmenthome extends ListFragment implements OnItemClickListe
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
         Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT).show();
+        Intent intent=new Intent(getContext(),RecipeActivity.class);
+        startActivity(intent);
+
     }
 }

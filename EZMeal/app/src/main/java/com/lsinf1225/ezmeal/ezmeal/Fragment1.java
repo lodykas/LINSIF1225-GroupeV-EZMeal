@@ -7,7 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 
 /**
@@ -71,14 +73,11 @@ public class Fragment1 extends Fragment {
         String usermail = getArguments().getString("usermail");
         MyListAdapterhome adapter = new MyListAdapterhome(getContext(), usermail);
         lv.setAdapter(adapter);
-        //getListView().setOnItemClickListener(this);
+
+
         return view;
     }
 
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-    }
 
 
     @Override
