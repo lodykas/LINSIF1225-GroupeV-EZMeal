@@ -2218,24 +2218,21 @@ public class SQLiteManager extends SQLiteOpenHelper {
         Recipe[] rt = new Recipe[res.size()];
         return res.toArray(rt);
     }
-    public Recipe[] getRecipeCat(String cat){
+    public Recipe[] getRecipeCat(String cat,String scat){
 
         ArrayList<Recipe> res=new ArrayList<Recipe>();
         SQLiteDatabase db = getReadableDatabase();
-        Cursor c =db.query("Catégories",new String[]{"NomRecette"},("Catégorie = \""+cat+"\"") ,null,null,null,null);
-        Log.wtf("wtf", ""+c.getCount());
-        Log.wtf("test", "test0");
+        Cursor c = db.rawQuery("SELECT DISTINCT C.NomRecette FROM Catégories C, Sous_catégorie S WHERE C.NomRecette=S.NomRecette AND Catégorie = \""+cat+"\" AND sous_catégorie=\""+scat+"\"",null);
+
         if(c.moveToFirst()){
-            Log.wtf("test", "test1");
-            for(int i = 0; i<c.getCount(); i++){   // il devrait n'y avoir qu'une seule row
-                Log.wtf("test", "test2");
+
+            for(int i = 0; i<c.getCount(); i++){
+
                 String nom=c.getString(c.getColumnIndex("NomRecette"));
                 Cursor c2= db.query("Recette", null, "NomRecette=\""+nom+"\"", null, null, null, null);
-                Log.wtf("wtf2",""+c2.getCount());
+
                 if(c2.moveToFirst()){
-                    Log.wtf("t",""+c2.getCount());
                     for(int j=0;j<c2.getCount();j++){
-                        Log.wtf("test", "test3");
                         String name=c2.getString(c2.getColumnIndex("NomRecette"));
                         String image=c2.getString(c2.getColumnIndex("Image"));
                         String instruc=c2.getString(c2.getColumnIndex("Instructions"));
