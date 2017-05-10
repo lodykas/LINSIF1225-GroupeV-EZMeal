@@ -83,7 +83,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Consommés\" (\"Ingrédient\" NOT NULL, \"Username\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Allergène\" (\"Usermail\" NOT NULL,\"Allergène\" NOT NULL);");
 
-        db.execSQL("CREATE TABLE IF NOT EXISTS \"Ingrédients\" (\"Libellé\" PRIMARY KEY, \"Allergène\", \"Unité\" NOT NULL);");
+        /*db.execSQL("CREATE TABLE IF NOT EXISTS \"Ingrédients\" (\"Libellé\" PRIMARY KEY, \"Allergène\", \"Unité\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Famille\" (\"Ingrédient\" NOT NULL, \"famille\" NOT NULL);");
         SQLiteStatement f=db.compileStatement("INSERT INTO\"Famille\"(\"Ingrédients\",\"famille\")VALUES (?,?)");
         f.bindString(1,"parmesan");
@@ -367,7 +367,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         f.execute();
 
         db.execSQL("INSERT INTO \"Famille\" VALUES (\"Carotte\",\"Légume\");");
-
+*/
 
 
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Recette\" ( _id INTEGER PRIMARY KEY AUTOINCREMENT,\"NomRecette\" NOT NULL,\"Image\" NOT NULL,\"Instructions\" NOT NULL,\"DateDAjout\" NOT NULL,\"Origine\" NOT NULL);");
@@ -1741,6 +1741,48 @@ public class SQLiteManager extends SQLiteOpenHelper {
         if(c.moveToFirst()){
             for(int i = 0; i<c.getCount(); i++){
                 res.add(c.getString(c.getColumnIndex("MotDePasse")));
+                c.moveToNext();
+            }
+        }
+        c.close();
+        return res;
+    }
+
+    public List<String> getBirthdate(String usermail){
+        List<String> res = new ArrayList<String>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c =db.query("\"Utilisateur\"",new String[]{"\"DateDeNaissance\""},("\"Usermail\" = \"" + usermail +"\"") ,null,null,null,null);
+        if(c.moveToFirst()){
+            for(int i = 0; i<c.getCount(); i++){
+                res.add(c.getString(c.getColumnIndex("DateDeNaissance")));
+                c.moveToNext();
+            }
+        }
+        c.close();
+        return res;
+    }
+
+    public List<String> getOrigin(String usermail){
+        List<String> res = new ArrayList<String>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c =db.query("\"Utilisateur\"",new String[]{"\"PaysDOrigine\""},("\"Usermail\" = \"" + usermail +"\"") ,null,null,null,null);
+        if(c.moveToFirst()){
+            for(int i = 0; i<c.getCount(); i++){
+                res.add(c.getString(c.getColumnIndex("PaysDOrigine")));
+                c.moveToNext();
+            }
+        }
+        c.close();
+        return res;
+    }
+
+    public List<String> getAllergene(String usermail){
+        List<String> res = new ArrayList<String>();
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c =db.query("\"Allergène\"",new String[]{"\"Allergène\""},("\"Usermail\" = \"" + usermail +"\"") ,null,null,null,null);
+        if(c.moveToFirst()){
+            for(int i = 0; i<c.getCount(); i++){
+                res.add(c.getString(c.getColumnIndex("Allergène")));
                 c.moveToNext();
             }
         }
