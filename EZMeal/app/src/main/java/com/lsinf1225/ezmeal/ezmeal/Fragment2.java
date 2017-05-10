@@ -81,7 +81,7 @@ public class Fragment2 extends Fragment {
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_food, container, false);
         if (mListener != null) {
-            mListener.onFragmentInteraction("Fragment 2");
+            //mListener.onFragmentInteraction("Fragment 2");
         }
 
 

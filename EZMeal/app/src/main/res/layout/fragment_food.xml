@@ -4,6 +4,7 @@
     android:layout_height="match_parent"
     tools:context="com.lsinf1225.ezmeal.ezmeal.Fragment2">
 
+
         <ExpandableListView
             android:id="@+id/lvExp"
             android:layout_height="match_parent"

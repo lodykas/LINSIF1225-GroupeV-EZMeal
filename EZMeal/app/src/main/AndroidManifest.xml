@@ -47,7 +47,7 @@
 
         <activity
             android:name=".ModifyProfileActivity"
-            android:label="@string/title_activity_modify_profile"
+            android:label="EZMeal"
             android:screenOrientation="portrait" />
         <activity
             android:name=".Fragment1"
