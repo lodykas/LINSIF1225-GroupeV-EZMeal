@@ -7,6 +7,7 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,9 +35,9 @@ public class SearchableActivity extends AppCompatActivity{
 
             ListView l = (ListView) findViewById(R.id.listsearch);
             SQLiteManager db = new SQLiteManager(getApplicationContext());
-            Cursor c = db.research(query);
-            if c.getCount() > 0 && c != null) {
-                CursorAdapter c = new CursorAdapter(getApplicationContext(), c) {
+            Cursor cu = db.research(query);
+            if (cu != null &&cu.getCount() > 0 ) {
+                    CursorAdapter c = new CursorAdapter(getApplicationContext(), cu) {
                     @Override
                     public View newView(Context context, Cursor cursor, ViewGroup parent) {
                         return LayoutInflater.from(context).inflate(R.layout.list_acceuil_recette, parent, false);
@@ -50,18 +51,24 @@ public class SearchableActivity extends AppCompatActivity{
                         Resources r = getResources();
                         int id = r.getIdentifier(cursor.getString(cursor.getColumnIndex("Image")).split("\\.")[0], "drawable", getPackageName());
                         im.setImageDrawable(r.getDrawable(id));
+                        ((TextView) view.findViewById(R.id.sentence_recipes)).setText(cursor.getString(cursor.getColumnIndex("Origine")));
 
                         SQLiteManager db = new SQLiteManager(getApplicationContext());
 
-                    /*((TextView) view.findViewById(R.id.sentence_recipes)).setText(cursor.getString(cursor.getColumnIndex("Origine")));
-                    Cursor c = db.getRecipeInfo(cursor.getString(cursor.getColumnIndexOrThrow("NomRecette")));
-                    ((TextView) view.findViewById(R.id.details_recipes)).setText(c.getString(c.getColumnIndex("Difficulté")));*/
+
+                        Cursor c = db.getRecipeInfo(cursor.getString(cursor.getColumnIndexOrThrow("NomRecette")));
+                        //String s = c.getString(0);
+                        //((TextView) view.findViewById(R.id.details_recipes)).setText(s);//c.getColumnIndex("NbrePersonnes")
+                        //c.close();
+                        db.close();
 
 
                     }
                 };
 
                 l.setAdapter(c);
+                cu.close();
+                db.close();
             }
             else{
                 Toast.makeText(getApplicationContext(), "Recipe not found", 3000).show();
