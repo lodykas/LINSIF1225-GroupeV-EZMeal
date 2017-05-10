@@ -46,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
                 SQLiteManager db =new SQLiteManager(getApplicationContext());
                 if(usermail == " "){return;}
                 List<String> res = db.getPassword(usermail);
+                db.close();
 
                 if(res.size()==0){
                     Toast.makeText(getApplicationContext(), "No user "+usermail+" found.", 1000).show();

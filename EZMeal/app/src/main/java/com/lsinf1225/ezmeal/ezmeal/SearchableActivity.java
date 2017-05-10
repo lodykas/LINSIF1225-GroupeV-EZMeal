@@ -37,7 +37,6 @@ public class SearchableActivity extends AppCompatActivity{
             Cursor cu = db.research(query);
             if( cu.getCount() > 0 && cu != null) {
                 CursorAdapter c = new CursorAdapter(getApplicationContext(), cu) {
-
                     @Override
                     public View newView(Context context, Cursor cursor, ViewGroup parent) {
                         return LayoutInflater.from(context).inflate(R.layout.list_acceuil_recette, parent, false);
@@ -54,15 +53,21 @@ public class SearchableActivity extends AppCompatActivity{
 
                         SQLiteManager db = new SQLiteManager(getApplicationContext());
 
-                    /*((TextView) view.findViewById(R.id.sentence_recipes)).setText(cursor.getString(cursor.getColumnIndex("Origine")));
-                    Cursor c = db.getRecipeInfo(cursor.getString(cursor.getColumnIndexOrThrow("NomRecette")));
-                    ((TextView) view.findViewById(R.id.details_recipes)).setText(c.getString(c.getColumnIndex("Difficulté")));*/
+
+                        //((TextView) view.findViewById(R.id.sentence_recipes)).setText(cursor.getString(cursor.getColumnIndex("Origine")));
+                        //Cursor c = db.getRecipeInfo(cursor.getString(cursor.getColumnIndexOrThrow("NomRecette")));
+                        //String s = c.getString(0);
+                        //((TextView) view.findViewById(R.id.details_recipes)).setText(s);//c.getColumnIndex("NbrePersonnes")
+                        //c.close();
+                        db.close();
 
 
                     }
                 };
 
                 l.setAdapter(c);
+                cu.close();
+                db.close();
             }
             else{
                 Toast.makeText(getApplicationContext(), "Recipe not found", 3000).show();

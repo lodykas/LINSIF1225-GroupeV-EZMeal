@@ -2121,7 +2121,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         SQLiteDatabase db = getReadableDatabase();
         Cursor c = db.rawQuery("SELECT DISTINCT * FROM Recette C WHERE (instr(NomRecette,\""+query+"\") > 0 OR instr(Origine,\""+query+"\") > 0)",null);
 
-        //Cursor c = db.rawQuery("SELECT NomRecette, Image, Instructions, DateDajout, Origine FROM Recette WHERE (instr(NomRecette,\""+query+"\") > 0 OR instr(Origine,\""+query+"\") > 0) ",null);
+        //Cursor c = db.rawQuery("SELECT R.NomRecette, Image, Instructions, DateDajout, Origine FROM Recette R, Categorie C WHERE R.NomRecette=C.NomRecette ",null);
         //Cursor c = db.query("\"Recette\"",new String[]{"*"},("instr(\"NomRecette\",\""+query+"\") > 0 ") ,null,null,null,null);
 
         return c;
@@ -2256,10 +2256,9 @@ public class SQLiteManager extends SQLiteOpenHelper {
     }
     public Cursor getRecipeInfo (String recipeName){
         SQLiteDatabase db = getReadableDatabase();
-        Cursor c = db.query("Informations",new String[]{"*"},("NomRecette=\""+recipeName+"\"") ,null,null,null,null);
+        Cursor c = db.rawQuery("SELECT * FROM Informations WHERE NomRecette=\""+recipeName+"\"",null);
         return c;
     }
-
 
 
 }
