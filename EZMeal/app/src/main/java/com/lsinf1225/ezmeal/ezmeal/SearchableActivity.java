@@ -30,12 +30,13 @@ public class SearchableActivity extends AppCompatActivity{
         // Get the intent, verify the action and get the query
         Intent intent = getIntent();
         if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-            String query = intent.getStringExtra(SearchManager.QUERY).toLowerCase();
+            String query = intent.getStringExtra(SearchManager.QUERY);
 
             ListView l = (ListView) findViewById(R.id.listsearch);
             SQLiteManager db = new SQLiteManager(getApplicationContext());
-            if (db.research(query).getCount() > 0 && db.research(query) != null) {
-                CursorAdapter c = new CursorAdapter(getApplicationContext(), db.research(query)) {
+            Cursor c = db.research(query);
+            if c.getCount() > 0 && c != null) {
+                CursorAdapter c = new CursorAdapter(getApplicationContext(), c) {
                     @Override
                     public View newView(Context context, Cursor cursor, ViewGroup parent) {
                         return LayoutInflater.from(context).inflate(R.layout.list_acceuil_recette, parent, false);

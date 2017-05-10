@@ -85,7 +85,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
 
         /*db.execSQL("CREATE TABLE IF NOT EXISTS \"Ingrédients\" (\"Libellé\" PRIMARY KEY, \"Allergène\", \"Unité\" NOT NULL);");
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Famille\" (\"Ingrédient\" NOT NULL, \"famille\" NOT NULL);");
-        SQLiteStatement f=db.compileStatement("INSERT INTO\"Famille\"(\"Ingrédients\",\"famille\")VALUES (?,?)");
+        SQLiteStatement f=db.compileStatement("INSERT INTO\"Famille\"(\"Ingrédient\",\"famille\")VALUES (?,?)");
         f.bindString(1,"parmesan");
         f.bindString(2,"produit laitier");
         f.execute();
@@ -1793,7 +1793,11 @@ public class SQLiteManager extends SQLiteOpenHelper {
     public Cursor research(String query)
     {
         SQLiteDatabase db = getReadableDatabase();
-        Cursor c = db.query("\"Recette\"",new String[]{"*"},("instr(\"NomRecette\",\""+query+"\") > 0") ,null,null,null,null);
+        Cursor c = db.rawQuery("SELECT DISTINCT * FROM Recette C WHERE (instr(NomRecette,\""+query+"\") > 0 OR instr(Origine,\""+query+"\") > 0)",null);
+
+        //Cursor c = db.rawQuery("SELECT NomRecette, Image, Instructions, DateDajout, Origine FROM Recette WHERE (instr(NomRecette,\""+query+"\") > 0 OR instr(Origine,\""+query+"\") > 0) ",null);
+        //Cursor c = db.query("\"Recette\"",new String[]{"*"},("instr(\"NomRecette\",\""+query+"\") > 0 ") ,null,null,null,null);
+
         return c;
     }
     public Recipe[] getRecipe(int tabSize, String usermail){
@@ -1893,4 +1897,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         Cursor c = db.query("Informations",new String[]{"*"},("NomRecette=\""+recipeName+"\"") ,null,null,null,null);
         return c;
     }
+
+
+
 }
