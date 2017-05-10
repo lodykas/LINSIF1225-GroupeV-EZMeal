@@ -2120,10 +2120,6 @@ public class SQLiteManager extends SQLiteOpenHelper {
     {
         SQLiteDatabase db = getReadableDatabase();
         Cursor c = db.rawQuery("SELECT DISTINCT * FROM Recette C WHERE (instr(NomRecette,\""+query+"\") > 0 OR instr(Origine,\""+query+"\") > 0)",null);
-
-        //Cursor c = db.rawQuery("SELECT R.NomRecette, Image, Instructions, DateDajout, Origine FROM Recette R, Categorie C WHERE R.NomRecette=C.NomRecette ",null);
-        //Cursor c = db.query("\"Recette\"",new String[]{"*"},("instr(\"NomRecette\",\""+query+"\") > 0 ") ,null,null,null,null);
-
         return c;
     }
     public Recipe[] getRecipe(int tabSize, String usermail){

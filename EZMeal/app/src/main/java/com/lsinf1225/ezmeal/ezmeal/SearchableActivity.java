@@ -7,6 +7,7 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +41,7 @@ public class SearchableActivity extends AppCompatActivity{
                 CursorAdapter c = new CursorAdapter(getApplicationContext(), c) {
 =======
             Cursor cu = db.research(query);
-            if( cu.getCount() > 0 && cu != null) {
+            if(cu != null && cu.getCount() > 0) {
                 CursorAdapter c = new CursorAdapter(getApplicationContext(), cu) {
 >>>>>>> 166d02167c21e96387c8c07803cffc4783eee164
                     @Override
@@ -56,12 +57,12 @@ public class SearchableActivity extends AppCompatActivity{
                         Resources r = getResources();
                         int id = r.getIdentifier(cursor.getString(cursor.getColumnIndex("Image")).split("\\.")[0], "drawable", getPackageName());
                         im.setImageDrawable(r.getDrawable(id));
+                        ((TextView) view.findViewById(R.id.sentence_recipes)).setText(cursor.getString(cursor.getColumnIndex("Origine")));
 
                         SQLiteManager db = new SQLiteManager(getApplicationContext());
 
 
-                        //((TextView) view.findViewById(R.id.sentence_recipes)).setText(cursor.getString(cursor.getColumnIndex("Origine")));
-                        //Cursor c = db.getRecipeInfo(cursor.getString(cursor.getColumnIndexOrThrow("NomRecette")));
+                        Cursor c = db.getRecipeInfo(cursor.getString(cursor.getColumnIndexOrThrow("NomRecette")));
                         //String s = c.getString(0);
                         //((TextView) view.findViewById(R.id.details_recipes)).setText(s);//c.getColumnIndex("NbrePersonnes")
                         //c.close();
