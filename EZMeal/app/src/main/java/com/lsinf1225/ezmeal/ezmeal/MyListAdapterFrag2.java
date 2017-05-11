@@ -1,6 +1,7 @@
 package com.lsinf1225.ezmeal.ezmeal;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -50,15 +51,38 @@ public class MyListAdapterFrag2 extends BaseAdapter {
                 .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View rowView = inflater.inflate(R.layout.list_acceuil_recette, parent, false);
         //emplacements
-        ImageButton ib=(ImageButton) rowView.findViewById(R.id.image_recipe);
+
         TextView tv=(TextView) rowView.findViewById(R.id.title_recipe);
         TextView phrase=(TextView) rowView.findViewById(R.id.sentence_recipes);
-        Recipe rec= r[position];
+
+
+        //TextView time=(TextView) rowView.findViewById(R.id.details_recipes);
+        //Recipe rec= r[position];
+
+        TextView time=(TextView) rowView.findViewById(R.id.details_recipes);
+
+
+        final Recipe rec= r[position];
+
+        ImageButton ib=(ImageButton) rowView.findViewById(R.id.image_recipe);
+        ib.setTag(new String[]{rec.title,rec.sentence});
+        ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent menu= new Intent(context,RecipeActivity.class);
+                String[] info = (String [])v.getTag();
+                menu.putExtra("NomRecette",info[0]);
+                menu.putExtra("Origine",info[1]);
+                context.startActivity(menu);
+            }
+        });
         String titre=rec.title;
         tv.setText(titre);
         String tt=rec.sentence;
         phrase.setText(tt);
         String id=rec.image;
+        SQLiteManager db = new SQLiteManager(context);
+        time.setText("Temps total : "+db.getTimeRecipe(titre)+" minutes");
         int resId = context.getResources().getIdentifier(id, "drawable", context.getPackageName());
         //Log.wtf("erreur nom recette ?", "nom = " + id + " resource id = " + resId);
         Drawable d = context.getResources().getDrawable(resId);
@@ -66,6 +90,8 @@ public class MyListAdapterFrag2 extends BaseAdapter {
         //donnees recup
 
         //String image=r.;
+
+
 
 
 

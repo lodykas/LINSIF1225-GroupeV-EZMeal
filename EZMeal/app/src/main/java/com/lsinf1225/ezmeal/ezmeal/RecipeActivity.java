@@ -80,7 +80,7 @@ public class RecipeActivity extends AppCompatActivity {
         com.lsinf1225.ezmeal.ezmeal.Ingredient ingredient;
         for (int i =0; i<ingr.length; i++) {
             ingredient = ingr[i];
-            res.add(i,String.valueOf(ingredient.Quantite)+" "+ingredient.Unite+" de "+ingredient.NomIngrédient+" ("+ingredient.Allergene+")");
+            res.add(i,String.valueOf(ingredient.Quantite)+" "+ingredient.Unite+" "+ingredient.NomIngrédient+" ("+ingredient.Allergene+")");
 
         }
         /*Ingredient ingredient2=new Ingredient("Fraise", "kg","f", 5);

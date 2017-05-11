@@ -100,11 +100,11 @@ public class SQLiteManager extends SQLiteOpenHelper {
         in.execute();
         in.bindString(1,"céleri");
         in.bindString(2," ");
-        in.bindString(3,"pièce");
+        in.bindString(3,"");
         in.execute();
         in.bindString(1,"carotte");
         in.bindString(2," ");
-        in.bindString(3,"pièce");
+        in.bindString(3,"");
         in.execute();
         in.bindString(1,"pastèque");
         in.bindString(2," ");
@@ -1338,7 +1338,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         l.bindString(3,"1");
         l.execute();
         l.bindString(1,"Milkshake berry");
-        l.bindString(2,"fruits rouges congelées");
+        l.bindString(2,"fruits rouges congelés");
         l.bindString(3,"150");
         l.execute();
         l.bindString(1,"Milkshake berry");
