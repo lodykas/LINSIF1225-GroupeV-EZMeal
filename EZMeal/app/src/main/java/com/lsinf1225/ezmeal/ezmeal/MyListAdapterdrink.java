@@ -53,12 +53,15 @@ public class MyListAdapterdrink extends BaseAdapter {
         ImageButton ib=(ImageButton) rowView.findViewById(R.id.image_recipe);
         TextView tv=(TextView) rowView.findViewById(R.id.title_recipe);
         TextView phrase=(TextView) rowView.findViewById(R.id.sentence_recipes);
+        TextView time = (TextView) rowView.findViewById(R.id.details_recipes);
         Recipe rec= r[position];
         String titre=rec.title;
         tv.setText(titre);
         String tt=rec.sentence;
         phrase.setText(tt);
         String id=rec.image;
+        SQLiteManager db = new SQLiteManager(context);
+        time.setText("Temps total : "+db.getTimeRecipe(titre)+" minutes");
         int resId = context.getResources().getIdentifier(id, "drawable", context.getPackageName());
         //Log.wtf("erreur nom recette ?", "nom = " + id + " resource id = " + resId);
         Drawable d = context.getResources().getDrawable(resId);

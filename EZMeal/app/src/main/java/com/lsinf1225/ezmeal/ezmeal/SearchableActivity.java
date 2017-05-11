@@ -46,13 +46,17 @@ public class SearchableActivity extends AppCompatActivity{
                     @Override
                     public void bindView(View view, Context context, Cursor cursor) {
                         TextView recipe = (TextView) view.findViewById(R.id.title_recipe);
+                        TextView time = (TextView) view.findViewById(R.id.details_recipes);
+                        TextView sentence = (TextView) view.findViewById(R.id.sentence_recipes);
                         recipe.setText(cursor.getString(cursor.getColumnIndexOrThrow("NomRecette")));
+                        sentence.setText(cursor.getString(cursor.getColumnIndexOrThrow("Origine")));
                         ImageButton im = (ImageButton) view.findViewById(R.id.image_recipe);
+                        SQLiteManager db = new SQLiteManager(getApplicationContext());
+                        time.setText("Temps total : "+db.getTimeRecipe(cursor.getString(cursor.getColumnIndexOrThrow("NomRecette")))+" minutes");
                         Resources r = getResources();
                         int id = r.getIdentifier(cursor.getString(cursor.getColumnIndex("Image")).split("\\.")[0], "drawable", getPackageName());
                         im.setImageDrawable(r.getDrawable(id));
 
-                        SQLiteManager db = new SQLiteManager(getApplicationContext());
 
 
                         //((TextView) view.findViewById(R.id.sentence_recipes)).setText(cursor.getString(cursor.getColumnIndex("Origine")));
