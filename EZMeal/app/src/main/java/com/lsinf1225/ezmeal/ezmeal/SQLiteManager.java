@@ -2546,7 +2546,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         ret.add(0,"k");
         String[] nom=new String[1];
         nom[0]=NomRecette;
-        String queryString="SELECT * FROM Informations WHERE \"NomRecette\" = '" + NomRecette + "'";
+        String queryString="SELECT * FROM Informations WHERE \"NomRecette\" = \"" + NomRecette + "\"";
         Cursor c=db.rawQuery(queryString,null);
         //Cursor c= db.query("Informations", null, "NomRecette LIKE ?", nom, null, null, null);
         if(c.moveToFirst()) {
