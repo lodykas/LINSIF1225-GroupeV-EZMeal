@@ -12,7 +12,7 @@
         android:layout_marginTop="1dp"
         android:id="@+id/passwordlog"
         android:layout_centerHorizontal="true"
-        android:hint="Password"
+        android:hint="@string/password"
         android:textColorLink="?android:attr/colorMultiSelectHighlight"
         android:gravity="center"
         android:autoText="false" />
@@ -48,13 +48,13 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="11dp"
         android:layout_marginTop="45dp"
-        android:hint="Login"
-        android:onClick="login"
+        android:hint="@string/login"
+        android:onClick="@string/login"
         android:textColorLink="?android:attr/colorMultiSelectHighlight" />
 
     <TextView
         android:id="@+id/newaccount"
-        android:text="New account"
+        android:text="@string/newaccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/logbutton"

@@ -85,7 +85,7 @@ public class Menuetage extends AppCompatActivity
        }
 
        this.doubleBackToExitPressedOnce = true;
-       Toast.makeText(this, "Please click BACK again to sign out", Toast.LENGTH_SHORT).show();
+       Toast.makeText(this, R.string.signout, Toast.LENGTH_SHORT).show();
 
        new Handler().postDelayed(new Runnable() {
 

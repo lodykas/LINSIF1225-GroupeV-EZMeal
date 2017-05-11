@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
                 db.close();
 
                 if(res.size()==0){
-                    Toast.makeText(getApplicationContext(), "No user "+usermail+" found.", 1000).show();
+                    Toast.makeText(getApplicationContext(), getResources().getString(R.string.user_not_found,usermail), 1000).show();
                     return;
                 }
 
@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                     startActivity(menu);
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "Password invalid", 1000).show();
+                    Toast.makeText(getApplicationContext(), R.string.invalid_password, 1000).show();
                     return;
                 }
             }

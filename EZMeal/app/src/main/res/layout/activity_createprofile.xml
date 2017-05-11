@@ -66,7 +66,7 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/passwordlog"
         android:layout_alignTop="@+id/passwordedit2"
-        android:text="Password Confirm" />
+        android:text="@string/password_confirm" />
 
     <RadioGroup
         android:id="@+id/sexSelect"
@@ -108,7 +108,7 @@
         android:layout_above="@+id/country"
         android:layout_alignLeft="@id/usermaillog"
         android:layout_below="@+id/sexSelect"
-        android:text="Birthday" />
+        android:text="@string/birthday" />
 
     <EditText
         android:id="@+id/birthedit"
@@ -225,6 +225,6 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/peanuts"
         android:layout_below="@id/eggs"
-        android:text="Soy" />
+        android:text="@string/soy" />
 
 </RelativeLayout>

@@ -66,15 +66,15 @@ public class CreateProfileActivity extends AppCompatActivity {
                 //String oriCountry = ((EditText) findViewById(R.id.spinner1)).getText().toString();
 
                 if (usermail == " " || password == " " || password2 == " " || birth == " " || country == " " || oriCountry == " " || sexB == null){
-                    Toast.makeText(getApplicationContext(), "All fields are mandatory!", 3000).show();
+                    Toast.makeText(getApplicationContext(), R.string.field_mandatory, 3000).show();
                 } else if (!(password.equals(password2))) {
-                    Toast.makeText(getApplicationContext(), "Password not match !", 3000).show();
+                    Toast.makeText(getApplicationContext(), R.string.unmatch_password, 3000).show();
                 }
                 else if((!emailAddressValidator(usermail))){
-                    Toast.makeText(getApplicationContext(), "Usermail must be a valid email", 3000).show();
+                    Toast.makeText(getApplicationContext(), R.string.invalid_usermail, 3000).show();
                 }
                 else if(!(DateValidator(birth))){
-                    Toast.makeText(getApplicationContext(), "Birthday invalid", 3000).show();
+                    Toast.makeText(getApplicationContext(), R.string.invalid_birthday, 3000).show();
                 }
                 else {//if everything's complete, I create the object and update the database
                     User user = new User(usermail, sexB.getText().charAt(0), password, birth, country, oriCountry);

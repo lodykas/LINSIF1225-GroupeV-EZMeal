@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">EZMeal</string>
+    <string name="action_settings">Options</string>
+    <string name="allergens">Allergènes</string>
+    <string name="banana">Banane</string>
+    <string name="birthday">Date de naissance</string>
+    <string name="country">Sélectionnez un pays</string>
+    <string name="country1">Pays de résidence</string>
+    <string name="createsuccess">Bienvenue, %1$s!</string>
+    <string name="eggs">Oeufs</string>
+    <string name="gluten">Gluten</string>
+    <string name="hello_blank_fragment"></string>
+    <string name="lactose">Lactose</string>
+    <string name="navigation_drawer_close"></string>
+    <string name="origincountry">Pays d\'origine</string>
+    <string name="password">Mot de passe</string>
+    <string name="peanuts">Arachides</string>
+    <string name="search">Recherche</string>
+    <string name="searchhint">Chercher une recette</string>
+    <string name="sex">Sexe</string>
+    <string name="title_activity_acceuil"></string>
+    <string name="title_activity_modify_profile">Modifer son profil</string>
+    <string name="invalid_password">Mot de passe invalide</string>
+    <string name="user_not_found">Aucun utilisateur %1$s trouvé</string>
+    <string name="soy">Soja</string>
+    <string name="field_mandatory">Tous les champs sont obligatoires!</string>
+    <string name="invalid_birthday">Date de naissance invalide</string>
+    <string name="invalid_usermail">L\'usermail doit être une addresse mail valide</string>
+    <string name="login">Connexion</string>
+    <string name="newaccount">Nouveau profil</string>
+    <string name="password_confirm">Confirmer mod de passe</string>
+    <string name="unmatch_password">Les mots de passe ne correspondent pas!</string>
+    <string name="signout">Touchez RETOUR à nouveau pour vous déconnecter</string>
+    <string name="todrink">EZ boisson</string>
+    <string name="toeat">EZ recettes</string>
+    <string name="totaste">EZ envie</string>
+    <string name="totrack">EZ stats</string>
+</resources>
