@@ -6,8 +6,10 @@
 package com.lsinf1225.ezmeal.ezmeal;
 
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.webkit.WebStorage;
 import android.widget.Button;
@@ -19,6 +21,7 @@ public class RecipeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
+        Log.d("DEI ","CEEGZE");
 
         final String NomRecette = getIntent().getStringExtra("NomRecette");
         TextView textView=(TextView) findViewById(R.id.title_recipe);
