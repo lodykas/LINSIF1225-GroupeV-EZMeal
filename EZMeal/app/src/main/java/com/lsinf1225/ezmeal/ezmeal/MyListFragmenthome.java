@@ -24,6 +24,15 @@ public class MyListFragmenthome extends ListFragment implements OnItemClickListe
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.list_acceuil, container, false);
+        ImageButton ib = (ImageButton) view.findViewById(R.id.image_recipe);
+        ib.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+             //   Intent retour = new Intent(getActivity().getApplicationContext(), RecipeActivity.class);
+              //  startActivity(retour);
+                Toast.makeText(getActivity().getApplicationContext(),"WTF?" , 3000).show();
+            }
+        });
         return view;
 
     }

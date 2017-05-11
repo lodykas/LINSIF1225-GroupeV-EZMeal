@@ -68,6 +68,10 @@ public class MyListAdapterhome extends BaseAdapter {
 
         TextView tv=(TextView) rowView.findViewById(R.id.title_recipe);
         TextView phrase=(TextView) rowView.findViewById(R.id.sentence_recipes);
+<<<<<<< HEAD
+        TextView time=(TextView) rowView.findViewById(R.id.details_recipes);
+        Recipe rec= r[position];
+=======
 
         final Recipe rec= r[position];
 
@@ -83,11 +87,14 @@ public class MyListAdapterhome extends BaseAdapter {
                 context.startActivity(menu);
             }
         });
+>>>>>>> 74a6b72fc814bec3cf843f600d637c17016edef0
         String titre=rec.title;
         tv.setText(titre);
         String tt=rec.sentence;
         phrase.setText(tt);
         String id=rec.image;
+        SQLiteManager db = new SQLiteManager(context);
+        time.setText("Temps total : "+db.getTimeRecipe(titre)+" minutes");
         int resId = context.getResources().getIdentifier(id, "drawable", context.getPackageName());
         //Log.wtf("erreur nom recette ?", "nom = " + id + " resource id = " + resId);
         Drawable d = context.getResources().getDrawable(resId);
