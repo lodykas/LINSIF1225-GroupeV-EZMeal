@@ -66,10 +66,10 @@ public class RecipeActivity extends AppCompatActivity {
         TextView textView7=(TextView) findViewById(R.id.Difficulté);
         textView7.setText(information[1]);
 
-        TextView textView6=(TextView) findViewById(R.id.TempsCuisson);
+        TextView textView6=(TextView) findViewById(R.id.TempsPreparation);
         textView6.setText(information[2]);
 
-        TextView textView8=(TextView) findViewById(R.id.TempsPreparation);
+        TextView textView8=(TextView) findViewById(R.id.TempsCuisson);
         textView8.setText(information[3]);
 
         TextView textView9=(TextView) findViewById(R.id.NbrePersonnes);
@@ -91,14 +91,6 @@ public class RecipeActivity extends AppCompatActivity {
         listView.setAdapter(new ArrayAdapter(this,  android.R.layout.simple_list_item_1, res.toArray(listItems)));
 
         Button b = (Button) findViewById(R.id.donebutton);
-        ImageButton ib2=(ImageButton) findViewById(R.id.imagebutton);
-        ib2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent retour = new Intent(getApplicationContext(), Menuetage.class);
-                startActivity(retour);
-            }
-        });
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -108,7 +108,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         in.execute();
         in.bindString(1,"pastèque");
         in.bindString(2," ");
-        in.bindString(3,"pièce");
+        in.bindString(3,"");
         in.execute();
         in.bindString(1,"farine");
         in.bindString(2,"Gluten");
@@ -132,7 +132,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         in.execute();
         in.bindString(1,"macaronis longs ou de pennes");
         in.bindString(2,"Gluten");
-        in.bindString(3,"cl");
+        in.bindString(3,"gr");
         in.execute();
         in.bindString(1,"poivre");
         in.bindString(2," ");
@@ -188,7 +188,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         in.execute();
         in.bindString(1,"chocolat");
         in.bindString(2," ");
-        in.bindString(3,"cl");
+        in.bindString(3,"gr");
         in.execute();
         in.bindString(1,"salade romaine");
         in.bindString(2," ");
@@ -705,7 +705,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         d.bindString(1,"Mojito");
         d.bindString(2,"beverage");
         d.execute();
-        d.bindString(1,"Soupe à l'oignon");
+        d.bindString(1,"Soupe oignon");
         d.bindString(2,"entree");
         d.execute();
         d.bindString(1,"Macaroni au fromage");
@@ -775,13 +775,13 @@ public class SQLiteManager extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Sous_catégorie\" (\"NomRecette\" NOT NULL,\"sous_catégorie\" NOT NULL);");
         SQLiteStatement sc=db.compileStatement("INSERT INTO\"sous_catégorie\"(\"NomRecette\",\"sous_catégorie\")VALUES(?,?)");
-        sc.bindString(1,"Soupe à l'oignon");
+        sc.bindString(1,"Soupe oignon");
         sc.bindString(2,"soups");
         sc.execute();
-        sc.bindString(1,"Soupe à l'oignon");
+        sc.bindString(1,"Soupe oignon");
         sc.bindString(2,"hot");
         sc.execute();
-        sc.bindString(1,"Soupe à l'oignon");
+        sc.bindString(1,"Soupe oignon");
         sc.bindString(2,"other origine");
         sc.execute();
         sc.bindString(1,"Macaroni au fromage");
@@ -905,7 +905,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
 
 
         SQLiteStatement r = db.compileStatement("INSERT INTO \"Recette\"(\"NomRecette\",\"Image\",\"Instructions\",\"DateDAjout\",\"Origine\") VALUES(?,?,?,?,?)");
-        r.bindString(1,"Soupe à l'oignon");
+        r.bindString(1,"Soupe oignon");
         r.bindString(2,"soupeoignon");
         r.bindString(3,"dans une casserole à gros fond, faites fondre le beurre ou chauffer l'huile d'olive, dorer à petit feu les oignons finement émincés. lorsqu'il est transparent, ajouter la farine en saupoudrant et en mélangeant sans cesse à la cuiller en bois. \n" +
                 "saler et poivrer au moulin. mouiller ensuite, toujours en remuant, avec le consommé et porter à ébullition.\n" +
@@ -1177,39 +1177,35 @@ public class SQLiteManager extends SQLiteOpenHelper {
 
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Liste\" (\"NomRecette\" NOT NULL,\"Ingrédient\" NOT NULL,\"Quantité\" NOT NULL);");
         SQLiteStatement l= db.compileStatement("INSERT INTO \"Liste\"(\"NomRecette\",\"Ingrédient\",\"Quantité\") VALUES(?,?,?) ");
-        l.bindString(1,"Soupe à l'oignon");
+        l.bindString(1,"Soupe oignon");
         l.bindString(2,"oignon");
         l.bindString(3,"250");
         l.execute();
-        l.bindString(1,"Soupe à l'oignon");
+        l.bindString(1,"Soupe oignon");
         l.bindString(2,"farine");
         l.bindString(3,"25");
         l.execute();
-        l.bindString(1,"Soupe à l'oignon");
+        l.bindString(1,"Soupe oignon");
         l.bindString(2,"beurre");
         l.bindString(3,"25");
         l.execute();
-        l.bindString(1,"Soupe à l'oignon");
+        l.bindString(1,"Soupe oignon");
         l.bindString(2,"consommé de volaille");
         l.bindString(3,"2");
         l.execute();
-        l.bindString(1,"Soupe à l'oignon");
+        l.bindString(1,"Soupe oignon");
         l.bindString(2,"porto rouge");
         l.bindString(3,"2");
         l.execute();
-        l.bindString(1,"Soupe à l'oignon");
+        l.bindString(1,"Soupe oignon");
         l.bindString(2,"tranches de pain gratinées au beurre");
         l.bindString(3,"2");
         l.execute();
-        l.bindString(1,"Soupe à l'oignon");
+        l.bindString(1,"Soupe oignon");
         l.bindString(2,"oeufs");
         l.bindString(3,"4");
         l.execute();
-        l.bindString(1,"Soupe à l'oignon");
-        l.bindString(2,"oeufs");
-        l.bindString(3,"4");
-        l.execute();
-        l.bindString(1,"Soupe à l'oignon");
+        l.bindString(1,"Soupe oignon");
         l.bindString(2,"parmesan");
         l.bindString(3,"30");
         l.execute();
@@ -1837,7 +1833,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         i.bindString(5,"6");
         i.bindString(6,"5");
         i.execute();
-        i.bindString(1,"Soupe à l'oignon");
+        i.bindString(1,"Soupe oignon");
         i.bindString(2,"réchauffez votre coeur");
         i.bindString(3,"moyen");
         i.bindString(4,"30");
@@ -2575,10 +2571,10 @@ public class SQLiteManager extends SQLiteOpenHelper {
         return ret.toArray(rt);
     }
 
-    public Ingredient[] getIngredient(String NomRecette){
+    public com.lsinf1225.ezmeal.ezmeal.Ingredient[] getIngredient(String NomRecette){
         ArrayList<Ingredient> res=new ArrayList<Ingredient>();
-        Ingredient ingr=new Ingredient("Carotte","kg","carotine",3);
-        res.add(0,ingr);
+        //Ingredient ingr=new Ingredient("Carotte","kg","carotine",3);
+        //res.add(0,ingr);
         SQLiteDatabase db = getReadableDatabase();
         Cursor c= db.query("Liste", null, "NomRecette=\""+NomRecette+"\"", null, null, null, null);
         if(c.moveToFirst()){
@@ -2606,7 +2602,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         }
         c.close();
 
-        com.lsinf1225.ezmeal.ezmeal.Ingredient[] rt = new com.lsinf1225.ezmeal.ezmeal.Ingredient[res.size()];
+        Ingredient[] rt = new Ingredient[res.size()];
         return res.toArray(rt);
     }
 
