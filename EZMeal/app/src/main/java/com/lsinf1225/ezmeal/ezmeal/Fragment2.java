@@ -169,7 +169,7 @@ public class Fragment2 extends Fragment {
                 else{
                     cat="dessert";
                 }
-
+                Menuetage.doubletap=false;
 
                 souscat =listDataChild.get(listDataHeader.get(groupPosition)).get(childPosition);
                 souscat=souscat.toLowerCase();
