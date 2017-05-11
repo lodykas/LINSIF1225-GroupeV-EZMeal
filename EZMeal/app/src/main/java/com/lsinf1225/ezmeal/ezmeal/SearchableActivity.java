@@ -47,28 +47,18 @@ public class SearchableActivity extends AppCompatActivity{
                     public void bindView(View view, Context context, Cursor cursor) {
                         TextView recipe = (TextView) view.findViewById(R.id.title_recipe);
 
-                        String nomRecette = cursor.getString(cursor.getColumnIndexOrThrow("NomRecette"));
-                        recipe.setText(nomRecette);
-                        String origine = cursor.getString(cursor.getColumnIndexOrThrow("Origine"));
-
+                        TextView time = (TextView) view.findViewById(R.id.details_recipes);
+                        TextView sentence = (TextView) view.findViewById(R.id.sentence_recipes);
+                        recipe.setText(cursor.getString(cursor.getColumnIndexOrThrow("NomRecette")));
+                        sentence.setText(cursor.getString(cursor.getColumnIndexOrThrow("Origine")));
                         ImageButton im = (ImageButton) view.findViewById(R.id.image_recipe);
-                        im.setTag(new String[]{nomRecette,origine});
-                        im.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                Intent menu= new Intent(getApplicationContext(),RecipeActivity.class);
-                                String[] info = (String [])v.getTag();
-                                menu.putExtra("NomRecette",info[0]);
-                                menu.putExtra("Origine",info[1]);
-                                getApplicationContext().startActivity(menu);
-                            }
-                        });
+                        SQLiteManager db = new SQLiteManager(getApplicationContext());
+                        time.setText("Temps total : "+db.getTimeRecipe(cursor.getString(cursor.getColumnIndexOrThrow("NomRecette")))+" minutes");
 
                         Resources r = getResources();
                         int id = r.getIdentifier(cursor.getString(cursor.getColumnIndex("Image")).split("\\.")[0], "drawable", getPackageName());
                         im.setImageDrawable(r.getDrawable(id));
 
-                        SQLiteManager db = new SQLiteManager(getApplicationContext());
 
 
                         //((TextView) view.findViewById(R.id.sentence_recipes)).setText(cursor.getString(cursor.getColumnIndex("Origine")));

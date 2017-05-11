@@ -14,7 +14,7 @@
             android:text="Soupe à l'oignon "
             android:layout_marginTop="30dp"
             android:textStyle="bold"
-            android:textSize="32sp"
+            android:textSize="20sp"
             android:textColor="#FF000000"
             android:layout_centerHorizontal="true" />
 
@@ -27,14 +27,123 @@
             android:layout_marginTop="15dp"
             android:textColor="#FF000000"
             android:layout_centerHorizontal="true" />
-
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/title_recipe"
+            android:text="Une soupe pas comme les autres"
+            android:textColor="#FF000000"
+            android:layout_centerHorizontal="true" />
+        <ImageButton
+            android:id="@+id/imagebutton"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@drawable/backarrow"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            />
         <ImageView
             android:id="@+id/image"
-            android:layout_width="wrap_content"
-            android:layout_height="260dp"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
             android:cropToPadding="false"
             app:srcCompat="@drawable/soupeoignon"
-            android:layout_below="@+id/title_recipe"/>
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/description" />
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/list"
+            android:layout_toEndOf="@+id/linLay"
+            android:layout_alignTop="@+id/linLay">
+        </ListView>
+
+        <RelativeLayout
+            android:layout_below="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/linLay"
+            >
+            <TextView
+                android:id="@+id/difficultéX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Difficulté:"
+                android:textStyle="bold"
+                android:textColor="#FF000000"/>
+            <TextView
+                android:id="@+id/Difficulté"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Moyen"
+                android:layout_toEndOf="@+id/difficultéX"
+                android:textColor="#FF000000"/>
+
+            <TextView
+                android:id="@+id/TempsCuissonX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temps de cuisson:"
+                android:layout_below="@+id/difficultéX"
+                android:textStyle="bold"
+                android:textColor="#FF000000"/>
+            <TextView
+                android:id="@+id/TempsCuisson"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15min"
+                android:layout_toEndOf="@+id/TempsCuissonX"
+                android:textColor="#FF000000"
+                android:layout_alignTop="@+id/TempsCuissonX" />
+            <TextView
+                android:id="@+id/TempsPreparationX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Temps de préparation:"
+                android:layout_below="@+id/TempsCuissonX"
+                android:textStyle="bold"
+                android:textColor="#FF000000"/>
+            <TextView
+                android:id="@+id/TempsPreparation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1h"
+                android:layout_toEndOf="@+id/TempsPreparationX"
+                android:layout_alignTop="@+id/TempsPreparationX"
+                android:textColor="#FF000000"/>
+
+            <TextView
+                android:id="@+id/NbrePersonnesX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Nombre de personnes:"
+                android:layout_below="@+id/TempsPreparationX"
+                android:textStyle="bold"
+                android:textColor="#FF000000"/>
+            <TextView
+                android:id="@+id/NbrePersonnes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6"
+                android:layout_toEndOf="@+id/NbrePersonnesX"
+                android:layout_alignTop="@+id/NbrePersonnesX"
+                android:textColor="#FF000000"/>
+            <TextView
+                android:id="@+id/InstructionsX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instructions:"
+                android:layout_below="@+id/NbrePersonnesX"
+                android:textStyle="bold"
+                android:textColor="#FF000000"/>
+
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/title_instruction"
@@ -42,7 +151,7 @@
             android:layout_height="wrap_content"
             android:text="Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum"
             android:textColor="#FF000000"
-            android:layout_below="@+id/image"/>
+            android:layout_below="@+id/linLay"/>
 
         <TextView
             android:id="@+id/ajout"
