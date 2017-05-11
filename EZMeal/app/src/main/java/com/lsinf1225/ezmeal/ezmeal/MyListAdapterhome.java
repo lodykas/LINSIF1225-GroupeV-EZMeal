@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MyListAdapterhome extends BaseAdapter {
     private final Context context;
@@ -84,6 +85,9 @@ public class MyListAdapterhome extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Intent menu= new Intent(context,RecipeActivity.class);
+                String usermail = menu.getStringExtra("usermail");
+                menu.putExtra("usermail",usermail);
+                Toast.makeText(context," "+usermail+" " , 1000).show();
                 String[] info = (String [])v.getTag();
                 menu.putExtra("NomRecette",info[0]);
                 menu.putExtra("Origine",info[1]);

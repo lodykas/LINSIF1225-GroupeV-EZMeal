@@ -2492,7 +2492,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         Cursor c =db.query("\"Liste\"",new String[]{"\"Ingrédient\""},("\"NomRecette\" = \"" + recette +"\"") ,null,null,null,null);
         if(c.moveToFirst()){
             for(int i = 0; i<c.getCount(); i++){
-                res.add(c.getString(c.getColumnIndex("Recette")));
+                res.add(c.getString(c.getColumnIndex("Ingrédient")));
                 c.moveToNext();
             }
         } else {
@@ -2617,7 +2617,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
 
     public void addEffectues(String usermail, String NomRecette){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("INSERT OR IGNORE INTO \"Effectués\" VALUES(\""+usermail+"\", \""+NomRecette+"\")");
+        db.execSQL("INSERT OR IGNORE INTO \"Effectués\" VALUES(\""+NomRecette+"\", \""+usermail+"\")");
         close();
     }
 

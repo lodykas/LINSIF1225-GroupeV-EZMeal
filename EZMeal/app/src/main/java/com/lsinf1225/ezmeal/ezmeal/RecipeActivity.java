@@ -32,6 +32,7 @@ public class RecipeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe);
         final String nom = getIntent().getStringExtra("NomRecette");
+        final String usermail = Menuetage.usermail;
         SQLiteManager db = new SQLiteManager(getApplicationContext());
 
         Recipe recipe=db.getRecipeName(nom);
@@ -90,14 +91,18 @@ public class RecipeActivity extends AppCompatActivity {
         /*String[] listItems = {String.valueOf(ingredient.Quantite)+" "+ingredient.Unite+" de "+ingredient.NomIngrédient};*/
         listView.setAdapter(new ArrayAdapter(this,  android.R.layout.simple_list_item_1, res.toArray(listItems)));
 
+
+
         Button b = (Button) findViewById(R.id.donebutton);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 SQLiteManager db = new SQLiteManager(getApplicationContext());
-                db.addEffectues(getIntent().getStringExtra("usermail"),nom);
 
+                db.addEffectues(usermail,nom);
+                //db.addEffectues(ModifyProfileActivity.usermail,nom);
                 Intent retour = new Intent(getApplicationContext(), Menuetage.class);
+                retour.putExtra("usermail",usermail);
                 startActivity(retour);
             }
         });

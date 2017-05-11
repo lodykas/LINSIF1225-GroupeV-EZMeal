@@ -46,6 +46,9 @@ public class MyListFragmenthome extends ListFragment implements OnItemClickListe
     public void onItemClick(AdapterView<?> parent, View view, int position,long id) {
         Toast.makeText(getActivity(), "Item: " + position, Toast.LENGTH_SHORT).show();
         Intent intent=new Intent(getContext(),RecipeActivity.class);
+        String usermail = intent.getStringExtra("usermail");
+        intent.putExtra("usermail",usermail);
+        Toast.makeText(getContext()," "+usermail+" " , 1000).show();
         startActivity(intent);
 
     }

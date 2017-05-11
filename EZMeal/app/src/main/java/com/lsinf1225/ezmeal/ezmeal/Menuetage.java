@@ -31,6 +31,8 @@ public class Menuetage extends AppCompatActivity
 
         NavigationView.OnNavigationItemSelectedListener {
 
+    public static String usermail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,9 +61,9 @@ public class Menuetage extends AppCompatActivity
 
         //NOTE:  Open fragment1 initially.
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-        String myMessage = getIntent().getStringExtra("usermail");
         Bundle bundle = new Bundle();
-        bundle.putString("usermail", myMessage );
+        usermail = getIntent().getStringExtra("usermail");
+        bundle.putString("usermail", usermail );
         Fragment f = new Fragment1();
         f.setArguments(bundle);
         ft.replace(R.id.mainFrame, f);
@@ -145,7 +147,11 @@ public class Menuetage extends AppCompatActivity
                 fragment = new Fragment3();
                 fragment.setArguments(bundle);
             }else if (id == R.id.nav_frag4) {
+                Bundle bundle = new Bundle();
+                String myMessage = getIntent().getStringExtra("usermail");
+                bundle.putString("usermail", myMessage );
                 fragment = new Fragment4();
+                fragment.setArguments(bundle);
             }
 
 

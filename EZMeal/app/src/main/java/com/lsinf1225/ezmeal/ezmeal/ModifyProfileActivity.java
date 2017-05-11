@@ -15,7 +15,7 @@ import android.widget.Toast;
 import java.util.List;
 
 public class ModifyProfileActivity extends AppCompatActivity {
-
+    //public static String usermail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

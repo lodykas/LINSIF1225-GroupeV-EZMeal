@@ -113,6 +113,8 @@ public class Fragment1 extends Fragment {
     }
     public void onClick(View v) {
         Intent intent = new Intent(getContext(), RecipeActivity.class);
+        String usermail = intent.getStringExtra("usermail");
+        intent.putExtra("usermail",usermail);
         startActivity(intent);
 
     }
