@@ -34,42 +34,10 @@ public class SearchableActivity extends AppCompatActivity{
             String query = intent.getStringExtra(SearchManager.QUERY);
 
             ListView l = (ListView) findViewById(R.id.listsearch);
-            SQLiteManager db = new SQLiteManager(getApplicationContext());
+            SQLiteManager db = new SQLiteManager(getBaseContext());
             Cursor cu = db.research(query);
             if( cu.getCount() > 0) {
-                CursorAdapter c = new CursorAdapter(getApplicationContext(), cu) {
-                    @Override
-                    public View newView(Context context, Cursor cursor, ViewGroup parent) {
-                        return LayoutInflater.from(context).inflate(R.layout.list_acceuil_recette, parent, false);
-                    }
-
-                    @Override
-                    public void bindView(View view, Context context, Cursor cursor) {
-                        TextView recipe = (TextView) view.findViewById(R.id.title_recipe);
-
-                        TextView time = (TextView) view.findViewById(R.id.details_recipes);
-                        TextView sentence = (TextView) view.findViewById(R.id.sentence_recipes);
-                        recipe.setText(cursor.getString(cursor.getColumnIndexOrThrow("NomRecette")));
-                        sentence.setText(cursor.getString(cursor.getColumnIndexOrThrow("Origine")));
-                        ImageButton im = (ImageButton) view.findViewById(R.id.image_recipe);
-                        SQLiteManager db = new SQLiteManager(getApplicationContext());
-                        time.setText("Temps total : "+db.getTimeRecipe(cursor.getString(cursor.getColumnIndexOrThrow("NomRecette")))+" minutes");
-
-                        Resources r = getResources();
-                        int id = r.getIdentifier(cursor.getString(cursor.getColumnIndex("Image")).split("\\.")[0], "drawable", getPackageName());
-                        im.setImageDrawable(r.getDrawable(id));
-
-
-
-                        //((TextView) view.findViewById(R.id.sentence_recipes)).setText(cursor.getString(cursor.getColumnIndex("Origine")));
-                        //Cursor c = db.getRecipeInfo(cursor.getString(cursor.getColumnIndexOrThrow("NomRecette")));
-                        //String s = c.getString(0);
-                        //((TextView) view.findViewById(R.id.details_recipes)).setText(s);//c.getColumnIndex("NbrePersonnes")
-                        //c.close();
-
-
-                    }
-                };
+                MyCursorAdapter c = new MyCursorAdapter(getApplicationContext(), cu);
 
                 l.setAdapter(c);
             }
