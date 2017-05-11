@@ -27,6 +27,7 @@ public class Menuetage extends AppCompatActivity
         Fragment2.OnFragmentInteractionListener,
         Fragment3.OnFragmentInteractionListener,
         Fragment4.OnFragmentInteractionListener,
+        PlusFrag2.OnFragmentInteractionListener,
 
         NavigationView.OnNavigationItemSelectedListener {
 

@@ -1,11 +1,12 @@
 package com.lsinf1225.ezmeal.ezmeal;
 
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.database.Cursor;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,9 +17,15 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.widget.ExpandableListView;
+import android.widget.ImageButton;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+
+
 import static android.R.attr.data;
+import static android.R.attr.fragment;
 
 
 /**
@@ -30,6 +37,13 @@ import static android.R.attr.data;
  * create an instance of this fragment.
  */
 public class Fragment2 extends Fragment {
+
+
+
+    private Recipe[] r;
+
+    public static String cat;
+    public static String souscat;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -81,7 +95,8 @@ public class Fragment2 extends Fragment {
 
     @Override
     public View onCreateView (LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_food, container, false);
+
+      View   view = inflater.inflate(R.layout.fragment_food, container, false);
         if (mListener != null) {
             //mListener.onFragmentInteraction("Fragment 2");
         }
@@ -139,17 +154,38 @@ public class Fragment2 extends Fragment {
         expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
 
             @Override
-            public boolean onChildClick(ExpandableListView parent, View v,
-                                        int groupPosition, int childPosition, long id) {
+
+
+            public boolean onChildClick(ExpandableListView parent, View v, int groupPosition, int childPosition, long id) {
                  //TODO Auto-generated method stub
-                Toast.makeText(
-                        getContext(),
-                        listDataHeader.get(groupPosition)
-                                + " : "
-                                + listDataChild.get(
-                                        listDataHeader.get(groupPosition)).get(
-                                childPosition), Toast.LENGTH_SHORT)
-                        .show();
+                Fragment fragment = null;
+                cat= listDataHeader.get(groupPosition);
+                if(cat.equals("Appetizers and Snack Recipes")){
+                    cat="entree";
+                }
+                else if(cat.equals("Main dishes")){
+                    cat="plat";
+                }
+                else{
+                    cat="dessert";
+                }
+
+
+                souscat =listDataChild.get(listDataHeader.get(groupPosition)).get(childPosition);
+                souscat=souscat.toLowerCase();
+
+
+
+                Fragment newFragment = new PlusFrag2();
+
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+
+
+                transaction.replace(R.id.mainFrame, newFragment);
+                transaction.addToBackStack(null);
+
+
+                transaction.commit();
 
                 return false;
             }
@@ -157,6 +193,7 @@ public class Fragment2 extends Fragment {
 
      return view;
     }
+
 
 
 
