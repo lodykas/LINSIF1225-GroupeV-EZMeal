@@ -21,6 +21,7 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 public class Menuetage extends AppCompatActivity
+
         //Note : OnFragmentInteractionListener of all the fragments
         implements
         Fragment1.OnFragmentInteractionListener,
@@ -33,6 +34,7 @@ public class Menuetage extends AppCompatActivity
 
     public static String usermail;
 
+         public static  boolean doubletap=true;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -82,21 +84,26 @@ public class Menuetage extends AppCompatActivity
    boolean doubleBackToExitPressedOnce = false;
    @Override
    public void onBackPressed() {
-       if (doubleBackToExitPressedOnce) {
-           super.onBackPressed();
-           return;
-       }
 
-       this.doubleBackToExitPressedOnce = true;
-       Toast.makeText(this, R.string.signout, Toast.LENGTH_SHORT).show();
-
-       new Handler().postDelayed(new Runnable() {
-
-           @Override
-           public void run() {
-               doubleBackToExitPressedOnce=false;
+           if (doubleBackToExitPressedOnce) {
+               super.onBackPressed();
+               return;
            }
-       }, 2000);
+       if(doubletap){
+           this.doubleBackToExitPressedOnce = true;
+           Toast.makeText(this, R.string.signout, Toast.LENGTH_SHORT).show();
+
+           new Handler().postDelayed(new Runnable() {
+
+               @Override
+               public void run() {
+                   doubleBackToExitPressedOnce = false;}}, 2000);
+
+       }
+       else{
+           super.onBackPressed();
+           doubletap=true;
+       }
    }
 
     @Override
