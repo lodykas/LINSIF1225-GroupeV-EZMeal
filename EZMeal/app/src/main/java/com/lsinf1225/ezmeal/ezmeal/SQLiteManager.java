@@ -2525,6 +2525,97 @@ public class SQLiteManager extends SQLiteOpenHelper {
         }
         return ret;
     }
+    public Recipe getRecipeName(String NomRecette){
+        SQLiteDatabase db = getReadableDatabase();
+        Recipe recipe=new Recipe("okok","","","","");
+        String[] nom=new String[1];
+        nom[0]=NomRecette;
+        Cursor c= db.query("Recette", null, "NomRecette=?", nom, null, null, null);
+        if(c.moveToFirst()) {
+            for(int i = 0; i<c.getCount(); i++) {
+                String image = c.getString(c.getColumnIndex("Image"));
+                String instruc = c.getString(c.getColumnIndex("Instructions"));
+                String date = c.getString(c.getColumnIndex("DateDAjout"));
+                String sentence = c.getString(c.getColumnIndex("Origine"));
+                recipe = new Recipe(NomRecette, image, instruc, date, sentence);
+            }
+        }
+        c.close();
+        return recipe;
+    }
+
+    public String[] getInformation (String NomRecette){
+        SQLiteDatabase db = this.getReadableDatabase();
+        ArrayList<String> ret=new ArrayList<String>();
+        ret.add(0,"k");
+        String[] nom=new String[1];
+        nom[0]=NomRecette;
+        String queryString="SELECT * FROM Informations WHERE \"NomRecette\" = '" + NomRecette + "'";
+        Cursor c=db.rawQuery(queryString,null);
+        //Cursor c= db.query("Informations", null, "NomRecette LIKE ?", nom, null, null, null);
+        if(c.moveToFirst()) {
+            //for (int i = 0; i < c.getCount(); i++) {
+            Log.wtf("yoyo", "ici");
+            String description = c.getString(c.getColumnIndex("Description"));
+            ret.set(0, description);
+            String difficulté = c.getString(c.getColumnIndex("Difficulté"));
+            ret.add(1, difficulté);
+            String tempsCuisson = c.getString(c.getColumnIndex("TempsCuisson"));
+            ret.add(2, tempsCuisson);
+            String tempsPreparation = c.getString(c.getColumnIndex("TempsPreparation"));
+            ret.add(3, tempsPreparation);
+            String nbrePersonnes = c.getString(c.getColumnIndex("NbrePersonnes"));
+            ret.add(4, nbrePersonnes);
+            //}
+        }
+        else ret.set(0,"passe le if");
+        c.close();
+        String[] rt = new String[ret.size()];
+
+        return ret.toArray(rt);
+    }
+
+    public Ingredient[] getIngredient(String NomRecette){
+        ArrayList<Ingredient> res=new ArrayList<Ingredient>();
+        Ingredient ingr=new Ingredient("Carotte","kg","carotine",3);
+        res.add(0,ingr);
+        SQLiteDatabase db = getReadableDatabase();
+        Cursor c= db.query("Liste", null, "NomRecette=\""+NomRecette+"\"", null, null, null, null);
+        if(c.moveToFirst()){
+            for(int i = 0; i<c.getCount(); i++){
+                int quantite=c.getInt(c.getColumnIndex("Quantité"));
+                String ingredient=c.getString(c.getColumnIndex("Ingrédient"));
+                Cursor c2= db.query("Ingrédients", null, "Libellé=\""+ingredient+"\"", null, null, null, null);
+                if(c2.moveToFirst()){
+                    for(int j=0;j<c2.getCount();j++){
+                        String unite=c2.getString(c2.getColumnIndex("Unité"));
+                        if(c2.isNull(c2.getColumnIndex("Allergène"))){
+                            res.add(new Ingredient(ingredient,unite,quantite));
+                        }
+                        else{
+                            String allergene=c2.getString(c2.getColumnIndex("Allergène"));
+                            res.add(new Ingredient(ingredient,unite,allergene,quantite));
+                        }
+                        c2.moveToNext();
+                    }
+                }
+                c2.close();
+
+                c.moveToNext();
+            }
+        }
+        c.close();
+
+        com.lsinf1225.ezmeal.ezmeal.Ingredient[] rt = new com.lsinf1225.ezmeal.ezmeal.Ingredient[res.size()];
+        return res.toArray(rt);
+    }
+
+    public void addEffectues(String usermail, String NomRecette){
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("INSERT OR IGNORE INTO \"Effectués\" VALUES(\""+usermail+"\", \""+NomRecette+"\")");
+        close();
+    }
+
 
 
 
