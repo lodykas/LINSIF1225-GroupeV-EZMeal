@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -104,8 +105,17 @@ public class Fragment4 extends Fragment {
                 TextView allergeneshow = (TextView)getActivity().findViewById(R.id.AllergeneShow);
                 List<String> Allergenes = db.AllergenesConsomm(usermail);
                 String allergenes = "";
+                List<String> AllergenesTest = new ArrayList<String>();
                 for (int i=0; i<Allergenes.size(); i++) {
-                    allergenes += Allergenes.get(i) + " ";
+                    boolean trouvé=false;
+                    for (int j=0; j<AllergenesTest.size(); j++) {
+                        if (Allergenes.get(i).equals(AllergenesTest.get(j))) {
+                            trouvé=true;
+                        }
+                    }
+                    if (!trouvé) {
+                        allergenes += Allergenes.get(i) + " ";
+                    }
                 }
                 allergeneshow.setText(allergenes);
             }

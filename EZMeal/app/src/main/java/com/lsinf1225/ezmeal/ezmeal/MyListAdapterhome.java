@@ -87,7 +87,6 @@ public class MyListAdapterhome extends BaseAdapter {
                 Intent menu= new Intent(context,RecipeActivity.class);
                 String usermail = menu.getStringExtra("usermail");
                 menu.putExtra("usermail",usermail);
-                Toast.makeText(context," "+usermail+" " , 1000).show();
                 String[] info = (String [])v.getTag();
                 menu.putExtra("NomRecette",info[0]);
                 menu.putExtra("Origine",info[1]);

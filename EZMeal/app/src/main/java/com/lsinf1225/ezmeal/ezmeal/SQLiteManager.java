@@ -2282,6 +2282,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
             if (count>comparateur) {
                 ret.clear();
                 ret.add(res.get(i));
+                comparateur=count;
             }
         }
         return ret;
@@ -2313,6 +2314,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
             if (count>comparateur) {
                 ret.clear();
                 ret.add(res.get(i));
+                comparateur=count;
             }
         }
         return ret;
@@ -2362,6 +2364,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
             if (count>comparateur) {
                 ret.clear();
                 ret.add(getOriginRecipe(res.get(i)));
+                comparateur=count;
             }
         }
         return ret;
@@ -2411,6 +2414,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
             if (count>comparateur) {
                 ret.clear();
                 ret.add(getCategoryRecipe(res.get(i)));
+                comparateur=count;
             }
         }
         return ret;
@@ -2460,6 +2464,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
             if (count>comparateur) {
                 ret.clear();
                 ret.add(getTimeRecipe(res.get(i)));
+                comparateur=count;
             }
         }
         return ret;
@@ -2507,7 +2512,8 @@ public class SQLiteManager extends SQLiteOpenHelper {
         List<String> ret = new ArrayList<>();
         List<String> allerUsr = getAllergene(usermail);
         SQLiteDatabase db = getReadableDatabase();
-        Cursor c =db.query("\"Effectués\"",new String[]{"\"Recette\""},("\"Username\" = \"" + usermail +"\"") ,null,null,null,null);
+        Cursor c = db.rawQuery("SELECT DISTINCT \"Recette\" FROM \"Effectués\" WHERE \"Username\" = \"" +usermail +"\"",null);
+        //Cursor c =db.query("\"Effectués\"",new String[]{"\"Recette\""},("\"Username\" = \"" + usermail +"\"") ,null,null,null,null);
         if(c.moveToFirst()){
             for(int i = 0; i<c.getCount(); i++){
                 res.add(c.getString(c.getColumnIndex("Recette")));
@@ -2617,7 +2623,15 @@ public class SQLiteManager extends SQLiteOpenHelper {
 
     public void addEffectues(String usermail, String NomRecette){
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("INSERT OR IGNORE INTO \"Effectués\" VALUES(\""+NomRecette+"\", \""+usermail+"\")");
+        db.execSQL("INSERT INTO \"Effectués\" VALUES(\""+NomRecette+"\", \""+usermail+"\")");
+        Cursor c= db.query("\"Liste\"",new String[]{"\"Ingrédient\""},("\"NomRecette\" = \"" + NomRecette +"\"") , null, null, null, null);
+        if(c.moveToFirst()) {
+            for (int i = 0; i < c.getCount(); i++) {
+                db.execSQL("INSERT INTO \"Consommés\" VALUES(\""+(c.getString(c.getColumnIndex("Ingrédient")))+"\", \""+usermail+"\")");
+                c.moveToNext();
+            }
+        }
+        c.close();
         close();
     }
 
