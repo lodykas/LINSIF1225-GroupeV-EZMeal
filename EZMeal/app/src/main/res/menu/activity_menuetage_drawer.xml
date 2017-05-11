@@ -6,19 +6,19 @@
         <item
         android:id="@+id/nav_frag1"
         android:icon="@drawable/cutlery"
-        android:title="EZ to taste" />
+        android:title="@string/totaste" />
         <item
             android:id="@+id/nav_frag2"
             android:icon="@drawable/cookingv"
-            android:title="EZ to eat" />
+            android:title="@string/toeat" />
         <item
             android:id="@+id/nav_frag3"
             android:icon="@drawable/coffee"
-            android:title="EZ to drink" />
+            android:title="@string/todrink" />
         <item
             android:id="@+id/nav_frag4"
             android:icon="@drawable/stat"
-            android:title="EZ to track" />
+            android:title="@string/totrack" />
 
 
 
