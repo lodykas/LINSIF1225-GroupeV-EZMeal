@@ -7,6 +7,7 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,7 @@ public class SearchableActivity extends AppCompatActivity{
             ListView l = (ListView) findViewById(R.id.listsearch);
             SQLiteManager db = new SQLiteManager(getApplicationContext());
             Cursor cu = db.research(query);
-            if( cu.getCount() > 0 && cu != null) {
+            if( cu.getCount() > 0) {
                 CursorAdapter c = new CursorAdapter(getApplicationContext(), cu) {
                     @Override
                     public View newView(Context context, Cursor cursor, ViewGroup parent) {
@@ -59,15 +60,12 @@ public class SearchableActivity extends AppCompatActivity{
                         //String s = c.getString(0);
                         //((TextView) view.findViewById(R.id.details_recipes)).setText(s);//c.getColumnIndex("NbrePersonnes")
                         //c.close();
-                        db.close();
 
 
                     }
                 };
 
                 l.setAdapter(c);
-                cu.close();
-                db.close();
             }
             else{
                 Toast.makeText(getApplicationContext(), "Recipe not found", 3000).show();
