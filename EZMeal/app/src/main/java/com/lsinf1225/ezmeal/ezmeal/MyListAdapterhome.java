@@ -69,8 +69,11 @@ public class MyListAdapterhome extends BaseAdapter {
         TextView tv=(TextView) rowView.findViewById(R.id.title_recipe);
         TextView phrase=(TextView) rowView.findViewById(R.id.sentence_recipes);
 
-        TextView time=(TextView) rowView.findViewById(R.id.details_recipes);
+
+        //TextView time=(TextView) rowView.findViewById(R.id.details_recipes);
         //Recipe rec= r[position];
+
+        TextView time=(TextView) rowView.findViewById(R.id.details_recipes);
 
 
         final Recipe rec= r[position];
@@ -87,7 +90,6 @@ public class MyListAdapterhome extends BaseAdapter {
                 context.startActivity(menu);
             }
         });
-
         String titre=rec.title;
         tv.setText(titre);
         String tt=rec.sentence;
