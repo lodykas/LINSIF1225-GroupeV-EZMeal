@@ -152,7 +152,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         in.execute();
         in.bindString(1,"tomates");
         in.bindString(2," ");
-        in.bindString(3,"pièce");
+        in.bindString(3,"gr");
         in.execute();
         in.bindString(1,"vin rouge");
         in.bindString(2," ");
@@ -328,7 +328,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         in.execute();
         in.bindString(1,"échalote");
         in.bindString(2," ");
-        in.bindString(3,"gr");
+        in.bindString(3,"");
         in.execute();
         in.bindString(1,"piment");
         in.bindString(2," ");
@@ -356,7 +356,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         in.execute();
         in.bindString(1,"bananes");
         in.bindString(2,"Banana");
-        in.bindString(3,"pièce");
+        in.bindString(3,"");
         in.execute();
         in.bindString(1,"pâte de curry rouge");
         in.bindString(2,"Soy");
@@ -368,7 +368,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         in.execute();
         in.bindString(1,"tapioca");
         in.bindString(2," ");
-        in.bindString(3,"gr");
+        in.bindString(3,"sachet");
         in.execute();
         in.bindString(1,"sucre semoule");
         in.bindString(2," ");
@@ -414,8 +414,15 @@ public class SQLiteManager extends SQLiteOpenHelper {
         in.bindString(2,"Peanuts");
         in.bindString(3,"gr");
         in.execute();
+        in.bindString(1,"fromage blanc");
+        in.bindString(2,"Lactose");
+        in.bindString(3,"gr");
+        in.execute();
         SQLiteStatement f=db.compileStatement("INSERT INTO\"Famille\"(\"Ingrédient\",\"famille\")VALUES (?,?)");
         f.bindString(1,"parmesan");
+        f.bindString(2,"produit laitier");
+        f.execute();
+        f.bindString(1,"fromage blanc");
         f.bindString(2,"produit laitier");
         f.execute();
         f.bindString(1,"creme liquide");
@@ -732,7 +739,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         d.bindString(1,"Curry japonais");
         d.bindString(2,"plat");
         d.execute();
-        d.bindString(1,"Donut de New York");
+        d.bindString(1,"Donut");
         d.bindString(2,"dessert");
         d.execute();
         d.bindString(1,"Gin à la framboise");
@@ -1252,7 +1259,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         l.execute();
         l.bindString(1,"Spaghetti bolognaise");
         l.bindString(2,"oignon");
-        l.bindString(3,"1");
+        l.bindString(3,"50");
         l.execute();
         l.bindString(1,"Spaghetti bolognaise");
         l.bindString(2,"gousse d'ail");
@@ -1268,7 +1275,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         l.execute();
         l.bindString(1,"Spaghetti bolognaise");
         l.bindString(2,"tomates");
-        l.bindString(3,"850");
+        l.bindString(3,"5");
         l.execute();
         l.bindString(1,"Spaghetti bolognaise");
         l.bindString(2,"vin rouge");
@@ -1467,7 +1474,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         l.bindString(3,"80");
         l.execute();
         l.bindString(1,"Donut");
-        l.bindString(2,"oeuf");
+        l.bindString(2,"oeufs");
         l.bindString(3,"1");
         l.execute();
         l.bindString(1,"Donut");
@@ -1687,7 +1694,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         l.bindString(3,"1");
         l.execute();
         l.bindString(1,"Fish and chips");
-        l.bindString(2,"oeuf");
+        l.bindString(2,"oeufs");
         l.bindString(3,"1");
         l.execute();
         l.bindString(1,"Fish and chips");
@@ -1828,15 +1835,15 @@ public class SQLiteManager extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE IF NOT EXISTS \"Informations\" (\"NomRecette\" PRIMARY KEY,\"Description\" NOT NULL,\"Difficulté\" NOT NULL,\"TempsCuisson\" NOT NULL,\"TempsPreparation\" NOT NULL,\"NbrePersonnes\" NOT NULL);");
         //difficulte peu etre que facile, moyen et difficile
         SQLiteStatement i = db.compileStatement("INSERT INTO \"Informations\"(\"NomRecette\",\"Description\",\"Difficulté\",\"TempsCuisson\",\"TempsPreparation\",\"NbrePersonnes\") VALUES(?,?,?,?,?,?)");
-        i.bindString(1,"Donut ");
+        i.bindString(1,"Donut");
         i.bindString(2,"Colorons la vie de donut");
         i.bindString(3,"moyen");
         i.bindString(4,"60");
         i.bindString(5,"3");
         i.bindString(6,"6");
         i.execute();
-        i.bindString(1,"Gaufre Belge ");
-        i.bindString(2,"L'art Belge chez vous");
+        i.bindString(1,"Gaufre Belge");
+        i.bindString(2,"La Belge chez vous");
         i.bindString(3,"facile");
         i.bindString(4,"15");
         i.bindString(5,"6");
@@ -1919,7 +1926,7 @@ public class SQLiteManager extends SQLiteOpenHelper {
         i.bindString(5,"5");
         i.bindString(6,"2");
         i.execute();
-        i.bindString(1,"Fish and chips ");
+        i.bindString(1,"Fish and chips");
         i.bindString(2,"Sain, pas sain");
         i.bindString(3,"expert");
         i.bindString(4,"10");
