@@ -2463,6 +2463,9 @@ public class SQLiteManager extends SQLiteOpenHelper {
         int countmoyen=0;
         int countlong=0;
         for (int i=0; i<res.size(); i++) {
+                if (res.get(i)=="None") {
+                    return 0;
+                }
                 if(Integer.parseInt(getTimeRecipe(res.get(i)))<20) {
                     countcourt++;
                 } else if (Integer.parseInt(getTimeRecipe(res.get(i)))>60) {

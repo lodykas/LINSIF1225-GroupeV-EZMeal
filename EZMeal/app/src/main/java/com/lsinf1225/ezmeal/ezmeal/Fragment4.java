@@ -104,7 +104,9 @@ public class Fragment4 extends Fragment {
                 TextView timeshow = (TextView)getActivity().findViewById(R.id.TimeShow);
                 int Times = db.mostTime(usermail);
                 String mostTime="None";
-                if (Times<15) {
+                if (Times==0) {
+                    mostTime = "None";
+                } else if (Times<15) {
                     mostTime = "< 15 minutes";
                 } else if (Times>60) {
                     mostTime = "> 60 minutes";
