@@ -6,6 +6,7 @@
     <string name="country1">Living country</string>
     <string name="origincountry">Country of origin</string>
     <string name="birthday">Birthday</string>
+    <string name="Date">DD/MM/YYYY</string>
     <string name="createsuccess">Welcome, %1$s!</string>
     <string name="title_activity_menuetage">EZMeal</string>
     <string name="title_activity_modify_profile">Modify Profile</string>
@@ -374,4 +375,23 @@
     <string name="todrink">EZ to drink</string>
     <string name="totaste">EZ to taste</string>
     <string name="totrack">EZ to track</string>
+
+    <string name="title">Profile</string>
+    <string name="newPassword">Write your new Password</string>
+    <string name="confirmNewPassword">Confirm your new Password</string>
+    <string name="informationsModify">Only those informations can be changed</string>
+    <string name="newLiving">Choose your new living country</string>
+    <string name="yourUsermail">Your Usermail : </string>
+    <string name="yourOrigin">Your country of origin : </string>
+    <string name="yourBirthday">Your birthday : </string>
+    <string name="yourAllergenes">Your Allergenes : </string>
+
+    <string name="titleStatistics"> YOUR STATISTICS : </string>
+    <string name="mostRecipe"> Most executed recipe : </string>
+    <string name="mostIngredient"> Most consumed ingredient : </string>
+    <string name="preferentialOrigin"> Preferential origin : </string>
+    <string name="buttonCalculate"> CALCULATE </string>
+    <string name="preferentialCategory"> Preferential category </string>
+    <string name="preferentialTime"> Preferential time of preparation </string>
+    <string name="Warning"> WARNING !! You have eaten those recipe however you are allergic to : </string>
 </resources>

@@ -15,7 +15,8 @@
         android:hint="@string/password"
         android:inputType="textPassword"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp" />
+        android:paddingRight="10dp"
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/passwordlog"
@@ -27,7 +28,7 @@
         android:layout_marginBottom="300dp"
         android:layout_marginLeft="22dp"
         android:layout_marginStart="22dp"
-        android:text="Write your new password "
+        android:text="@string/newPassword"
         android:textColor="@android:color/holo_red_dark" />
 
     <EditText
@@ -35,15 +36,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/passwordlog"
+        android:layout_alignLeft="@id/passwordedit2"
+        android:layout_alignStart="@id/passwordedit2"
         android:layout_toEndOf="@+id/button201"
         android:layout_toRightOf="@id/passwordlog"
-        android:layout_alignStart="@id/passwordedit2"
-        android:layout_alignLeft="@id/passwordedit2"
         android:background="@color/white"
         android:hint="@string/password"
         android:inputType="textPassword"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp" />
+        android:paddingRight="10dp"
+        android:textSize="12sp" />
 
     <TextView
         android:id="@+id/passwordlog2"
@@ -55,7 +57,7 @@
         android:layout_marginBottom="250dp"
         android:layout_marginLeft="22dp"
         android:layout_marginStart="22dp"
-        android:text="Write your new password "
+        android:text="@string/confirmNewPassword"
         android:textColor="@android:color/holo_red_dark" />
 
     <Spinner
@@ -85,7 +87,7 @@
         android:layout_marginBottom="200dp"
         android:layout_marginLeft="22dp"
         android:layout_marginStart="22dp"
-        android:text="Choose your new living country"
+        android:text="@string/newLiving"
         android:textColor="@android:color/holo_red_dark" />
 
     <Button
@@ -108,7 +110,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="84dp"
         android:ems="10"
-        android:text="Only those informations can be changed."
+        android:text="@string/informationsModify"
         android:textAlignment="center"
         android:textColor="@android:color/holo_red_dark"
         android:textSize="18sp" />
@@ -118,9 +120,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button201"
-        android:text="Your Usermail : "
+        android:text="@string/yourUsermail"
         android:layout_marginLeft="20dp"
-        android:layout_marginBottom="120dp"/>
+        android:layout_marginBottom="140dp"/>
 
     <TextView
         android:id="@+id/usermailshow"
@@ -131,16 +133,16 @@
         android:layout_marginRight="20dp"
         android:layout_toRightOf="@id/button201"
         android:layout_toEndOf="@id/button201"
-        android:layout_marginBottom="120dp" />
+        android:layout_marginBottom="140dp" />
 
     <TextView
         android:id="@+id/origincountry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button201"
-        android:text="Your country of origin: "
+        android:text="@string/yourOrigin"
         android:layout_marginLeft="20dp"
-        android:layout_marginBottom="80dp"/>
+        android:layout_marginBottom="100dp"/>
 
     <TextView
         android:id="@+id/countryoriginshow"
@@ -151,16 +153,16 @@
         android:layout_marginRight="20dp"
         android:layout_toRightOf="@id/button201"
         android:layout_toEndOf="@id/button201"
-        android:layout_marginBottom="80dp" />
+        android:layout_marginBottom="100dp" />
 
     <TextView
         android:id="@+id/birthday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button201"
-        android:text="Your Birthday : "
+        android:text="@string/yourBirthday"
         android:layout_marginLeft="20dp"
-        android:layout_marginBottom="40dp"/>
+        android:layout_marginBottom="60dp"/>
 
     <TextView
         android:id="@+id/birthdayshow"
@@ -171,16 +173,16 @@
         android:layout_marginRight="20dp"
         android:layout_toRightOf="@id/button201"
         android:layout_toEndOf="@id/button201"
-        android:layout_marginBottom="40dp" />
+        android:layout_marginBottom="60dp" />
 
     <TextView
         android:id="@+id/allergenes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button201"
-        android:text="Your Allergenes : "
+        android:text="@string/yourAllergenes"
         android:layout_marginLeft="20dp"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="15dp"/>
 
     <TextView
         android:id="@+id/allergenesshow"
@@ -192,6 +194,7 @@
         android:layout_toRightOf="@id/button201"
         android:layout_toEndOf="@id/button201"
         android:layout_marginBottom="5dp" />
+
     <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"

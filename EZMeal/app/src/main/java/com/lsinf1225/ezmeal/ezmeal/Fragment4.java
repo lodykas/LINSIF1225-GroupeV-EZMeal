@@ -11,7 +11,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 
 /**
@@ -98,26 +102,27 @@ public class Fragment4 extends Fragment {
                 categoryshow.setText(mostCategory);
 
                 TextView timeshow = (TextView)getActivity().findViewById(R.id.TimeShow);
-                List<String> Times = db.mostTime(usermail);
-                String mostTime = Times.get(0).toString();
+                int Times = db.mostTime(usermail);
+                String mostTime="None";
+                if (Times<15) {
+                    mostTime = "< 15 minutes";
+                } else if (Times>60) {
+                    mostTime = "> 60 minutes";
+                } else {
+                    mostTime ="15-60 minutes";
+                }
                 timeshow.setText(mostTime);
 
                 TextView allergeneshow = (TextView)getActivity().findViewById(R.id.AllergeneShow);
-                List<String> Allergenes = db.AllergenesConsomm(usermail);
-                String allergenes = "";
-                List<String> AllergenesTest = new ArrayList<String>();
-                for (int i=0; i<Allergenes.size(); i++) {
-                    boolean trouvé=false;
-                    for (int j=0; j<AllergenesTest.size(); j++) {
-                        if (Allergenes.get(i).equals(AllergenesTest.get(j))) {
-                            trouvé=true;
-                        }
-                    }
-                    if (!trouvé) {
-                        allergenes += Allergenes.get(i) + " ";
-                    }
+                List<String> Recettes = db.AllergenesConsomm(usermail);
+                Set<String> RecetteDistinct = new HashSet<String>(Recettes);
+                String recette = "";
+                Iterator<String> iter = RecetteDistinct.iterator();
+                while(iter.hasNext()) {
+                    String recipe = iter.next();
+                    recette += recipe + " ";
                 }
-                allergeneshow.setText(allergenes);
+                allergeneshow.setText(recette);
             }
         });
         // NOTE : We are calling the onFragmentInteraction() declared in the MainActivity

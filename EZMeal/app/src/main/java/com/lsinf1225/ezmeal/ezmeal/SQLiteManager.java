@@ -16,6 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.lsinf1225.ezmeal.ezmeal.R.string.usermail;
+import static java.lang.StrictMath.max;
 
 
 public class SQLiteManager extends SQLiteOpenHelper {
@@ -2445,9 +2446,8 @@ public class SQLiteManager extends SQLiteOpenHelper {
         return ret;
     }
 
-    public List<String> mostTime(String usermail){
+    public int mostTime(String usermail){
         List<String> res = new ArrayList<String>();
-        List<String> ret = new ArrayList<>();
         SQLiteDatabase db = getReadableDatabase();
         Cursor c =db.query("\"Effectués\"",new String[]{"\"Recette\""},("\"Username\" = \"" + usermail +"\"") ,null,null,null,null);
         if(c.moveToFirst()){
@@ -2459,22 +2459,31 @@ public class SQLiteManager extends SQLiteOpenHelper {
             res.add("None");
         }
         c.close();
-        int count=0;
-        int comparateur=0;
+        int countcourt=0;
+        int countmoyen=0;
+        int countlong=0;
         for (int i=0; i<res.size(); i++) {
-            count=0;
-            for (int j=0; j<res.size(); j++) {
-                if(getTimeRecipe(res.get(i))==(getTimeRecipe(res.get(j)))) {
-                    count++;
+                if(Integer.parseInt(getTimeRecipe(res.get(i)))<20) {
+                    countcourt++;
+                } else if (Integer.parseInt(getTimeRecipe(res.get(i)))>60) {
+                    countlong++;
+                } else {
+                    countmoyen++;
                 }
-            }
-            if (count>comparateur) {
-                ret.clear();
-                ret.add(getTimeRecipe(res.get(i)));
-                comparateur=count;
-            }
         }
-        return ret;
+        if (countcourt>countmoyen) {
+            if (countmoyen>countlong) {
+                return 1;
+            } else if (countcourt>countlong) {
+                    return 1;
+            } else {
+                return 100;
+            }
+        } else if (countmoyen>countlong) {
+            return 50;
+        } else {
+            return 100;
+        }
     }
 
     public Cursor getRecipeInfo (String recipeName){
@@ -2536,13 +2545,14 @@ public class SQLiteManager extends SQLiteOpenHelper {
             for (int j=0; j<ingr.size();j++) {
                 for (int k = 0; k < allerUsr.size(); k++) {
                     if (getAllerIngrédient(ingr.get(j)).equals(allerUsr.get(k))) {
-                        ret.add(getAllerIngrédient(ingr.get(j)));
+                        ret.add(res.get(i));
                     }
                 }
             }
         }
         return ret;
     }
+
     public Recipe getRecipeName(String NomRecette){
         SQLiteDatabase db = getReadableDatabase();
         Recipe recipe=new Recipe("okok","","","","");

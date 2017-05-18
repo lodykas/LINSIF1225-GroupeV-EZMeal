@@ -46,7 +46,7 @@ public class ModifyProfileActivity extends AppCompatActivity {
         } else {
             String allergenes = "";
             for (int i = 0; i < allergene.size(); i++) {
-                allergenes += allergene.get(i).toString() + " ";
+                allergenes += allergene.get(i).toString() + ", ";
             }
             allergenesShow.setText(allergenes);
         }

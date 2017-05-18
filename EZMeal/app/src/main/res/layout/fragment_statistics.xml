@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:text="Your Statistics"
+            android:text="@string/titleStatistics"
             android:textAllCaps="true" />
 
         <TextView
@@ -24,7 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/title"
-            android:text="Most executed recipe :"
+            android:text="@string/mostRecipe"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"/>
 
@@ -41,7 +41,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/MostRecipe"
-            android:text="Most consummed ingredient :"
+            android:text="@string/mostIngredient"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"/>
 
@@ -58,7 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/MostIngredient"
-            android:text="preferential origin :"
+            android:text="@string/preferentialOrigin"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"/>
 
@@ -75,7 +75,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/Origin"
-            android:text="Preferential category :"
+            android:text="@string/preferentialCategory"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"/>
 
@@ -92,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/Category"
-            android:text="preferential time of preparation :"
+            android:text="@string/preferentialTime"
             android:layout_marginTop="20dp"
             android:layout_marginLeft="20dp"/>
 
@@ -109,7 +109,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="18dp"
-            android:text="CALCULATE"
+            android:text="@string/buttonCalculate"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
 
@@ -118,20 +118,22 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_above="@+id/calculate"
-            android:layout_marginBottom="74dp"
+            android:layout_marginBottom="150dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="WARNING !! You have eaten those ingredients either you are allergic to :"
+            android:text="@string/Warning"
             android:textColor="@android:color/holo_red_dark" />
 
         <TextView
             android:id="@+id/AllergeneShow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="36dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:text="-"
+            android:layout_centerHorizontal="true"
             android:layout_above="@+id/calculate"
-            android:layout_centerHorizontal="true" />
+            android:layout_marginBottom="40dp"/>
 
     </RelativeLayout>
 </FrameLayout>

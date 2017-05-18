@@ -5,6 +5,8 @@
     <string name="allergens">Allergènes</string>
     <string name="banana">Banane</string>
     <string name="birthday">Date de naissance</string>
+    <string name="Date">JJ/MM/AAAA
+    </string>
     <string name="country">Sélectionnez un pays</string>
     <string name="country1">Pays de résidence</string>
     <string name="createsuccess">Bienvenue, %1$s!</string>
@@ -36,4 +38,23 @@
     <string name="toeat">EZ recettes</string>
     <string name="totaste">EZ envie</string>
     <string name="totrack">EZ stats</string>
+
+    <string name="title">Profil</string>
+    <string name="newPassword">Nouveau mot de passe</string>
+    <string name="confirmNewPassword">Confirmez mot de passe</string>
+    <string name="informationsModify">Seules ces informations peuvent être modifiées</string>
+    <string name="newLiving">Nouveau pays de résidence</string>
+    <string name="yourUsermail">Votre Usermail : </string>
+    <string name="yourOrigin">Votre pays d origine : </string>
+    <string name="yourBirthday">Votre date de naissance : </string>
+    <string name="yourAllergenes">Vos Allergènes : </string>
+
+    <string name="titleStatistics"> VOS STATISTIQUES : </string>
+    <string name="mostRecipe"> Recette la plus effectuée : </string>
+    <string name="mostIngredient"> Ingrédient le plus consommé : </string>
+    <string name="preferentialOrigin"> Origine préférée : </string>
+    <string name="buttonCalculate"> CALCULER </string>
+    <string name="preferentialCategory"> Catégorie préférée </string>
+    <string name="preferentialTime"> Temps de préparation préféré </string>
+    <string name="Warning"> ATTENTION !! Vous avez consommé cette recette alors qu elle contient des ingrédients auxquels vous êtes allergiques : </string>
 </resources>
